@@ -1,0 +1,36 @@
+plugins {
+	id 'fabric-loom' version '1.15.5'
+}
+
+version = project.mod_version
+group = 'com.vnap'
+base { archivesName = 'villager-news-addon-port' }
+
+repositories {
+	maven { url = 'https://maven.terraformersmc.com/' }
+	exclusiveContent {
+		forRepository { maven { url = 'https://api.modrinth.com/maven' } }
+		filter { includeGroup 'maven.modrinth' }
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation 'maven.modrinth:entity-model-features:3.3.9-fabric-1.20.1'
+	modImplementation 'maven.modrinth:entitytexturefeatures:7.2.4-fabric-1.20.1'
+	modImplementation 'maven.modrinth:esf:0.8.2-fabric-1.20.1'
+	modCompileOnly 'com.terraformersmc:modmenu:7.2.2'
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release = 17
+	options.encoding = 'UTF-8'
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}

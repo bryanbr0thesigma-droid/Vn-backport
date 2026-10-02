@@ -1,0 +1,41 @@
+package com.vnap.sound;
+
+import com.vnap.VillagerNewsAddonPort;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+
+public final class SupplementalSoundCatalog {
+   private static final List<String> ADULT_HURT_EFFECTS = List.of("a", "d", "g", "j", "l", "n", "r", "t", "v");
+   private static final List<String> BABY_HURT_EFFECTS = List.of("b", "e", "h", "k", "m", "o", "s", "u");
+   private static final List<String> EFFECTS = List.of(
+      "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v"
+   );
+   public static final SoundEvent EMPTY = SoundEvent.createVariableRangeEvent(VillagerNewsAddonPort.id("empty"));
+   private static final Map<String, SoundEvent> REGISTERED = new LinkedHashMap<>();
+
+   private SupplementalSoundCatalog() {
+   }
+
+   public static void register() {
+      Registry.register(BuiltInRegistries.SOUND_EVENT, VillagerNewsAddonPort.id("empty"), EMPTY);
+      for (String effect : EFFECTS) {
+         ResourceLocation id = VillagerNewsAddonPort.id("effect." + effect);
+         REGISTERED.put(effect, (SoundEvent)Registry.register(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id)));
+      }
+   }
+
+   public static String chooseHurtEffect(boolean baby) {
+      List<String> effects = baby ? BABY_HURT_EFFECTS : ADULT_HURT_EFFECTS;
+      return effects.get(ThreadLocalRandom.current().nextInt(effects.size()));
+   }
+
+   public static SoundEvent byId(String effect) {
+      return REGISTERED.get(effect);
+   }
+}
