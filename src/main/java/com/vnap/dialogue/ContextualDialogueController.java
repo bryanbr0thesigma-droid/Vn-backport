@@ -106,6 +106,7 @@ public final class ContextualDialogueController {
    private static final Map<UUID, Long> LAST_DANGER = new HashMap<>();
    private static final Map<UUID, Long> NO_BELL_SINCE = new HashMap<>();
    private static final Map<UUID, ContextualDialogueController.TradeSession> ACTIVE_TRADES = new HashMap<>();
+   private static final Map<UUID, LastInteraction> LAST_INTERACTIONS = new HashMap<>();
    private static final Map<UUID, ContextualDialogueController.UnreachableState> UNREACHABLE_STATES = new HashMap<>();
    private static final Set<UUID> ACTIVE_PLAYER_ENCOUNTERS = new HashSet<>();
    private static final Map<UUID, ContextualDialogueController.PendingSleep> PENDING_SLEEP = new HashMap<>();
@@ -461,7 +462,7 @@ public final class ContextualDialogueController {
       UseEntityCallback.EVENT
          .register(
             (UseEntityCallback)(player, level, hand, entity, hitResult) -> (InteractionResult)(level instanceof ServerLevel
-               ? onUseEntity(player, entity, hand)
+               ? onUseEntityOnce(player, entity, hand)
                : InteractionResult.PASS)
          );
       AttackEntityCallback.EVENT
@@ -859,6 +860,7 @@ public final class ContextualDialogueController {
       LAST_DANGER.clear();
       NO_BELL_SINCE.clear();
       ACTIVE_TRADES.clear();
+      LAST_INTERACTIONS.clear();
       UNREACHABLE_STATES.clear();
       ACTIVE_PLAYER_ENCOUNTERS.clear();
       PENDING_SLEEP.clear();
@@ -2525,6 +2527,22 @@ public final class ContextualDialogueController {
       }
    }
 
+   /**
+    * Fabric API 1.20.1 fires the entity-use callback for both the interact-at and the plain interact
+    * packet of a single right-click. The second call would repeat every side effect (a sheared nose
+    * would immediately open the trade screen), so a repeat within the same click replays the first result.
+    */
+   private static InteractionResult onUseEntityOnce(Player player, Entity entity, InteractionHand hand) {
+      LastInteraction last = LAST_INTERACTIONS.get(player.getUUID());
+      if (last != null && last.entityId() == entity.getId() && last.hand() == hand && ticks - last.tick() <= 1L) {
+         return last.result();
+      }
+
+      InteractionResult result = onUseEntity(player, entity, hand);
+      LAST_INTERACTIONS.put(player.getUUID(), new LastInteraction(entity.getId(), hand, ticks, result));
+      return result;
+   }
+
    private static InteractionResult onUseEntity(Player player, Entity entity, InteractionHand hand) {
       if (entity.getTags().contains("vnap_dialogue_test")) {
          return InteractionResult.SUCCESS;
@@ -3678,6 +3696,9 @@ public final class ContextualDialogueController {
    }
 
    private record SpeechTarget(UUID targetId, Vec3 position, long untilTick, boolean lockMovement) {
+   }
+
+   private record LastInteraction(int entityId, InteractionHand hand, long tick, InteractionResult result) {
    }
 
    private static final class TradeSession {
