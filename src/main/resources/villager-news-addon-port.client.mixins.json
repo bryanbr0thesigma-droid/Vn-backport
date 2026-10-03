@@ -7,8 +7,7 @@
     "ItemRendererMixin",
     "EMFModelPartMixin",
     "VillagerRendererMixin",
-    "VillagerBabyScaleMixin",
-    "VillagerProfessionLayerMixin"
+    "VillagerBabyScaleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
