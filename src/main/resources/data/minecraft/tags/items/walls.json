@@ -4,6 +4,12 @@
   "pale_garden:resin_brick_wall",
   "backport:tuff_wall",
   "backport:polished_tuff_wall",
-  "backport:tuff_brick_wall"
+  "backport:tuff_brick_wall",
+  "backport:cinnabar_wall",
+  "backport:polished_cinnabar_wall",
+  "backport:cinnabar_brick_wall",
+  "backport:sulfur_wall",
+  "backport:polished_sulfur_wall",
+  "backport:sulfur_brick_wall"
  ]
 }

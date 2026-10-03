@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "shelf",
+ "key": {
+  "#": {
+   "item": "pale_garden:stripped_pale_oak_log"
+  }
+ },
+ "pattern": [
+  "###",
+  "   ",
+  "###"
+ ],
+ "result": {
+  "item": "backport:pale_oak_shelf",
+  "count": 6
+ }
+}

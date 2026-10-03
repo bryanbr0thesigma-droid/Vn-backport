@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "shelf",
+ "key": {
+  "#": {
+   "item": "minecraft:stripped_cherry_log"
+  }
+ },
+ "pattern": [
+  "###",
+  "   ",
+  "###"
+ ],
+ "result": {
+  "item": "backport:cherry_shelf",
+  "count": 6
+ }
+}

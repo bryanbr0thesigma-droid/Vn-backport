@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "wooden_fence",
+ "key": {
+  "#": {
+   "item": "minecraft:stick"
+  },
+  "W": {
+   "item": "backport:poplar_planks"
+  }
+ },
+ "pattern": [
+  "W#W",
+  "W#W"
+ ],
+ "result": {
+  "item": "backport:poplar_fence",
+  "count": 3
+ }
+}

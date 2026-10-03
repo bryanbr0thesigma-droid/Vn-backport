@@ -1,0 +1,7 @@
+{
+ "parent": "backport:block/template_sign_rot_2",
+ "textures": {
+  "all": "backport:block/poplar_sign",
+  "particle": "backport:block/poplar_planks"
+ }
+}

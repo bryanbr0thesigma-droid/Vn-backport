@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "S": {
+   "item": "backport:sulfur"
+  }
+ },
+ "pattern": [
+  "SS",
+  "SS"
+ ],
+ "result": {
+  "item": "backport:polished_sulfur",
+  "count": 4
+ }
+}

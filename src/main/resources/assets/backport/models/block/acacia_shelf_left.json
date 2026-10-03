@@ -1,0 +1,7 @@
+{
+ "parent": "backport:block/template_shelf_left",
+ "textures": {
+  "all": "backport:block/acacia_shelf",
+  "particle": "minecraft:block/stripped_acacia_log"
+ }
+}

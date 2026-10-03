@@ -11,6 +11,17 @@
   "backport:waxed_exposed_copper_golem_statue",
   "backport:waxed_weathered_copper_golem_statue",
   "backport:waxed_oxidized_copper_golem_statue",
-  "backport:heavy_core"
+  "backport:heavy_core",
+  "backport:bush",
+  "backport:short_dry_grass",
+  "backport:tall_dry_grass",
+  "backport:golden_dandelion",
+  "backport:cactus_flower",
+  "backport:wildflowers",
+  "backport:leaf_litter",
+  "backport:firefly_bush",
+  "backport:red_shrub",
+  "backport:shelf_mushroom",
+  "backport:straw_bed"
  ]
 }

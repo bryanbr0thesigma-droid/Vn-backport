@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "backport:poplar_log",
+  "backport:poplar_wood",
+  "backport:stripped_poplar_log",
+  "backport:stripped_poplar_wood"
+ ]
+}

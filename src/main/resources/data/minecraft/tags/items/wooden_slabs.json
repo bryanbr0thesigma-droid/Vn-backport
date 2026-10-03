@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:pale_oak_slab"
+  "pale_garden:pale_oak_slab",
+  "backport:poplar_slab"
  ]
 }

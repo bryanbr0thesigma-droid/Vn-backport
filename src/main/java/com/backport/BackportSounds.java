@@ -5,6 +5,13 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
 
 public final class BackportSounds {
+   public static final SoundEvent BLOCK_CACTUS_FLOWER_BREAK = register("block.cactus_flower.break");
+   public static final SoundEvent BLOCK_CACTUS_FLOWER_PLACE = register("block.cactus_flower.place");
+   public static final SoundEvent BLOCK_CINNABAR_BREAK = register("block.cinnabar.break");
+   public static final SoundEvent BLOCK_CINNABAR_FALL = register("block.cinnabar.fall");
+   public static final SoundEvent BLOCK_CINNABAR_HIT = register("block.cinnabar.hit");
+   public static final SoundEvent BLOCK_CINNABAR_PLACE = register("block.cinnabar.place");
+   public static final SoundEvent BLOCK_CINNABAR_STEP = register("block.cinnabar.step");
    public static final SoundEvent BLOCK_COPPER_BULB_BREAK = register("block.copper_bulb.break");
    public static final SoundEvent BLOCK_COPPER_BULB_FALL = register("block.copper_bulb.fall");
    public static final SoundEvent BLOCK_COPPER_BULB_HIT = register("block.copper_bulb.hit");
@@ -37,11 +44,53 @@ public final class BackportSounds {
    public static final SoundEvent BLOCK_DRIED_GHAST_PLACE_IN_WATER = register("block.dried_ghast.place_in_water");
    public static final SoundEvent BLOCK_DRIED_GHAST_STEP = register("block.dried_ghast.step");
    public static final SoundEvent BLOCK_DRIED_GHAST_TRANSITION = register("block.dried_ghast.transition");
+   public static final SoundEvent BLOCK_DRY_GRASS_AMBIENT = register("block.dry_grass.ambient");
+   public static final SoundEvent BLOCK_FIREFLY_BUSH_IDLE = register("block.firefly_bush.idle");
    public static final SoundEvent BLOCK_HEAVY_CORE_BREAK = register("block.heavy_core.break");
    public static final SoundEvent BLOCK_HEAVY_CORE_FALL = register("block.heavy_core.fall");
    public static final SoundEvent BLOCK_HEAVY_CORE_HIT = register("block.heavy_core.hit");
    public static final SoundEvent BLOCK_HEAVY_CORE_PLACE = register("block.heavy_core.place");
    public static final SoundEvent BLOCK_HEAVY_CORE_STEP = register("block.heavy_core.step");
+   public static final SoundEvent BLOCK_LEAF_LITTER_BREAK = register("block.leaf_litter.break");
+   public static final SoundEvent BLOCK_LEAF_LITTER_FALL = register("block.leaf_litter.fall");
+   public static final SoundEvent BLOCK_LEAF_LITTER_HIT = register("block.leaf_litter.hit");
+   public static final SoundEvent BLOCK_LEAF_LITTER_PLACE = register("block.leaf_litter.place");
+   public static final SoundEvent BLOCK_LEAF_LITTER_STEP = register("block.leaf_litter.step");
+   public static final SoundEvent BLOCK_POPLAR_LEAVES_AMBIENT = register("block.poplar_leaves.ambient");
+   public static final SoundEvent BLOCK_POPLAR_LEAVES_BREAK = register("block.poplar_leaves.break");
+   public static final SoundEvent BLOCK_POPLAR_LEAVES_FALL = register("block.poplar_leaves.fall");
+   public static final SoundEvent BLOCK_POPLAR_LEAVES_HIT = register("block.poplar_leaves.hit");
+   public static final SoundEvent BLOCK_POPLAR_LEAVES_PLACE = register("block.poplar_leaves.place");
+   public static final SoundEvent BLOCK_POPLAR_LEAVES_STEP = register("block.poplar_leaves.step");
+   public static final SoundEvent BLOCK_RED_SHRUB_BREAK = register("block.red_shrub.break");
+   public static final SoundEvent BLOCK_RED_SHRUB_PLACE = register("block.red_shrub.place");
+   public static final SoundEvent BLOCK_SHELF_ACTIVATE = register("block.shelf.activate");
+   public static final SoundEvent BLOCK_SHELF_BREAK = register("block.shelf.break");
+   public static final SoundEvent BLOCK_SHELF_DEACTIVATE = register("block.shelf.deactivate");
+   public static final SoundEvent BLOCK_SHELF_FALL = register("block.shelf.fall");
+   public static final SoundEvent BLOCK_SHELF_HIT = register("block.shelf.hit");
+   public static final SoundEvent BLOCK_SHELF_MULTI_SWAP = register("block.shelf.multi_swap");
+   public static final SoundEvent BLOCK_SHELF_PLACE = register("block.shelf.place");
+   public static final SoundEvent BLOCK_SHELF_PLACE_ITEM = register("block.shelf.place_item");
+   public static final SoundEvent BLOCK_SHELF_SINGLE_SWAP = register("block.shelf.single_swap");
+   public static final SoundEvent BLOCK_SHELF_STEP = register("block.shelf.step");
+   public static final SoundEvent BLOCK_SHELF_TAKE_ITEM = register("block.shelf.take_item");
+   public static final SoundEvent BLOCK_SHELF_MUSHROOM_BOUNCE = register("block.shelf_mushroom.bounce");
+   public static final SoundEvent BLOCK_SHELF_MUSHROOM_BREAK = register("block.shelf_mushroom.break");
+   public static final SoundEvent BLOCK_SHELF_MUSHROOM_FALL = register("block.shelf_mushroom.fall");
+   public static final SoundEvent BLOCK_SHELF_MUSHROOM_PLACE = register("block.shelf_mushroom.place");
+   public static final SoundEvent BLOCK_SHELF_MUSHROOM_STEP = register("block.shelf_mushroom.step");
+   public static final SoundEvent BLOCK_STRAW_BED_BREAK = register("block.straw_bed.break");
+   public static final SoundEvent BLOCK_STRAW_BED_BREAK_LEAVE = register("block.straw_bed.break_leave");
+   public static final SoundEvent BLOCK_STRAW_BED_FALL = register("block.straw_bed.fall");
+   public static final SoundEvent BLOCK_STRAW_BED_HIT = register("block.straw_bed.hit");
+   public static final SoundEvent BLOCK_STRAW_BED_PLACE = register("block.straw_bed.place");
+   public static final SoundEvent BLOCK_STRAW_BED_STEP = register("block.straw_bed.step");
+   public static final SoundEvent BLOCK_SULFUR_BREAK = register("block.sulfur.break");
+   public static final SoundEvent BLOCK_SULFUR_FALL = register("block.sulfur.fall");
+   public static final SoundEvent BLOCK_SULFUR_HIT = register("block.sulfur.hit");
+   public static final SoundEvent BLOCK_SULFUR_PLACE = register("block.sulfur.place");
+   public static final SoundEvent BLOCK_SULFUR_STEP = register("block.sulfur.step");
    public static final SoundEvent BLOCK_TRIAL_SPAWNER_ABOUT_TO_SPAWN_ITEM = register("block.trial_spawner.about_to_spawn_item");
    public static final SoundEvent BLOCK_TRIAL_SPAWNER_AMBIENT = register("block.trial_spawner.ambient");
    public static final SoundEvent BLOCK_TRIAL_SPAWNER_AMBIENT_OMINOUS = register("block.trial_spawner.ambient_ominous");
@@ -141,6 +190,10 @@ public final class BackportSounds {
    public static final SoundEvent ENTITY_COPPER_GOLEM_WEATHERED_HURT = register("entity.copper_golem_weathered.hurt");
    public static final SoundEvent ENTITY_COPPER_GOLEM_WEATHERED_SPIN = register("entity.copper_golem_weathered.spin");
    public static final SoundEvent ENTITY_COPPER_GOLEM_WEATHERED_STEP = register("entity.copper_golem_weathered.step");
+   public static final SoundEvent ENTITY_CUSHION_BREAK = register("entity.cushion.break");
+   public static final SoundEvent ENTITY_CUSHION_GET_UP = register("entity.cushion.get_up");
+   public static final SoundEvent ENTITY_CUSHION_PLACE = register("entity.cushion.place");
+   public static final SoundEvent ENTITY_CUSHION_SIT = register("entity.cushion.sit");
    public static final SoundEvent ENTITY_GHASTLING_AMBIENT = register("entity.ghastling.ambient");
    public static final SoundEvent ENTITY_GHASTLING_DEATH = register("entity.ghastling.death");
    public static final SoundEvent ENTITY_GHASTLING_HURT = register("entity.ghastling.hurt");
@@ -170,6 +223,42 @@ public final class BackportSounds {
    public static final SoundEvent ENTITY_PARCHED_DEATH = register("entity.parched.death");
    public static final SoundEvent ENTITY_PARCHED_HURT = register("entity.parched.hurt");
    public static final SoundEvent ENTITY_PARCHED_STEP = register("entity.parched.step");
+   public static final SoundEvent ENTITY_SMALL_SULFUR_CUBE_DEATH = register("entity.small_sulfur_cube.death");
+   public static final SoundEvent ENTITY_SMALL_SULFUR_CUBE_EAT = register("entity.small_sulfur_cube.eat");
+   public static final SoundEvent ENTITY_SMALL_SULFUR_CUBE_HURT = register("entity.small_sulfur_cube.hurt");
+   public static final SoundEvent ENTITY_SMALL_SULFUR_CUBE_JUMP = register("entity.small_sulfur_cube.jump");
+   public static final SoundEvent ENTITY_SMALL_SULFUR_CUBE_SQUISH = register("entity.small_sulfur_cube.squish");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_ABSORB = register("entity.sulfur_cube.absorb");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_BOUNCE = register("entity.sulfur_cube.bounce");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_BOUNCY_HIT = register("entity.sulfur_cube.bouncy.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_BOUNCY_PUSH = register("entity.sulfur_cube.bouncy.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_DEATH = register("entity.sulfur_cube.death");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_EJECT = register("entity.sulfur_cube.eject");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_EXPLOSIVE_HIT = register("entity.sulfur_cube.explosive.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_EXPLOSIVE_PUSH = register("entity.sulfur_cube.explosive.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_FAST_FLAT_HIT = register("entity.sulfur_cube.fast_flat.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_FAST_FLAT_PUSH = register("entity.sulfur_cube.fast_flat.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_FAST_SLIDING_HIT = register("entity.sulfur_cube.fast_sliding.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_FAST_SLIDING_PUSH = register("entity.sulfur_cube.fast_sliding.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_HIGH_RESISTANCE_HIT = register("entity.sulfur_cube.high_resistance.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_HIGH_RESISTANCE_PUSH = register("entity.sulfur_cube.high_resistance.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_HOT_HIT = register("entity.sulfur_cube.hot.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_HOT_PUSH = register("entity.sulfur_cube.hot.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_HURT = register("entity.sulfur_cube.hurt");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_JUMP = register("entity.sulfur_cube.jump");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_LIGHT_HIT = register("entity.sulfur_cube.light.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_LIGHT_PUSH = register("entity.sulfur_cube.light.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_REGULAR_HIT = register("entity.sulfur_cube.regular.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_REGULAR_PUSH = register("entity.sulfur_cube.regular.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_SLOW_BOUNCY_HIT = register("entity.sulfur_cube.slow_bouncy.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_SLOW_BOUNCY_PUSH = register("entity.sulfur_cube.slow_bouncy.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_SLOW_FLAT_HIT = register("entity.sulfur_cube.slow_flat.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_SLOW_FLAT_PUSH = register("entity.sulfur_cube.slow_flat.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_SLOW_SLIDING_HIT = register("entity.sulfur_cube.slow_sliding.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_SLOW_SLIDING_PUSH = register("entity.sulfur_cube.slow_sliding.push");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_SQUISH = register("entity.sulfur_cube.squish");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_STICKY_HIT = register("entity.sulfur_cube.sticky.hit");
+   public static final SoundEvent ENTITY_SULFUR_CUBE_STICKY_PUSH = register("entity.sulfur_cube.sticky.push");
    public static final SoundEvent ENTITY_WIND_CHARGE_THROW = register("entity.wind_charge.throw");
    public static final SoundEvent ENTITY_WIND_CHARGE_WIND_BURST = register("entity.wind_charge.wind_burst");
    public static final SoundEvent ENTITY_ZOMBIE_NAUTILUS_AMBIENT = register("entity.zombie_nautilus.ambient");
@@ -186,6 +275,8 @@ public final class BackportSounds {
    public static final SoundEvent ENTITY_ZOMBIE_NAUTILUS_SWIM = register("entity.zombie_nautilus.swim");
    public static final SoundEvent ITEM_ARMOR_EQUIP_WOLF = register("item.armor.equip_wolf");
    public static final SoundEvent ITEM_ARMOR_UNEQUIP_WOLF = register("item.armor.unequip_wolf");
+   public static final SoundEvent ITEM_BUCKET_EMPTY_SULFUR_CUBE = register("item.bucket.empty_sulfur_cube");
+   public static final SoundEvent ITEM_BUCKET_FILL_SULFUR_CUBE = register("item.bucket.fill_sulfur_cube");
    public static final SoundEvent ITEM_MACE_SMASH_AIR = register("item.mace.smash_air");
    public static final SoundEvent ITEM_MACE_SMASH_GROUND = register("item.mace.smash_ground");
    public static final SoundEvent ITEM_MACE_SMASH_GROUND_HEAVY = register("item.mace.smash_ground_heavy");
@@ -204,6 +295,10 @@ public final class BackportSounds {
    public static final SoundEvent ITEM_WOLF_ARMOR_REPAIR = register("item.wolf_armor.repair");
 
    private BackportSounds() {
+   }
+
+   public static SoundEvent byName(String name) {
+      return BuiltInRegistries.SOUND_EVENT.get(Backport.id(name));
    }
 
    private static SoundEvent register(String name) {

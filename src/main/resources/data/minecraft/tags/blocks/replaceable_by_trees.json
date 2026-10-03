@@ -1,6 +1,12 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:pale_moss_carpet"
+  "pale_garden:pale_moss_carpet",
+  "backport:bush",
+  "backport:firefly_bush",
+  "backport:leaf_litter",
+  "backport:short_dry_grass",
+  "backport:tall_dry_grass",
+  "backport:shelf_mushroom"
  ]
 }

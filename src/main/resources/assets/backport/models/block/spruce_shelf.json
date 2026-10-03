@@ -1,0 +1,7 @@
+{
+ "parent": "backport:block/template_shelf_body",
+ "textures": {
+  "all": "backport:block/spruce_shelf",
+  "particle": "minecraft:block/stripped_spruce_log"
+ }
+}

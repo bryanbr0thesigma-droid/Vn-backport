@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "backport:golden_nautilus_armor"
+  "backport:golden_nautilus_armor",
+  "backport:golden_dandelion"
  ]
 }

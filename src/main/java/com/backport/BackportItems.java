@@ -60,6 +60,19 @@ public final class BackportItems {
    public static final Item GOLDEN_NAUTILUS_ARMOR = Backport.item("golden_nautilus_armor", new NautilusArmorItem(7, new FabricItemSettings().maxDamage(112)));
    public static final Item DIAMOND_NAUTILUS_ARMOR = Backport.item("diamond_nautilus_armor", new NautilusArmorItem(11, new FabricItemSettings().maxDamage(528)));
    public static final Item NETHERITE_NAUTILUS_ARMOR = Backport.item("netherite_nautilus_armor", new NautilusArmorItem(11, new FabricItemSettings().maxDamage(592).fireproof()));
+   public static final Item[] CUSHIONS = new Item[16];
+   static {
+      net.minecraft.world.item.DyeColor[] cols = net.minecraft.world.item.DyeColor.values();
+      for (int i = 0; i < cols.length; i++) {
+         final net.minecraft.world.item.DyeColor c = cols[i];
+         CUSHIONS[i] = Backport.item(c.getName() + "_cushion", new CushionItem(new FabricItemSettings(), c));
+      }
+   }
+
+   public static Item cushion(net.minecraft.world.item.DyeColor color) {
+      return CUSHIONS[color.getId()];
+   }
+
    public static final Item BREEZE_ROD = Backport.item("breeze_rod", new Item(new FabricItemSettings()));
    public static final Item MACE = Backport.item("mace", new MaceItem(new FabricItemSettings().maxDamage(500).rarity(Rarity.EPIC)));
    public static final Item WIND_CHARGE = Backport.item("wind_charge", new WindChargeItem(new FabricItemSettings()));
@@ -67,6 +80,7 @@ public final class BackportItems {
    public static final Item OMINOUS_TRIAL_KEY = Backport.item("ominous_trial_key", new Item(new FabricItemSettings()));
    public static final Item OMINOUS_BOTTLE = Backport.item("ominous_bottle", new OminousBottleItem(new FabricItemSettings().maxCount(64).rarity(Rarity.UNCOMMON)));
    public static final Item WOLF_ARMOR = Backport.item("wolf_armor", new WolfArmorItem(new FabricItemSettings().maxDamage(64)));
+   public static final Item SULFUR_CUBE_BUCKET = Backport.item("sulfur_cube_bucket", new com.backport.SulfurCubeBucketItem(new FabricItemSettings().maxCount(1)));
    public static final Item ARMADILLO_SCUTE = Backport.item("armadillo_scute", new Item(new FabricItemSettings()));
 
    private BackportItems() {
@@ -77,6 +91,36 @@ public final class BackportItems {
       com.backport.crafter.CrafterMenu.registerServer();
       com.backport.trial.TrialSpawnerBlockEntity.register(TRIAL_SPAWNER);
       com.backport.trial.VaultBlockEntity.register(VAULT);
+   }
+
+   public static final class CushionItem extends Item {
+      private final net.minecraft.world.item.DyeColor color;
+
+      CushionItem(Item.Properties properties, net.minecraft.world.item.DyeColor color) {
+         super(properties);
+         this.color = color;
+      }
+
+      public net.minecraft.world.InteractionResult useOn(net.minecraft.world.item.context.UseOnContext ctx) {
+         Level level = ctx.getLevel();
+         if (ctx.getClickedFace() != net.minecraft.core.Direction.UP) return net.minecraft.world.InteractionResult.FAIL;
+         net.minecraft.world.item.context.BlockPlaceContext place = new net.minecraft.world.item.context.BlockPlaceContext(ctx);
+         net.minecraft.core.BlockPos pos = place.getClickedPos();
+         net.minecraft.world.phys.Vec3 at = new net.minecraft.world.phys.Vec3(pos.getX() + 0.5, ctx.getClickLocation().y, pos.getZ() + 0.5);
+         net.minecraft.world.phys.AABB box = BackportEntities.CUSHION.getDimensions().makeBoundingBox(at);
+         if (!com.backport.entity.Cushion.canBePlacedAt(level, box)) return net.minecraft.world.InteractionResult.FAIL;
+         if (level instanceof net.minecraft.server.level.ServerLevel sl) {
+            if (!sl.getEntitiesOfClass(com.backport.entity.Cushion.class, box).isEmpty()) return net.minecraft.world.InteractionResult.FAIL;
+            com.backport.entity.Cushion cushion = BackportEntities.CUSHION.create(sl);
+            if (cushion == null) return net.minecraft.world.InteractionResult.FAIL;
+            cushion.setColor(this.color);
+            cushion.moveTo(at.x, at.y, at.z, net.minecraft.core.Direction.fromYRot(place.getRotation()).toYRot(), 0.0F);
+            sl.addFreshEntity(cushion);
+            level.playSound(null, cushion.getX(), cushion.getY(), cushion.getZ(), BackportSounds.ENTITY_CUSHION_PLACE, net.minecraft.sounds.SoundSource.BLOCKS, 0.75F, 0.8F);
+            if (ctx.getPlayer() == null || !ctx.getPlayer().getAbilities().instabuild) ctx.getItemInHand().shrink(1);
+         }
+         return net.minecraft.world.InteractionResult.sidedSuccess(level.isClientSide);
+      }
    }
 
    public static final class NautilusArmorItem extends Item {

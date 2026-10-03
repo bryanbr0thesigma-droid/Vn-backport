@@ -1,6 +1,11 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:resin_clump"
+  "pale_garden:resin_clump",
+  "backport:bush",
+  "backport:red_shrub",
+  "backport:short_dry_grass",
+  "backport:tall_dry_grass",
+  "backport:leaf_litter"
  ]
 }

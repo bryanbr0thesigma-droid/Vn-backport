@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": {
+  "item": "backport:polished_cinnabar"
+ },
+ "result": "backport:polished_cinnabar_slab",
+ "count": 2
+}

@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:pale_oak_sign"
+  "pale_garden:pale_oak_sign",
+  "backport:poplar_sign"
  ]
 }

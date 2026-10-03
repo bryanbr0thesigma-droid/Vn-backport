@@ -1,0 +1,7 @@
+{
+ "parent": "backport:block/template_shelf_unconnected",
+ "textures": {
+  "all": "backport:block/cherry_shelf",
+  "particle": "minecraft:block/stripped_cherry_log"
+ }
+}

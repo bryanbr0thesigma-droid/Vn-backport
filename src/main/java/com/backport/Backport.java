@@ -47,8 +47,14 @@ public final class Backport {
       return item;
    }
 
+   public static final net.minecraft.world.level.block.SoundType SHELF_SOUNDS = new net.minecraft.world.level.block.SoundType(1.0F, 1.0F, BackportSounds.BLOCK_SHELF_BREAK, BackportSounds.BLOCK_SHELF_STEP,
+      BackportSounds.BLOCK_SHELF_PLACE, BackportSounds.BLOCK_SHELF_HIT, BackportSounds.BLOCK_SHELF_FALL);
+
    public static void init() {
       BackportSounds.init();
+      BiomeAdditions.init();
+      com.backport.worldgen.BackportWorldgen.init();
+      BackportParticles.init();
       BackportEffects.init();
       com.backport.worldgen.TrialChambersStructure.register();
       com.backport.loot.BackportLootFunctions.init();
@@ -56,6 +62,17 @@ public final class Backport {
       BackportEntities.init();
       BackportItems.init();
       SimpleBlocks.init();
+      NewStone.init();
+      PlantBlocks.init();
+      com.backport.poplar.PoplarBoats.init();
+      com.backport.poplar.Poplar.init();
+      java.util.List<net.minecraft.world.level.block.Block> shelves = new java.util.ArrayList<>();
+      for (String w : new String[]{"oak", "spruce", "birch", "acacia", "jungle", "dark_oak", "mangrove", "cherry", "bamboo", "crimson", "warped", "pale_oak", "poplar"}) {
+         shelves.add(block(w + "_shelf", new com.backport.shelf.ShelfBlock(net.minecraft.world.level.block.state.BlockBehaviour.Properties.of()
+            .mapColor(net.minecraft.world.level.material.MapColor.WOOD).instrument(net.minecraft.world.level.block.state.properties.NoteBlockInstrument.BASS)
+            .sound(SHELF_SOUNDS).ignitedByLava().strength(2.0F, 3.0F))));
+      }
+      com.backport.shelf.ShelfBlockEntity.register(shelves.toArray(new net.minecraft.world.level.block.Block[0]));
       CopperBlocks.init();
       CopperTools.init();
       Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceKey.create(Registries.CREATIVE_MODE_TAB, id("main")), FabricItemGroup.builder()

@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:random_selector",
+ "config": {
+  "features": [
+   {
+    "feature": "backport:red_poplar_leaf_litter",
+    "chance": 0.29542097488921715
+   },
+   {
+    "feature": "backport:orange_poplar_leaf_litter",
+    "chance": 0.5031446540880503
+   },
+   {
+    "feature": "backport:yellow_poplar_leaf_litter",
+    "chance": 0.379746835443038
+   },
+   {
+    "feature": "minecraft:spruce_checked",
+    "chance": 0.1836734693877551
+   }
+  ],
+  "default": "backport:fallen_poplar_tree"
+ }
+}

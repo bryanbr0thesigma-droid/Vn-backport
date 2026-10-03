@@ -30,6 +30,15 @@
   "backport:waxed_weathered_copper_bulb",
   "backport:waxed_oxidized_copper_bulb",
   "backport:crafter",
-  "backport:dried_ghast"
+  "backport:dried_ghast",
+  "backport:sulfur",
+  "backport:polished_sulfur",
+  "backport:sulfur_bricks",
+  "backport:chiseled_sulfur",
+  "backport:cinnabar",
+  "backport:polished_cinnabar",
+  "backport:cinnabar_bricks",
+  "backport:chiseled_cinnabar",
+  "backport:straw_bed"
  ]
 }

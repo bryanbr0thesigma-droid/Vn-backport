@@ -32,6 +32,7 @@ public class BackportClient implements ClientModInitializer {
    public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_BABY_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "baby");
    public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_ARMOR_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "armor");
    public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_SADDLE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "saddle");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation CUSHION_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("cushion"), "main");
    public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "main");
    public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_WIND_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "wind");
    public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_EYES_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "eyes");
@@ -70,6 +71,35 @@ public class BackportClient implements ClientModInitializer {
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_SADDLE_LAYER, () -> NautilusModel.createArmorLayer(0.2F, true));
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.NAUTILUS, NautilusRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.ZOMBIE_NAUTILUS, NautilusRenderer::new);
+      net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry.getInstance().register(com.backport.BackportParticles.FIREFLY, FireflyParticle.Provider::new);
+      for (net.minecraft.core.particles.SimpleParticleType t : new net.minecraft.core.particles.SimpleParticleType[]{com.backport.BackportParticles.RED_POPLAR_LEAVES, com.backport.BackportParticles.ORANGE_POPLAR_LEAVES, com.backport.BackportParticles.YELLOW_POPLAR_LEAVES}) {
+         net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry.getInstance().register(t, com.palegarden.client.FallingLeavesParticle.PaleOakProvider::new);
+      }
+      net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutout(),
+         com.backport.PlantBlocks.BUSH, com.backport.PlantBlocks.RED_SHRUB, com.backport.PlantBlocks.CACTUS_FLOWER, com.backport.PlantBlocks.FIREFLY_BUSH, com.backport.PlantBlocks.GOLDEN_DANDELION,
+         com.backport.PlantBlocks.POTTED_GOLDEN_DANDELION, com.backport.PlantBlocks.LEAF_LITTER, com.backport.PlantBlocks.WILDFLOWERS, com.backport.PlantBlocks.SHORT_DRY_GRASS, com.backport.PlantBlocks.TALL_DRY_GRASS,
+         com.backport.PlantBlocks.SHELF_MUSHROOM, com.backport.PlantBlocks.STRAW_BED);
+      net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry.BLOCK.register((state, level, pos, tint) -> level != null && pos != null ? net.minecraft.client.renderer.BiomeColors.getAverageGrassColor(level, pos) : 0x91BD59,
+         com.backport.PlantBlocks.BUSH);
+      net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry.BLOCK.register((state, level, pos, tint) -> tint == 1 && level != null && pos != null ? net.minecraft.client.renderer.BiomeColors.getAverageGrassColor(level, pos) : -1,
+         com.backport.PlantBlocks.WILDFLOWERS);
+      net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry.BLOCK.register((state, level, pos, tint) -> 0x9B7A36, com.backport.PlantBlocks.LEAF_LITTER);
+      net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry.ITEM.register((stack, tint) -> 0x91BD59, com.backport.PlantBlocks.BUSH);
+      net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry.ITEM.register((stack, tint) -> tint == 1 ? 0x91BD59 : -1, com.backport.PlantBlocks.WILDFLOWERS);
+      net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry.ITEM.register((stack, tint) -> 0x9B7A36, com.backport.PlantBlocks.LEAF_LITTER);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.poplar.PoplarBoats.BOAT, ctx -> new PoplarBoatRenderer(ctx, false));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.poplar.PoplarBoats.CHEST_BOAT, ctx -> new PoplarBoatRenderer(ctx, true));
+      net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutoutMipped(), com.backport.poplar.Poplar.RED_LEAVES, com.backport.poplar.Poplar.ORANGE_LEAVES, com.backport.poplar.Poplar.YELLOW_LEAVES);
+      net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutout(), com.backport.poplar.Poplar.SAPLING, com.backport.poplar.Poplar.POTTED_SAPLING, com.backport.poplar.Poplar.DOOR, com.backport.poplar.Poplar.TRAPDOOR);
+      net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry.register(com.backport.shelf.ShelfBlockEntity.TYPE, ShelfRenderer::new);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(CUSHION_LAYER, CushionRenderer::createBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.CUSHION, CushionRenderer::new);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(SulfurCubeRenderer.OUTER, () -> SulfurCubeRenderer.outer(false));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(SulfurCubeRenderer.INNER, () -> SulfurCubeRenderer.inner(false));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(SulfurCubeRenderer.OUTER_SMALL, () -> SulfurCubeRenderer.outer(true));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(SulfurCubeRenderer.INNER_SMALL, () -> SulfurCubeRenderer.inner(true));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.SULFUR_CUBE, SulfurCubeRenderer::new);
+      net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry.getInstance().register(com.backport.BackportParticles.SULFUR_CUBE_GOO, net.minecraft.client.particle.WaterDropParticle.Provider::new);
       net.minecraft.client.gui.screens.MenuScreens.register(com.backport.crafter.CrafterMenu.TYPE, CrafterScreen::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE, BreezeRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE_WIND_CHARGE, WindChargeRenderer::new);

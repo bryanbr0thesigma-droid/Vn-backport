@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:pale_oak_chest_boat"
+  "pale_garden:pale_oak_chest_boat",
+  "backport:poplar_chest_boat"
  ]
 }

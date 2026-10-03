@@ -1,0 +1,7 @@
+{
+ "parent": "backport:block/template_shelf_right",
+ "textures": {
+  "all": "backport:block/mangrove_shelf",
+  "particle": "minecraft:block/stripped_mangrove_log"
+ }
+}

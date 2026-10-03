@@ -1,0 +1,7 @@
+{
+ "parent": "backport:block/template_wall_hanging_sign",
+ "textures": {
+  "all": "backport:block/poplar_hanging_sign",
+  "particle": "backport:block/stripped_poplar_log"
+ }
+}

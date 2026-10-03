@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "building",
+ "key": {
+  "#": {
+   "item": "backport:sulfur_spike"
+  }
+ },
+ "pattern": [
+  "##",
+  "##"
+ ],
+ "result": {
+  "item": "backport:sulfur"
+ }
+}

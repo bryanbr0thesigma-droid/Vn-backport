@@ -1,0 +1,7 @@
+{
+ "replace": false,
+ "values": [
+  "backport:short_dry_grass",
+  "backport:tall_dry_grass"
+ ]
+}

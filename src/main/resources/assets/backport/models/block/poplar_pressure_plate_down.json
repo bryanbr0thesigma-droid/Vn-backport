@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/pressure_plate_down",
+ "textures": {
+  "texture": "backport:block/poplar_planks"
+ }
+}

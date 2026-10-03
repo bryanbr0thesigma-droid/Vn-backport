@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": {
+  "item": "backport:cinnabar_bricks"
+ },
+ "result": "backport:cinnabar_brick_wall",
+ "count": 1
+}

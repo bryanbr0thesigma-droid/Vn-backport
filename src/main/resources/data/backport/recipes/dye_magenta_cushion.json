@@ -1,0 +1,59 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "group": "cushion_dye",
+ "ingredients": [
+  {
+   "item": "minecraft:magenta_dye"
+  },
+  [
+   {
+    "item": "backport:white_cushion"
+   },
+   {
+    "item": "backport:orange_cushion"
+   },
+   {
+    "item": "backport:light_blue_cushion"
+   },
+   {
+    "item": "backport:yellow_cushion"
+   },
+   {
+    "item": "backport:lime_cushion"
+   },
+   {
+    "item": "backport:pink_cushion"
+   },
+   {
+    "item": "backport:gray_cushion"
+   },
+   {
+    "item": "backport:light_gray_cushion"
+   },
+   {
+    "item": "backport:cyan_cushion"
+   },
+   {
+    "item": "backport:purple_cushion"
+   },
+   {
+    "item": "backport:blue_cushion"
+   },
+   {
+    "item": "backport:brown_cushion"
+   },
+   {
+    "item": "backport:green_cushion"
+   },
+   {
+    "item": "backport:red_cushion"
+   },
+   {
+    "item": "backport:black_cushion"
+   }
+  ]
+ ],
+ "result": {
+  "item": "backport:magenta_cushion"
+ }
+}

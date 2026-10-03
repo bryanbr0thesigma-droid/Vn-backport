@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "backport:leaf_litter",
+  "backport:short_dry_grass",
+  "backport:tall_dry_grass",
+  "backport:bush",
+  "backport:red_shrub",
+  "backport:firefly_bush"
+ ]
+}

@@ -16,11 +16,11 @@ public abstract class BlockEntityTypeMixin {
       Object self = this;
       Block block = state.getBlock();
       if (self == BlockEntityType.SIGN) {
-         if (block == PaleBlocks.PALE_OAK_SIGN || block == PaleBlocks.PALE_OAK_WALL_SIGN) {
+         if (block == PaleBlocks.PALE_OAK_SIGN || block == PaleBlocks.PALE_OAK_WALL_SIGN || block == com.backport.poplar.Poplar.SIGN || block == com.backport.poplar.Poplar.WALL_SIGN) {
             cir.setReturnValue(true);
          }
       } else if (self == BlockEntityType.HANGING_SIGN) {
-         if (block == PaleBlocks.PALE_OAK_HANGING_SIGN || block == PaleBlocks.PALE_OAK_WALL_HANGING_SIGN) {
+         if (block == PaleBlocks.PALE_OAK_HANGING_SIGN || block == PaleBlocks.PALE_OAK_WALL_HANGING_SIGN || block == com.backport.poplar.Poplar.HANGING_SIGN || block == com.backport.poplar.Poplar.WALL_HANGING_SIGN) {
             cir.setReturnValue(true);
          }
       }

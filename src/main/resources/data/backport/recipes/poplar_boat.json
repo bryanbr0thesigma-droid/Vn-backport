@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "boat",
+ "key": {
+  "#": {
+   "item": "backport:poplar_planks"
+  }
+ },
+ "pattern": [
+  "# #",
+  "###"
+ ],
+ "result": {
+  "item": "backport:poplar_boat"
+ }
+}

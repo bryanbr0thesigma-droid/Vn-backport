@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "backport:block/poplar_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "backport:block/poplar_wood"
+    },
+    "axis=z": {
+      "model": "backport:block/poplar_wood",
+      "x": 90
+    }
+  }
+}

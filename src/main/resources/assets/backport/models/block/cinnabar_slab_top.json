@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab_top",
+ "textures": {
+  "bottom": "backport:block/cinnabar",
+  "side": "backport:block/cinnabar",
+  "top": "backport:block/cinnabar"
+ }
+}

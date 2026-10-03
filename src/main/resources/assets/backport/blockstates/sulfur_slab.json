@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "backport:block/sulfur_slab"
+    },
+    "type=double": {
+      "model": "backport:block/sulfur"
+    },
+    "type=top": {
+      "model": "backport:block/sulfur_slab_top"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:pale_oak_pressure_plate"
+  "pale_garden:pale_oak_pressure_plate",
+  "backport:poplar_pressure_plate"
  ]
 }

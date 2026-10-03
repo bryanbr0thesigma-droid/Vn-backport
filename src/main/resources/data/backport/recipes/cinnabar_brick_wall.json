@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "backport:cinnabar_bricks"
+  }
+ },
+ "pattern": [
+  "###",
+  "###"
+ ],
+ "result": {
+  "item": "backport:cinnabar_brick_wall",
+  "count": 6
+ }
+}

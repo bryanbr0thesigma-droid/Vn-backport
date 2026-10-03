@@ -4,6 +4,14 @@
   "backport:chiseled_tuff",
   "backport:chiseled_tuff_bricks",
   "backport:polished_tuff",
-  "backport:tuff_bricks"
+  "backport:tuff_bricks",
+  "backport:chiseled_cinnabar",
+  "backport:chiseled_sulfur",
+  "backport:cinnabar",
+  "backport:cinnabar_bricks",
+  "backport:polished_cinnabar",
+  "backport:polished_sulfur",
+  "backport:sulfur",
+  "backport:sulfur_bricks"
  ]
 }

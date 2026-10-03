@@ -71,6 +71,11 @@ public final class BackportEntities {
          .spawnRestriction(SpawnPlacements.Type.IN_WATER, Heightmap.Types.OCEAN_FLOOR, com.backport.entity.AbstractNautilus::checkNautilusSpawnRules)
          .dimensions(EntityDimensions.fixed(0.875F, 0.95F)).trackRangeBlocks(10).build()
    );
+   public static final EntityType<com.backport.entity.Cushion> CUSHION = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("cushion"),
+      FabricEntityTypeBuilder.<com.backport.entity.Cushion>create(MobCategory.MISC, com.backport.entity.Cushion::new).dimensions(EntityDimensions.fixed(1.0F, 0.25F)).trackRangeBlocks(10).trackedUpdateRate(Integer.MAX_VALUE).build()
+   );
    public static final EntityType<com.backport.entity.Armadillo> ARMADILLO = Registry.register(
       BuiltInRegistries.ENTITY_TYPE,
       Backport.id("armadillo"),
@@ -84,6 +89,14 @@ public final class BackportEntities {
       FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.Breeze::new).spawnGroup(MobCategory.MONSTER)
          .dimensions(EntityDimensions.fixed(0.6F, 1.77F)).trackRangeBlocks(10).build()
    );
+   public static final EntityType<com.backport.entity.SulfurCube> SULFUR_CUBE = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("sulfur_cube"),
+      FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.SulfurCube::new).spawnGroup(MobCategory.CREATURE)
+         .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, net.minecraft.world.entity.Mob::checkMobSpawnRules)
+         .dimensions(EntityDimensions.fixed(1.04F, 1.04F)).trackRangeBlocks(10).build()
+   );
+   public static final Item SULFUR_CUBE_SPAWN_EGG = Backport.item("sulfur_cube_spawn_egg", new SpawnEggItem(SULFUR_CUBE, 0xCBD64C, 0x6F7B1F, new FabricItemSettings()));
    public static final Item BREEZE_SPAWN_EGG = Backport.item("breeze_spawn_egg", new SpawnEggItem(BREEZE, 0xAFC1E8, 0x9B9FE0, new FabricItemSettings()));
    public static final EntityType<com.backport.entity.BreezeWindCharge> BREEZE_WIND_CHARGE = Registry.register(
       BuiltInRegistries.ENTITY_TYPE,
@@ -128,6 +141,7 @@ public final class BackportEntities {
             net.minecraft.world.level.biome.Biomes.FROZEN_OCEAN, net.minecraft.world.level.biome.Biomes.DEEP_FROZEN_OCEAN),
          MobCategory.WATER_CREATURE, NAUTILUS, 5, 1, 1);
       FabricDefaultAttributeRegistry.register(BOGGED, Bogged.createAttributes());
+      FabricDefaultAttributeRegistry.register(SULFUR_CUBE, com.backport.entity.SulfurCube.createAttributes());
       FabricDefaultAttributeRegistry.register(BREEZE, com.backport.entity.Breeze.createAttributes());
       FabricDefaultAttributeRegistry.register(ARMADILLO, com.backport.entity.Armadillo.createAttributes());
       net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(

@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "potent_sulfur_state=dry": {
+   "model": "backport:block/potent_sulfur"
+  },
+  "potent_sulfur_state=wet": {
+   "model": "backport:block/potent_sulfur"
+  },
+  "potent_sulfur_state=dormant": {
+   "model": "backport:block/potent_sulfur"
+  },
+  "potent_sulfur_state=erupting": {
+   "model": "backport:block/potent_sulfur"
+  },
+  "potent_sulfur_state=continuous": {
+   "model": "backport:block/potent_sulfur"
+  }
+ }
+}

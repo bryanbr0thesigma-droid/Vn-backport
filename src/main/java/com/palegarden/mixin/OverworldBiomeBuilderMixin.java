@@ -15,6 +15,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class OverworldBiomeBuilderMixin {
    private static final ResourceKey<Biome> PALE_GARDEN = ResourceKey.create(Registries.BIOME, PaleGarden.id("pale_garden"));
 
+   private static final ResourceKey<Biome> DAPPLED_FOREST = ResourceKey.create(Registries.BIOME, new net.minecraft.resources.ResourceLocation("backport", "dappled_forest"));
+
+   @Inject(method = "pickMiddleBiome", at = @At("RETURN"), cancellable = true)
+   private void palegarden$dappledForest(int temperature, int humidity, Climate.Parameter weirdness, CallbackInfoReturnable<ResourceKey<Biome>> cir) {
+      if (temperature == 1 && humidity == 0 && weirdness.max() >= 0L) {
+         cir.setReturnValue(DAPPLED_FOREST);
+      }
+   }
+
    /** Pale Garden takes the dark forest's place on the plateau/"variant" climate slice, as in 1.21.4. */
    @Inject(method = "pickPlateauBiome", at = @At("RETURN"), cancellable = true)
    private void palegarden$paleGarden(int temperature, int humidity, Climate.Parameter weirdness, CallbackInfoReturnable<ResourceKey<Biome>> cir) {

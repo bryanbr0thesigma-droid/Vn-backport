@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "backport:polished_sulfur"
+  }
+ },
+ "pattern": [
+  "###",
+  "###"
+ ],
+ "result": {
+  "item": "backport:polished_sulfur_wall",
+  "count": 6
+ }
+}

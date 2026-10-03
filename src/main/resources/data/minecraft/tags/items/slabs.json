@@ -4,6 +4,12 @@
   "pale_garden:resin_brick_slab",
   "backport:tuff_slab",
   "backport:polished_tuff_slab",
-  "backport:tuff_brick_slab"
+  "backport:tuff_brick_slab",
+  "backport:cinnabar_slab",
+  "backport:polished_cinnabar_slab",
+  "backport:cinnabar_brick_slab",
+  "backport:sulfur_slab",
+  "backport:polished_sulfur_slab",
+  "backport:sulfur_brick_slab"
  ]
 }

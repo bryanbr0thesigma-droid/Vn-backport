@@ -1,0 +1,475 @@
+{
+ "badlands": {
+  "add": [
+   [
+    9,
+    "backport:patch_dry_grass_badlands"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "bamboo_jungle": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "beach": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "birch_forest": {
+  "add": [
+   [
+    9,
+    "backport:wildflowers_birch_forest"
+   ],
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "cold_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "dark_forest": {
+  "add": [
+   [
+    9,
+    "backport:patch_leaf_litter"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "deep_cold_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "deep_frozen_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "deep_lukewarm_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "deep_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "desert": {
+  "add": [
+   [
+    9,
+    "backport:patch_dry_grass_desert"
+   ]
+  ],
+  "remove": []
+ },
+ "eroded_badlands": {
+  "add": [
+   [
+    9,
+    "backport:patch_dry_grass_badlands"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "flower_forest": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "forest": {
+  "add": [
+   [
+    9,
+    "backport:trees_birch_and_oak_leaf_litter"
+   ],
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": [
+   [
+    9,
+    "minecraft:trees_birch_and_oak"
+   ]
+  ]
+ },
+ "frozen_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "frozen_river": {
+  "add": [
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "ice_spikes": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "jungle": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "lukewarm_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "mangrove_swamp": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "meadow": {
+  "add": [
+   [
+    9,
+    "backport:patch_grass_meadow"
+   ],
+   [
+    9,
+    "backport:wildflowers_meadow"
+   ]
+  ],
+  "remove": []
+ },
+ "mushroom_fields": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "old_growth_birch_forest": {
+  "add": [
+   [
+    9,
+    "backport:wildflowers_birch_forest"
+   ],
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "old_growth_pine_taiga": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "old_growth_spruce_taiga": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "plains": {
+  "add": [
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "river": {
+  "add": [
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "savanna": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "savanna_plateau": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "snowy_beach": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "snowy_plains": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "snowy_taiga": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "sparse_jungle": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "stony_shore": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "sunflower_plains": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "swamp": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_swamp"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water_swamp"
+   ]
+  ],
+  "remove": []
+ },
+ "taiga": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "warm_ocean": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "windswept_forest": {
+  "add": [
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "windswept_gravelly_hills": {
+  "add": [
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "windswept_hills": {
+  "add": [
+   [
+    9,
+    "backport:patch_bush"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "windswept_savanna": {
+  "add": [
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ },
+ "wooded_badlands": {
+  "add": [
+   [
+    9,
+    "backport:patch_dry_grass_badlands"
+   ],
+   [
+    9,
+    "backport:patch_firefly_bush_near_water"
+   ]
+  ],
+  "remove": []
+ }
+}

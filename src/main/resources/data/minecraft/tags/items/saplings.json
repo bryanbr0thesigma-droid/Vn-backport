@@ -1,6 +1,7 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:pale_oak_sapling"
+  "pale_garden:pale_oak_sapling",
+  "backport:poplar_sapling"
  ]
 }

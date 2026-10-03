@@ -4,6 +4,12 @@
   "pale_garden:resin_brick_stairs",
   "backport:tuff_stairs",
   "backport:polished_tuff_stairs",
-  "backport:tuff_brick_stairs"
+  "backport:tuff_brick_stairs",
+  "backport:cinnabar_stairs",
+  "backport:polished_cinnabar_stairs",
+  "backport:cinnabar_brick_stairs",
+  "backport:sulfur_stairs",
+  "backport:polished_sulfur_stairs",
+  "backport:sulfur_brick_stairs"
  ]
 }

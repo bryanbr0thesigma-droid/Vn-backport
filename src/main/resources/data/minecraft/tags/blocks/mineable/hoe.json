@@ -3,6 +3,7 @@
  "values": [
   "pale_garden:pale_oak_leaves",
   "pale_garden:pale_moss_block",
-  "pale_garden:pale_moss_carpet"
+  "pale_garden:pale_moss_carpet",
+  "backport:straw_bed"
  ]
 }

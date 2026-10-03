@@ -1,0 +1,6 @@
+{
+ "parent": "backport:block/template_leaf_litter_1",
+ "textures": {
+  "texture": "backport:block/leaf_litter"
+ }
+}

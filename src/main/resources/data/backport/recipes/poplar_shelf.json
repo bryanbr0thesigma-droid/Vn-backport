@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "shelf",
+ "key": {
+  "#": {
+   "item": "backport:stripped_poplar_log"
+  }
+ },
+ "pattern": [
+  "###",
+  "   ",
+  "###"
+ ],
+ "result": {
+  "item": "backport:poplar_shelf",
+  "count": 6
+ }
+}
