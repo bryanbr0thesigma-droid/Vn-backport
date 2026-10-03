@@ -46,10 +46,19 @@ public class SulfurSpikeBlock extends Block implements SimpleWaterloggedBlock, F
    private static final VoxelShape SHAPE_MIDDLE = Block.box(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
    private static final VoxelShape SHAPE_BASE = Block.box(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
    private final Block growOn;
+   private final int maxGrowth;
+   private final boolean fallsInLight;
 
    public SulfurSpikeBlock(Block growOn, Properties props) {
+      this(growOn, props, 2, false);
+   }
+
+   /** @param maxGrowth max natural length; @param fallsInLight stalactites drop when bright (icicles). */
+   public SulfurSpikeBlock(Block growOn, Properties props, int maxGrowth, boolean fallsInLight) {
       super(props);
       this.growOn = growOn;
+      this.maxGrowth = maxGrowth;
+      this.fallsInLight = fallsInLight;
       this.registerDefaultState(this.stateDefinition.any().setValue(TIP_DIRECTION, Direction.UP).setValue(THICKNESS, DripstoneThickness.TIP).setValue(WATERLOGGED, false));
    }
 
@@ -177,6 +186,15 @@ public class SulfurSpikeBlock extends Block implements SimpleWaterloggedBlock, F
    }
 
    @Override
+   public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, float fall) {
+      if (this.withDirection(state, Direction.UP) && state.getValue(THICKNESS) == DripstoneThickness.TIP) {
+         entity.causeFallDamage(fall + 2.0F, 2.0F, level.damageSources().stalagmite());
+      } else {
+         super.fallOn(level, state, pos, entity, fall);
+      }
+   }
+
+   @Override
    public DamageSource getFallDamageSource(Entity entity) {
       return entity.damageSources().fallingStalactite(entity);
    }
@@ -215,6 +233,10 @@ public class SulfurSpikeBlock extends Block implements SimpleWaterloggedBlock, F
 
    @Override
    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+      if (this.fallsInLight && this.withDirection(state, Direction.DOWN) && level.getBrightness(net.minecraft.world.level.LightLayer.BLOCK, pos) >= 12) {
+         this.spawnFalling(state, level, pos);
+         return;
+      }
       if (random.nextFloat() < 0.011377778F && this.withDirection(state, Direction.DOWN) && !level.getBlockState(pos.above()).is(this)) {
          this.growIfPossible(state, level, pos, random);
       }
@@ -224,7 +246,7 @@ public class SulfurSpikeBlock extends Block implements SimpleWaterloggedBlock, F
       if (!level.getBlockState(startPos.above()).is(this.growOn)) {
          return;
       }
-      BlockPos tipPos = this.findTip(startState, level, startPos, 2, false);
+      BlockPos tipPos = this.findTip(startState, level, startPos, this.maxGrowth, false);
       if (tipPos != null) {
          BlockState tip = level.getBlockState(tipPos);
          if (this.withDirection(tip, Direction.DOWN) && tip.getValue(THICKNESS) == DripstoneThickness.TIP && !tip.getValue(WATERLOGGED) && this.canTipGrow(tip, level, tipPos)) {

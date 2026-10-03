@@ -12,7 +12,8 @@
     "LivingEntityWolfArmorMixin",
     "LivingEntityAccessor",
     "MushroomBlockMixin",
-    "MushroomBlockAccess"
+    "MushroomBlockAccess",
+    "ZombieFrostbiteMixin"
   ],
   "client": [
     "ItemRendererMixin",

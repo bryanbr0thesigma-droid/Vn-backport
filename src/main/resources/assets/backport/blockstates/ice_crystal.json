@@ -1,0 +1,30 @@
+{
+ "variants": {
+  "facing=down": {
+   "model": "backport:block/ice_crystal",
+   "x": 180
+  },
+  "facing=east": {
+   "model": "backport:block/ice_crystal",
+   "x": 90,
+   "y": 90
+  },
+  "facing=north": {
+   "model": "backport:block/ice_crystal",
+   "x": 90
+  },
+  "facing=south": {
+   "model": "backport:block/ice_crystal",
+   "x": 90,
+   "y": 180
+  },
+  "facing=up": {
+   "model": "backport:block/ice_crystal"
+  },
+  "facing=west": {
+   "model": "backport:block/ice_crystal",
+   "x": 90,
+   "y": 270
+  }
+ }
+}

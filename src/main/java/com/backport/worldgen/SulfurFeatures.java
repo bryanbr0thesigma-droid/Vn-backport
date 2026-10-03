@@ -52,7 +52,10 @@ public final class SulfurFeatures {
    }
 
    static void spike(WorldGenLevel level, BlockPos start, Direction dir, int length) {
-      Block spike = NewStone.SULFUR_SPIKE;
+      spike(level, start, dir, length, NewStone.SULFUR_SPIKE);
+   }
+
+   static void spike(WorldGenLevel level, BlockPos start, Direction dir, int length, Block spike) {
       BlockPos.MutableBlockPos p = start.mutable();
       for (int i = 0; i < length; i++) {
          int rem = length - 1 - i;

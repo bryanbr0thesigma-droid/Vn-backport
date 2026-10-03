@@ -32,6 +32,15 @@ public abstract class OverworldBiomeBuilderMixin {
 
    private static final ResourceKey<Biome> SULFUR_CAVES = ResourceKey.create(Registries.BIOME, new net.minecraft.resources.ResourceLocation("backport", "sulfur_caves"));
 
+   private static final ResourceKey<Biome> ICE_CAVES = ResourceKey.create(Registries.BIOME, new net.minecraft.resources.ResourceLocation("backport", "ice_caves"));
+
+   /** Ice Caves (Bedrock preview 26.60): under the coldest biomes, at high weirdness. */
+   @Inject(method = "addUndergroundBiomes", at = @At("RETURN"))
+   private void palegarden$iceCaves(java.util.function.Consumer<com.mojang.datafixers.util.Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, org.spongepowered.asm.mixin.injection.callback.CallbackInfo ci) {
+      this.addUndergroundBiome(consumer, Climate.Parameter.span(-1.0F, -0.45F), Climate.Parameter.span(-1.0F, 0.7F), Climate.Parameter.span(this.coastContinentalness, this.inlandContinentalness),
+         this.FULL_RANGE, Climate.Parameter.span(0.85F, 1.1F), 0.0F, ICE_CAVES);
+   }
+
    @Inject(method = "addUndergroundBiomes", at = @At("RETURN"))
    private void palegarden$sulfurCaves(java.util.function.Consumer<com.mojang.datafixers.util.Pair<Climate.ParameterPoint, ResourceKey<Biome>>> consumer, org.spongepowered.asm.mixin.injection.callback.CallbackInfo ci) {
       this.addUndergroundBiome(consumer, this.FULL_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.coastContinentalness, this.inlandContinentalness),

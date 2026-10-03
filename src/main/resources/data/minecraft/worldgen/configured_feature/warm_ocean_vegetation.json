@@ -1,0 +1,787 @@
+{
+ "type": "minecraft:simple_random_selector",
+ "config": {
+  "features": [
+   {
+    "feature": {
+     "type": "backport:coral_tree",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/tube_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": {
+     "type": "backport:coral_claw",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/tube_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": "backport:coral/tube_block",
+    "placement": [
+     {
+      "type": "backport:offset",
+      "x": 0,
+      "y": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": -3,
+        "max_inclusive": -1
+       }
+      },
+      "z": 0
+     },
+     {
+      "type": "backport:cuboid",
+      "include_edges": false,
+      "include_interior": false,
+      "xz_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      },
+      "y_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      }
+     },
+     {
+      "type": "backport:random_chance",
+      "chance": 0.9
+     },
+     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+       "type": "minecraft:all_of",
+       "predicates": [
+        {
+         "type": "minecraft:any_of",
+         "predicates": [
+          {
+           "type": "minecraft:matching_blocks",
+           "blocks": "minecraft:water"
+          },
+          {
+           "type": "minecraft:matching_block_tag",
+           "tag": "minecraft:corals"
+          }
+         ]
+        },
+        {
+         "type": "minecraft:matching_blocks",
+         "blocks": "minecraft:water",
+         "offset": [
+          0,
+          1,
+          0
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "feature": {
+     "type": "backport:coral_tree",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/brain_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": {
+     "type": "backport:coral_claw",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/brain_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": "backport:coral/brain_block",
+    "placement": [
+     {
+      "type": "backport:offset",
+      "x": 0,
+      "y": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": -3,
+        "max_inclusive": -1
+       }
+      },
+      "z": 0
+     },
+     {
+      "type": "backport:cuboid",
+      "include_edges": false,
+      "include_interior": false,
+      "xz_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      },
+      "y_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      }
+     },
+     {
+      "type": "backport:random_chance",
+      "chance": 0.9
+     },
+     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+       "type": "minecraft:all_of",
+       "predicates": [
+        {
+         "type": "minecraft:any_of",
+         "predicates": [
+          {
+           "type": "minecraft:matching_blocks",
+           "blocks": "minecraft:water"
+          },
+          {
+           "type": "minecraft:matching_block_tag",
+           "tag": "minecraft:corals"
+          }
+         ]
+        },
+        {
+         "type": "minecraft:matching_blocks",
+         "blocks": "minecraft:water",
+         "offset": [
+          0,
+          1,
+          0
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "feature": {
+     "type": "backport:coral_tree",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/bubble_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": {
+     "type": "backport:coral_claw",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/bubble_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": "backport:coral/bubble_block",
+    "placement": [
+     {
+      "type": "backport:offset",
+      "x": 0,
+      "y": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": -3,
+        "max_inclusive": -1
+       }
+      },
+      "z": 0
+     },
+     {
+      "type": "backport:cuboid",
+      "include_edges": false,
+      "include_interior": false,
+      "xz_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      },
+      "y_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      }
+     },
+     {
+      "type": "backport:random_chance",
+      "chance": 0.9
+     },
+     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+       "type": "minecraft:all_of",
+       "predicates": [
+        {
+         "type": "minecraft:any_of",
+         "predicates": [
+          {
+           "type": "minecraft:matching_blocks",
+           "blocks": "minecraft:water"
+          },
+          {
+           "type": "minecraft:matching_block_tag",
+           "tag": "minecraft:corals"
+          }
+         ]
+        },
+        {
+         "type": "minecraft:matching_blocks",
+         "blocks": "minecraft:water",
+         "offset": [
+          0,
+          1,
+          0
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "feature": {
+     "type": "backport:coral_tree",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/fire_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": {
+     "type": "backport:coral_claw",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/fire_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": "backport:coral/fire_block",
+    "placement": [
+     {
+      "type": "backport:offset",
+      "x": 0,
+      "y": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": -3,
+        "max_inclusive": -1
+       }
+      },
+      "z": 0
+     },
+     {
+      "type": "backport:cuboid",
+      "include_edges": false,
+      "include_interior": false,
+      "xz_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      },
+      "y_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      }
+     },
+     {
+      "type": "backport:random_chance",
+      "chance": 0.9
+     },
+     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+       "type": "minecraft:all_of",
+       "predicates": [
+        {
+         "type": "minecraft:any_of",
+         "predicates": [
+          {
+           "type": "minecraft:matching_blocks",
+           "blocks": "minecraft:water"
+          },
+          {
+           "type": "minecraft:matching_block_tag",
+           "tag": "minecraft:corals"
+          }
+         ]
+        },
+        {
+         "type": "minecraft:matching_blocks",
+         "blocks": "minecraft:water",
+         "offset": [
+          0,
+          1,
+          0
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "feature": {
+     "type": "backport:coral_tree",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/horn_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": {
+     "type": "backport:coral_claw",
+     "config": {
+      "feature": {
+       "feature": "backport:coral/horn_block",
+       "placement": [
+        {
+         "type": "minecraft:block_predicate_filter",
+         "predicate": {
+          "type": "minecraft:all_of",
+          "predicates": [
+           {
+            "type": "minecraft:any_of",
+            "predicates": [
+             {
+              "type": "minecraft:matching_blocks",
+              "blocks": "minecraft:water"
+             },
+             {
+              "type": "minecraft:matching_block_tag",
+              "tag": "minecraft:corals"
+             }
+            ]
+           },
+           {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:water",
+            "offset": [
+             0,
+             1,
+             0
+            ]
+           }
+          ]
+         }
+        }
+       ]
+      }
+     }
+    },
+    "placement": []
+   },
+   {
+    "feature": "backport:coral/horn_block",
+    "placement": [
+     {
+      "type": "backport:offset",
+      "x": 0,
+      "y": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": -3,
+        "max_inclusive": -1
+       }
+      },
+      "z": 0
+     },
+     {
+      "type": "backport:cuboid",
+      "include_edges": false,
+      "include_interior": false,
+      "xz_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      },
+      "y_size": {
+       "type": "minecraft:uniform",
+       "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 6
+       }
+      }
+     },
+     {
+      "type": "backport:random_chance",
+      "chance": 0.9
+     },
+     {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+       "type": "minecraft:all_of",
+       "predicates": [
+        {
+         "type": "minecraft:any_of",
+         "predicates": [
+          {
+           "type": "minecraft:matching_blocks",
+           "blocks": "minecraft:water"
+          },
+          {
+           "type": "minecraft:matching_block_tag",
+           "tag": "minecraft:corals"
+          }
+         ]
+        },
+        {
+         "type": "minecraft:matching_blocks",
+         "blocks": "minecraft:water",
+         "offset": [
+          0,
+          1,
+          0
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ]
+ }
+}

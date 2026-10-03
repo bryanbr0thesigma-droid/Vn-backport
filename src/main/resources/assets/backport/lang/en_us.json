@@ -526,5 +526,21 @@
  "block.backport.sulfur_spike": "Sulfur Spike",
  "block.backport.potent_sulfur": "Potent Sulfur",
  "biome.backport.sulfur_caves": "Sulfur Caves",
- "biome.backport.dappled_forest": "Dappled Forest"
+ "biome.backport.dappled_forest": "Dappled Forest",
+ "block.backport.ice_crystal": "Ice Crystal",
+ "block.backport.icicle": "Icicle",
+ "item.backport.ice_ball": "Ice Ball",
+ "entity.backport.ice_ball": "Ice Ball",
+ "entity.backport.frostbite": "Frostbite",
+ "item.backport.frostbite_spawn_egg": "Frostbite Spawn Egg",
+ "effect.backport.freezing": "Freezing",
+ "biome.backport.ice_caves": "Ice Caves",
+ "item.minecraft.potion.effect.freezing": "Potion of Freezing",
+ "item.minecraft.splash_potion.effect.freezing": "Splash Potion of Freezing",
+ "item.minecraft.lingering_potion.effect.freezing": "Lingering Potion of Freezing",
+ "item.minecraft.tipped_arrow.effect.freezing": "Arrow of Freezing",
+ "item.minecraft.potion.effect.long_freezing": "Potion of Freezing",
+ "item.minecraft.splash_potion.effect.long_freezing": "Splash Potion of Freezing",
+ "item.minecraft.lingering_potion.effect.long_freezing": "Lingering Potion of Freezing",
+ "item.minecraft.tipped_arrow.effect.long_freezing": "Arrow of Freezing"
 }

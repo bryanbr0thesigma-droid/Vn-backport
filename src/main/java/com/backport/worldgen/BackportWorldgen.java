@@ -25,5 +25,7 @@ public final class BackportWorldgen {
       TrapezoidInt.register();
       SulfurFeatures.init();
       BelowHeightmapPredicate.init();
+      IceFeatures.init();
+      CoralFeatures.init();
    }
 }
