@@ -92,12 +92,14 @@ public class BackportClient implements ClientModInitializer {
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.poplar.PoplarBoats.BOAT, ctx -> new PoplarBoatRenderer(ctx, false));
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.poplar.PoplarBoats.CHEST_BOAT, ctx -> new PoplarBoatRenderer(ctx, true));
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutoutMipped(), com.backport.poplar.Poplar.RED_LEAVES, com.backport.poplar.Poplar.ORANGE_LEAVES, com.backport.poplar.Poplar.YELLOW_LEAVES);
-      net.fabricmc.loader.api.FabricLoader.getInstance().getModContainer("villager-news-addon-port").ifPresent(c -> {
-         if (c.findPath("resourcepacks/fresh_animations/pack.mcmeta").isPresent()) {
-            net.fabricmc.fabric.api.resource.ResourceManagerHelper.registerBuiltinResourcePack(Backport.id("fresh_animations"), c,
-               net.minecraft.network.chat.Component.literal("Fresh Animations"), net.fabricmc.fabric.api.resource.ResourcePackActivationType.DEFAULT_ENABLED);
-         }
-      });
+      for (String modId : new String[]{"villager-news-addon-port", "fresh-animations-bundle"}) {
+         net.fabricmc.loader.api.FabricLoader.getInstance().getModContainer(modId).ifPresent(c -> {
+            if (c.findPath("resourcepacks/fresh_animations/pack.mcmeta").isPresent()) {
+               net.fabricmc.fabric.api.resource.ResourceManagerHelper.registerBuiltinResourcePack(Backport.id("fresh_animations"), c,
+                  net.minecraft.network.chat.Component.literal("Fresh Animations"), net.fabricmc.fabric.api.resource.ResourcePackActivationType.DEFAULT_ENABLED);
+            }
+         });
+      }
       net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents.CLIENT_STARTED.register(mc -> {
          // DEFAULT_ENABLED only applies to profiles without a saved pack list, so switch the bundled pack on once for existing ones.
          try {

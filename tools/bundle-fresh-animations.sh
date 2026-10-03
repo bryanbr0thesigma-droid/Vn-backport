@@ -44,5 +44,21 @@ for r,_,fs in os.walk(w+'/pack'):
         zo.write(p,'resourcepacks/fresh_animations/'+os.path.relpath(p,w+'/pack'))
 zo.close()
 P
+# Small companion jar (Fresh Animations + EMF/ETF/ESF only), for use next to the normal mod jar.
+COMP=${3:-dist-private/fresh-animations-bundle-1.0.0.jar}
+python3 - "$COMP" "$W" <<'P'
+import sys,zipfile,json,os
+out,w=sys.argv[1:3]
+z=zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED)
+z.writestr('fabric.mod.json',json.dumps({"schemaVersion":1,"id":"fresh-animations-bundle","version":"1.0.0","name":"Fresh Animations Bundle",
+ "description":"Fresh Animations (by FreshLX) with Entity Model/Texture/Sound Features nested. Personal use only.","environment":"client",
+ "depends":{"fabricloader":">=0.14.21","minecraft":"1.20.1","fabric-api":"*"},
+ "jars":[{"file":"META-INF/jars/"+f} for f in sorted(os.listdir(w+'/jars'))]},indent=1))
+for f in os.listdir(w+'/jars'): z.write(w+'/jars/'+f,'META-INF/jars/'+f)
+for r,_,fs in os.walk(w+'/pack'):
+    for f in fs:
+        p=os.path.join(r,f); z.write(p,'resourcepacks/fresh_animations/'+os.path.relpath(p,w+'/pack'))
+z.close()
+P
 rm -rf "$W"
-ls -la "$OUT"
+ls -la "$OUT" "$COMP"
