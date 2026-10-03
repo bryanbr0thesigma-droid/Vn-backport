@@ -68,6 +68,8 @@ public final class IceCaves {
    }
 
    public static void init() {
+      net.minecraft.world.item.alchemy.PotionBrewing.addMix(net.minecraft.world.item.alchemy.Potions.AWKWARD, ICE_BALL, FREEZING_POTION);
+      net.minecraft.world.item.alchemy.PotionBrewing.addMix(FREEZING_POTION, net.minecraft.world.item.Items.REDSTONE, LONG_FREEZING_POTION);
       FabricDefaultAttributeRegistry.register(FROSTBITE, Frostbite.createAttributes());
       net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(Biomes.ICE_SPIKES),
          MobCategory.MONSTER, FROSTBITE, 30, 1, 2);
