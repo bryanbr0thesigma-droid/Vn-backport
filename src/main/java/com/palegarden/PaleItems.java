@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class PaleItems {
-   private static final List<Item> TAB_ITEMS = new ArrayList<>();
+   public static final List<Item> TAB_ITEMS = new ArrayList<>();
 
    public static final Item PALE_OAK_PLANKS = block("pale_oak_planks", PaleBlocks.PALE_OAK_PLANKS);
    public static final Item PALE_OAK_LOG = block("pale_oak_log", PaleBlocks.PALE_OAK_LOG);
@@ -70,13 +70,6 @@ public final class PaleItems {
    }
 
    public static void init() {
-      ResourceKey<CreativeModeTab> key = ResourceKey.create(Registries.CREATIVE_MODE_TAB, PaleGarden.id("main"));
-      Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, key, FabricItemGroup.builder()
-         .title(Component.translatable("itemGroup.pale_garden"))
-         .icon(() -> new ItemStack(PALE_OAK_SAPLING))
-         .displayItems((params, output) -> TAB_ITEMS.forEach(output::accept))
-         .build());
-
       StrippableBlockRegistry.register(PaleBlocks.PALE_OAK_LOG, PaleBlocks.STRIPPED_PALE_OAK_LOG);
       StrippableBlockRegistry.register(PaleBlocks.PALE_OAK_WOOD, PaleBlocks.STRIPPED_PALE_OAK_WOOD);
 

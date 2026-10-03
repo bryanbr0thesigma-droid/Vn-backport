@@ -83,7 +83,10 @@ public final class Backport {
       Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceKey.create(Registries.CREATIVE_MODE_TAB, id("main")), FabricItemGroup.builder()
          .title(Component.translatable("itemGroup.backport"))
          .icon(() -> new ItemStack(Items.TUFF))
-         .displayItems((params, output) -> TAB_ITEMS.forEach(output::accept))
+         .displayItems((params, output) -> {
+            TAB_ITEMS.forEach(output::accept);
+            com.palegarden.PaleItems.TAB_ITEMS.forEach(output::accept);
+         })
          .build());
    }
 }
