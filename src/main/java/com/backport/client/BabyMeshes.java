@@ -487,6 +487,11 @@ public final class BabyMeshes {
       root.addOrReplaceChild(
          "right_hind_leg", CubeListBuilder.create().texOffs(0, 38).addBox(-1.5F, -0.5F, -1.5F, 3.0F, 13.0F, 3.0F), PartPose.offset(-3.0F, 11.5F, 5.5F)
       );
+            PartDefinition cBody = root.getChild("body");
+      PartDefinition cHead = cBody.getChild("head");
+      cBody.addOrReplaceChild("saddle", CubeListBuilder.create(), PartPose.ZERO);
+      cHead.addOrReplaceChild("bridle", CubeListBuilder.create(), PartPose.ZERO);
+      cHead.addOrReplaceChild("reins", CubeListBuilder.create(), PartPose.ZERO);
       return LayerDefinition.create(mesh, 64, 64);
       }
 
@@ -733,6 +738,7 @@ public final class BabyMeshes {
       root.addOrReplaceChild(
          "left_front_leg", CubeListBuilder.create().texOffs(12, 38).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 6.0F, 3.0F), PartPose.offset(2.5F, 18.0F, -4.5F)
       );
+            root.getChild("body").addOrReplaceChild("mane", CubeListBuilder.create(), PartPose.ZERO);
       return LayerDefinition.create(mesh, 64, 64);
       }
 
@@ -771,6 +777,7 @@ public final class BabyMeshes {
       root.addOrReplaceChild(
          "left_leg", CubeListBuilder.create().texOffs(10, 23).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 4.0F, 3.0F), PartPose.offset(1.5F, 20.0F, 0.0F)
       );
+            root.getChild("head").addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
       return LayerDefinition.create(mesh, 64, 64);
       }
 
