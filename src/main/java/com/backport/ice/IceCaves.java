@@ -32,6 +32,7 @@ import net.minecraft.world.level.material.PushReaction;
 
 /** Ice Caves content from Bedrock preview 26.60 (Drop 4 of 2026): icicles, ice crystals, ice balls, Freezing, Frostbite. */
 public final class IceCaves {
+   private static final java.util.UUID FREEZING_SLOW = java.util.UUID.fromString("5d3b8a40-7c1e-4f6a-9a77-1f0c2e4b9d11");
    public static final MobEffect FREEZING = Registry.register(BuiltInRegistries.MOB_EFFECT, Backport.id("freezing"), new MobEffect(MobEffectCategory.HARMFUL, 0x9FDFFF) {
       @Override
       public boolean isDurationEffectTick(int duration, int amplifier) {
@@ -40,9 +41,33 @@ public final class IceCaves {
 
       @Override
       public void applyEffectTick(LivingEntity entity, int amplifier) {
-         if (entity.canFreeze()) {
-            // vanilla thaws 2 ticks per tick outside powder snow, so +3 nets +1 and fully freezes in 7 seconds
-            entity.setTicksFrozen(Math.min(entity.getTicksRequiredToFreeze() + 10, entity.getTicksFrozen() + 3));
+         net.minecraft.world.entity.ai.attributes.AttributeInstance speed = entity.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
+         if (speed != null) {
+            speed.removeModifier(FREEZING_SLOW);
+         }
+         // fire and lava thaw you instantly; leather armor and cold-adapted mobs are immune
+         boolean warm = entity.isInLava() || entity.level().getBlockState(entity.blockPosition()).is(net.minecraft.tags.BlockTags.FIRE);
+         if (warm) {
+            entity.setTicksFrozen(0);
+            return;
+         }
+         if (!entity.canFreeze()) {
+            return;
+         }
+         // vanilla thaws 2 ticks per tick outside powder snow, so +3 nets +1 and fully freezes in 7 seconds
+         entity.setTicksFrozen(Math.min(entity.getTicksRequiredToFreeze() + 10, entity.getTicksFrozen() + 3));
+         double pct = Math.min(1.0, entity.getTicksFrozen() / (double) entity.getTicksRequiredToFreeze());
+         if (speed != null && pct > 0.0) {
+            speed.addTransientModifier(new net.minecraft.world.entity.ai.attributes.AttributeModifier(FREEZING_SLOW, "Freezing slowdown", -0.5 * pct, net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation.MULTIPLY_TOTAL));
+         }
+      }
+
+      @Override
+      public void removeAttributeModifiers(LivingEntity entity, net.minecraft.world.entity.ai.attributes.AttributeMap map, int amplifier) {
+         super.removeAttributeModifiers(entity, map, amplifier);
+         net.minecraft.world.entity.ai.attributes.AttributeInstance speed = map.getInstance(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED);
+         if (speed != null) {
+            speed.removeModifier(FREEZING_SLOW);
          }
       }
    });

@@ -1,6 +1,8 @@
 {
  "replace": false,
  "values": [
-  "backport:frostbite"
+  "backport:frostbite",
+  "minecraft:wither",
+  "minecraft:ender_dragon"
  ]
 }
