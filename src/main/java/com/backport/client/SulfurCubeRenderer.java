@@ -139,7 +139,7 @@ public class SulfurCubeRenderer extends MobRenderer<SulfurCube, SulfurCubeRender
             ps.pushPose();
             if (body.getItem() instanceof BlockItem bi) {
                ps.mulPose(Axis.XP.rotationDegrees(180.0F));
-               float s = cube.isBaby() ? 0.5F : 1.0F;
+               float s = (cube.isBaby() ? 0.5F : 1.0F) * 1.8F;
                ps.scale(s, s, s);
                ps.translate(-0.5F, -0.518F, -0.5F);
                net.minecraft.client.Minecraft.getInstance().getBlockRenderer().renderSingleBlock(bi.getBlock().defaultBlockState(), ps, buf, light, overlay);
