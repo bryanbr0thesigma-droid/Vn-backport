@@ -10,6 +10,20 @@
     },
     {
      "type": "minecraft:item",
+     "name": "backport:flow_armor_trim_smithing_template",
+     "weight": 3
+    },
+    {
+     "type": "minecraft:item",
+     "name": "backport:flow_banner_pattern",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "backport:music_disc_creator"
+    },
+    {
+     "type": "minecraft:item",
      "name": "backport:heavy_core"
     }
    ],

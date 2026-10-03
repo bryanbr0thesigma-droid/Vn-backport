@@ -15,7 +15,8 @@
     "MushroomBlockAccess",
     "ZombieFrostbiteMixin",
     "LivingEntityFreezingJumpMixin",
-    "RaidsOmenMixin"
+    "RaidsOmenMixin",
+    "DecoratedPotPatternsMixin"
   ],
   "client": [
     "ItemRendererMixin",

@@ -1,0 +1,23 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+  "#S#",
+  "#C#",
+  "###"
+ ],
+ "key": {
+  "#": {
+   "item": "minecraft:diamond"
+  },
+  "C": {
+   "item": "backport:breeze_rod"
+  },
+  "S": {
+   "item": "backport:flow_armor_trim_smithing_template"
+  }
+ },
+ "result": {
+  "item": "backport:flow_armor_trim_smithing_template",
+  "count": 2
+ }
+}

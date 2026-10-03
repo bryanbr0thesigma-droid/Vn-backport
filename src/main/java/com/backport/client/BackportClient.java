@@ -100,6 +100,11 @@ public class BackportClient implements ClientModInitializer {
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(SulfurCubeRenderer.INNER_SMALL, () -> SulfurCubeRenderer.inner(true));
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.SULFUR_CUBE, SulfurCubeRenderer::new);
       BabyModels.init();
+      java.util.List<net.minecraft.world.item.Item> bundles = new java.util.ArrayList<>(com.backport.NewItems.BUNDLES.values());
+      bundles.add(com.backport.NewItems.BUNDLE);
+      for (net.minecraft.world.item.Item b : bundles) {
+         net.minecraft.client.renderer.item.ItemProperties.register(b, Backport.id("filled"), (stack, level, entity, seed) -> net.minecraft.world.item.BundleItem.getFullnessDisplay(stack));
+      }
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.OMINOUS_ITEM_SPAWNER, OminousItemSpawnerRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.FROSTBITE, FrostbiteRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.ICE_BALL_ENTITY, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);

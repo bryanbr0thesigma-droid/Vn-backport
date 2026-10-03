@@ -1,0 +1,14 @@
+{
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "backport:item/blue_bundle"
+ },
+ "overrides": [
+  {
+   "predicate": {
+    "backport:filled": 1e-07
+   },
+   "model": "backport:item/blue_bundle_filled"
+  }
+ ]
+}

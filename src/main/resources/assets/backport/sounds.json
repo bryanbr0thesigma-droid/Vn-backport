@@ -5153,5 +5153,53 @@
    }
   ],
   "subtitle": "subtitles.item.bucket.fill_sulfur_cube"
+ },
+ "music_disc.bounce": {
+  "sounds": [
+   {
+    "name": "backport:records/bounce",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc.creator": {
+  "sounds": [
+   {
+    "name": "backport:records/creator",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc.creator_music_box": {
+  "sounds": [
+   {
+    "name": "backport:records/creator_music_box",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc.lava_chicken": {
+  "sounds": [
+   {
+    "name": "backport:records/lava_chicken",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc.precipice": {
+  "sounds": [
+   {
+    "name": "backport:records/precipice",
+    "stream": true
+   }
+  ]
+ },
+ "music_disc.tears": {
+  "sounds": [
+   {
+    "name": "backport:records/tears",
+    "stream": true
+   }
+  ]
  }
 }

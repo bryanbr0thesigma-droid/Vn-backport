@@ -12,6 +12,48 @@
       },
       {
        "function": "minecraft:set_potion",
+       "id": "backport:oozing"
+      }
+     ],
+     "name": "minecraft:lingering_potion"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_potion",
+       "id": "backport:weaving"
+      }
+     ],
+     "name": "minecraft:lingering_potion"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_potion",
+       "id": "backport:infested"
+      }
+     ],
+     "name": "minecraft:lingering_potion"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_potion",
        "id": "minecraft:strength"
       }
      ],

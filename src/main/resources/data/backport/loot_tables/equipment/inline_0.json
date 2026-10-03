@@ -12,6 +12,10 @@
      "type": "minecraft:item",
      "functions": [
       {
+       "function": "minecraft:set_nbt",
+       "tag": "{Trim:{material:\"minecraft:copper\",pattern:\"backport:bolt\"}}"
+      },
+      {
        "function": "backport:set_enchantments",
        "enchantments": {
         "minecraft:fire_protection": 4,
@@ -36,6 +40,10 @@
     {
      "type": "minecraft:item",
      "functions": [
+      {
+       "function": "minecraft:set_nbt",
+       "tag": "{Trim:{material:\"minecraft:copper\",pattern:\"backport:bolt\"}}"
+      },
       {
        "function": "backport:set_enchantments",
        "enchantments": {

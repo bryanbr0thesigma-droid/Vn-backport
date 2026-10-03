@@ -10,6 +10,21 @@
     },
     {
      "type": "minecraft:item",
+     "name": "backport:bolt_armor_trim_smithing_template",
+     "weight": 3
+    },
+    {
+     "type": "minecraft:item",
+     "name": "backport:guster_banner_pattern",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "name": "backport:music_disc_precipice",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
      "name": "minecraft:trident"
     }
    ],

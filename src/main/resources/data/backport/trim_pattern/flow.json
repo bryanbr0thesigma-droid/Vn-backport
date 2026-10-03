@@ -1,0 +1,8 @@
+{
+ "asset_id": "backport:flow",
+ "template_item": "backport:flow_armor_trim_smithing_template",
+ "decal": false,
+ "description": {
+  "translate": "trim_pattern.backport.flow"
+ }
+}
