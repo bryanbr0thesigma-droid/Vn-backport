@@ -6,7 +6,9 @@
 	"ClientLevelAccessor",
     "ItemRendererMixin",
     "EMFModelPartMixin",
-    "VillagerRendererMixin"
+    "VillagerRendererMixin",
+    "VillagerBabyScaleMixin",
+    "VillagerProfessionLayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
