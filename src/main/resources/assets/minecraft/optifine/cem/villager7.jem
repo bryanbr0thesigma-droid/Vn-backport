@@ -1510,7 +1510,8 @@
           "villager_news_baby_base_rightleg.tz": "vnap_right_leg_tz",
           "villager_news_baby_base_rightleg.sz": "vnap_right_leg_sz"
         }
-      ]
+      ],
+      "texture": "minecraft:textures/entity/villager/villager_baby.png"
     },
     {
       "id": "villager_news_baby_extra_0_root",
