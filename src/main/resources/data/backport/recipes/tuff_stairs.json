@@ -1,0 +1,17 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "minecraft:tuff"
+  }
+ },
+ "pattern": [
+  "#  ",
+  "## ",
+  "###"
+ ],
+ "result": {
+  "item": "backport:tuff_stairs",
+  "count": 4
+ }
+}

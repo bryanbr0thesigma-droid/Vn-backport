@@ -1,0 +1,59 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "group": "wool_slabs",
+ "ingredients": [
+  {
+   "item": "minecraft:gray_dye"
+  },
+  [
+   {
+    "item": "backport:white_wool_slab"
+   },
+   {
+    "item": "backport:orange_wool_slab"
+   },
+   {
+    "item": "backport:magenta_wool_slab"
+   },
+   {
+    "item": "backport:light_blue_wool_slab"
+   },
+   {
+    "item": "backport:yellow_wool_slab"
+   },
+   {
+    "item": "backport:lime_wool_slab"
+   },
+   {
+    "item": "backport:pink_wool_slab"
+   },
+   {
+    "item": "backport:light_gray_wool_slab"
+   },
+   {
+    "item": "backport:cyan_wool_slab"
+   },
+   {
+    "item": "backport:purple_wool_slab"
+   },
+   {
+    "item": "backport:blue_wool_slab"
+   },
+   {
+    "item": "backport:brown_wool_slab"
+   },
+   {
+    "item": "backport:green_wool_slab"
+   },
+   {
+    "item": "backport:red_wool_slab"
+   },
+   {
+    "item": "backport:black_wool_slab"
+   }
+  ]
+ ],
+ "result": {
+  "item": "backport:gray_wool_slab"
+ }
+}

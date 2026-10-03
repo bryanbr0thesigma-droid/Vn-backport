@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "woolen_slab",
+ "key": {
+  "#": {
+   "item": "minecraft:lime_wool"
+  }
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "item": "backport:lime_wool_slab",
+  "count": 6
+ }
+}

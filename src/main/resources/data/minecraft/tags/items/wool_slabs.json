@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  "backport:white_wool_slab",
+  "backport:orange_wool_slab",
+  "backport:magenta_wool_slab",
+  "backport:light_blue_wool_slab",
+  "backport:yellow_wool_slab",
+  "backport:lime_wool_slab",
+  "backport:pink_wool_slab",
+  "backport:gray_wool_slab",
+  "backport:light_gray_wool_slab",
+  "backport:cyan_wool_slab",
+  "backport:purple_wool_slab",
+  "backport:blue_wool_slab",
+  "backport:brown_wool_slab",
+  "backport:green_wool_slab",
+  "backport:red_wool_slab",
+  "backport:black_wool_slab"
+ ]
+}

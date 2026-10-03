@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/cube_all",
+ "textures": {
+  "all": "backport:block/polished_tuff"
+ }
+}

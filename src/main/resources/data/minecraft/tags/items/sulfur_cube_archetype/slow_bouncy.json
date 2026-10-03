@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "backport:chiseled_tuff",
+  "backport:chiseled_tuff_bricks",
+  "backport:polished_tuff",
+  "backport:tuff_bricks"
+ ]
+}

@@ -10,6 +10,7 @@ public class PaleGarden implements ModInitializer {
    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
    public void onInitialize() {
+      com.backport.Backport.init();
       PaleSounds.init();
       PaleWood.init();
       PaleParticles.init();

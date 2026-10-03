@@ -1,0 +1,21 @@
+{
+ "replace": false,
+ "values": [
+  "backport:white_wool_stairs",
+  "backport:orange_wool_stairs",
+  "backport:magenta_wool_stairs",
+  "backport:light_blue_wool_stairs",
+  "backport:yellow_wool_stairs",
+  "backport:lime_wool_stairs",
+  "backport:pink_wool_stairs",
+  "backport:gray_wool_stairs",
+  "backport:light_gray_wool_stairs",
+  "backport:cyan_wool_stairs",
+  "backport:purple_wool_stairs",
+  "backport:blue_wool_stairs",
+  "backport:brown_wool_stairs",
+  "backport:green_wool_stairs",
+  "backport:red_wool_stairs",
+  "backport:black_wool_stairs"
+ ]
+}

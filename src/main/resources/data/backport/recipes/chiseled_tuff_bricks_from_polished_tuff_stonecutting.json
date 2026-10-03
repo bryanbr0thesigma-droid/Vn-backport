@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": {
+  "item": "backport:polished_tuff"
+ },
+ "result": "backport:chiseled_tuff_bricks",
+ "count": 1
+}

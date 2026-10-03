@@ -1,6 +1,9 @@
 {
  "replace": false,
  "values": [
-  "pale_garden:resin_brick_wall"
+  "pale_garden:resin_brick_wall",
+  "backport:tuff_wall",
+  "backport:polished_tuff_wall",
+  "backport:tuff_brick_wall"
  ]
 }

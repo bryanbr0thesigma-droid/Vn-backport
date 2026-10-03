@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "concrete_slab",
+ "key": {
+  "#": {
+   "item": "minecraft:cyan_concrete"
+  }
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "item": "backport:cyan_concrete_slab",
+  "count": 6
+ }
+}

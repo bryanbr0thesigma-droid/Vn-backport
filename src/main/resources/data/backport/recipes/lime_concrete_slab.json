@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "concrete_slab",
+ "key": {
+  "#": {
+   "item": "minecraft:lime_concrete"
+  }
+ },
+ "pattern": [
+  "###"
+ ],
+ "result": {
+  "item": "backport:lime_concrete_slab",
+  "count": 6
+ }
+}

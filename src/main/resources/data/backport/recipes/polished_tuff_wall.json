@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "backport:polished_tuff"
+  }
+ },
+ "pattern": [
+  "###",
+  "###"
+ ],
+ "result": {
+  "item": "backport:polished_tuff_wall",
+  "count": 6
+ }
+}
