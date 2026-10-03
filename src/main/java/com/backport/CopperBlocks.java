@@ -56,6 +56,8 @@ public final class CopperBlocks {
    public static final Block[] COPPER_LANTERN = family("copper_lantern", (s, p) -> new LanternBlock(p), WeatheringLanternBlock::new,
       s -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().strength(3.5F).sound(SoundType.LANTERN).lightLevel(st -> 15).noOcclusion().pushReaction(PushReaction.DESTROY));
 
+   public static final Block[] COPPER_CHEST = chestFamily();
+
    private CopperBlocks() {
    }
 
@@ -105,6 +107,31 @@ public final class CopperBlocks {
       }
 
       return Backport.block(name, block);
+   }
+
+   private static Block[] chestFamily() {
+      Block[] weathering = new Block[4];
+      Block[] waxed = new Block[4];
+      java.util.List<Block> all = new java.util.ArrayList<>();
+      for (int i = 0; i < 4; i++) {
+         BlockBehaviour.Properties props = BlockBehaviour.Properties.of().mapColor(COPPER_BLOCKS[i].defaultMapColor()).strength(3.0F, 6.0F).sound(SoundType.COPPER).requiresCorrectToolForDrops();
+         weathering[i] = Backport.blockNoItem(PREFIX[i] + "copper_chest", new WeatheringChestBlock(STATES[i], props));
+         waxed[i] = Backport.blockNoItem("waxed_" + PREFIX[i] + "copper_chest", new CopperChestBlock(STATES[i], props));
+         all.add(weathering[i]);
+         all.add(waxed[i]);
+         OxidizableBlocksRegistry.registerWaxableBlockPair(weathering[i], waxed[i]);
+      }
+
+      for (int i = 0; i < 3; i++) {
+         OxidizableBlocksRegistry.registerOxidizableBlockPair(weathering[i], weathering[i + 1]);
+      }
+
+      CopperChestBlockEntity.register(all.toArray(new Block[0]));
+      for (Block block : all) {
+         Backport.item(BuiltInRegistries.BLOCK.getKey(block).getPath(), new net.minecraft.world.item.BlockItem(block, new FabricItemSettings()));
+      }
+
+      return weathering;
    }
 
    public static void init() {

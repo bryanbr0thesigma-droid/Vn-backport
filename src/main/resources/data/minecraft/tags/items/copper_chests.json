@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  "backport:copper_chest",
+  "backport:exposed_copper_chest",
+  "backport:weathered_copper_chest",
+  "backport:oxidized_copper_chest",
+  "backport:waxed_copper_chest",
+  "backport:waxed_exposed_copper_chest",
+  "backport:waxed_weathered_copper_chest",
+  "backport:waxed_oxidized_copper_chest"
+ ]
+}

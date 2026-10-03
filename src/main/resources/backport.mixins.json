@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.backport.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "CarvedPumpkinBlockMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

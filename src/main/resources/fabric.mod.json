@@ -32,7 +32,8 @@
 			"config": "villager-news-addon-port.client.mixins.json",
 			"environment": "client"
 		},
-		"pale_garden.mixins.json"
+		"pale_garden.mixins.json",
+		"backport.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",

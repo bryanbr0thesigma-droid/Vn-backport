@@ -11,7 +11,20 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 
 public class BackportClient implements ClientModInitializer {
+   public static final net.minecraft.client.model.geom.ModelLayerLocation COPPER_GOLEM_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("copper_golem"), "main");
+
    public void onInitializeClient() {
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(COPPER_GOLEM_LAYER, CopperGolemModel::createBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.COPPER_GOLEM, CopperGolemRenderer::new);
+      net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry.register(com.backport.CopperChestBlockEntity.TYPE, CopperChestRenderer::new);
+      for (net.minecraft.world.level.block.Block block : BuiltInRegistries.BLOCK) {
+         if (BuiltInRegistries.BLOCK.getKey(block).getNamespace().equals(Backport.ID) && BuiltInRegistries.BLOCK.getKey(block).getPath().endsWith("copper_chest")) {
+            net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry.INSTANCE.register(block.asItem(), (stack, mode, matrices, vcp, light, overlay) ->
+               net.minecraft.client.Minecraft.getInstance().getBlockEntityRenderDispatcher().renderItem(
+                  new com.backport.CopperChestBlockEntity(net.minecraft.core.BlockPos.ZERO, block.defaultBlockState()), matrices, vcp, light, overlay));
+         }
+      }
+
       ParticleFactoryRegistry.getInstance().register(CopperBlocks.COPPER_FIRE_FLAME, FlameParticle.Provider::new);
       for (Block block : BuiltInRegistries.BLOCK) {
          if (!BuiltInRegistries.BLOCK.getKey(block).getNamespace().equals(Backport.ID)) {

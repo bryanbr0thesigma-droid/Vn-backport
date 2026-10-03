@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "group": "waxed_copper_chest",
+ "ingredients": [
+  {
+   "item": "backport:copper_chest"
+  },
+  {
+   "item": "minecraft:honeycomb"
+  }
+ ],
+ "result": {
+  "item": "backport:waxed_copper_chest"
+ }
+}
