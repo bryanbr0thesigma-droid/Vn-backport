@@ -65,6 +65,7 @@ public final class Backport {
       NewStone.init();
       OmenEffects.init();
       NewItems.init();
+      com.backport.loot.DiscDrops.init();
       com.backport.variant.Variants.init();
       com.backport.ice.IceCaves.init();
       PlantBlocks.init();
