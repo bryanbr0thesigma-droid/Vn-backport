@@ -92,6 +92,12 @@ public class BackportClient implements ClientModInitializer {
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.poplar.PoplarBoats.BOAT, ctx -> new PoplarBoatRenderer(ctx, false));
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.poplar.PoplarBoats.CHEST_BOAT, ctx -> new PoplarBoatRenderer(ctx, true));
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutoutMipped(), com.backport.poplar.Poplar.RED_LEAVES, com.backport.poplar.Poplar.ORANGE_LEAVES, com.backport.poplar.Poplar.YELLOW_LEAVES);
+      net.fabricmc.loader.api.FabricLoader.getInstance().getModContainer("villager-news-addon-port").ifPresent(c -> {
+         if (c.findPath("resourcepacks/fresh_animations/pack.mcmeta").isPresent()) {
+            net.fabricmc.fabric.api.resource.ResourceManagerHelper.registerBuiltinResourcePack(Backport.id("fresh_animations"), c,
+               net.minecraft.network.chat.Component.literal("Fresh Animations"), net.fabricmc.fabric.api.resource.ResourcePackActivationType.DEFAULT_ENABLED);
+         }
+      });
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutout(), com.backport.poplar.Poplar.SAPLING, com.backport.poplar.Poplar.POTTED_SAPLING, com.backport.poplar.Poplar.DOOR, com.backport.poplar.Poplar.TRAPDOOR);
       net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry.register(com.backport.shelf.ShelfBlockEntity.TYPE, ShelfRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(CUSHION_LAYER, CushionRenderer::createBodyLayer);
