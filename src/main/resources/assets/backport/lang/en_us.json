@@ -524,5 +524,7 @@
  "death.attack.sulfurCubeHot": "%1$s was scorched by a sulfur cube",
  "death.attack.sulfurCubeHot.player": "%1$s was scorched by %2$s",
  "block.backport.sulfur_spike": "Sulfur Spike",
- "block.backport.potent_sulfur": "Potent Sulfur"
+ "block.backport.potent_sulfur": "Potent Sulfur",
+ "biome.backport.sulfur_caves": "Sulfur Caves",
+ "biome.backport.dappled_forest": "Dappled Forest"
 }

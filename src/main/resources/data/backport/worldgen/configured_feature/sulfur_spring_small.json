@@ -1,0 +1,13 @@
+{
+ "type": "backport:template_spring",
+ "config": {
+  "templates": [
+   "backport:spring/sulfur_spring_small_1",
+   "backport:spring/sulfur_spring_small_2",
+   "backport:spring/sulfur_spring_small_3",
+   "backport:spring/sulfur_spring_small_4"
+  ],
+  "tuff_count": 64,
+  "radius": 7
+ }
+}

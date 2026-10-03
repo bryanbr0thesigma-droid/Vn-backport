@@ -1,0 +1,11 @@
+{
+ "type": "backport:template_spring",
+ "config": {
+  "templates": [
+   "backport:spring/sulfur_spring_large_1",
+   "backport:spring/sulfur_spring_large_2"
+  ],
+  "tuff_count": 96,
+  "radius": 9
+ }
+}
