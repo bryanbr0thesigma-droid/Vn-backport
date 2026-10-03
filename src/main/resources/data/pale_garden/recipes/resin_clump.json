@@ -1,0 +1,12 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "ingredients": [
+  {
+   "item": "pale_garden:resin_block"
+  }
+ ],
+ "result": {
+  "item": "pale_garden:resin_clump",
+  "count": 9
+ }
+}

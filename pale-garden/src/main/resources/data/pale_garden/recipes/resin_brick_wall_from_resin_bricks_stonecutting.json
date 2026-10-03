@@ -1,8 +1,0 @@
-{
- "type": "minecraft:stonecutting",
- "ingredient": {
-  "item": "pale_garden:resin_bricks"
- },
- "result": "pale_garden:resin_brick_wall",
- "count": 1
-}

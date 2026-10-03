@@ -1,0 +1,7 @@
+{
+  "parent": "pale_garden:block/cross_emissive",
+  "textures": {
+    "cross": "pale_garden:block/open_eyeblossom",
+    "cross_emissive": "pale_garden:block/open_eyeblossom_emissive"
+  }
+}

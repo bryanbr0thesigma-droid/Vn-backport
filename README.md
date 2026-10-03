@@ -22,6 +22,10 @@ Loom 1.15 needs Gradle 9.2+ (the wrapper is configured for it) and a JDK 21+; th
 
 The jar is written to `build/libs/`.
 
+## Pale Garden
+
+The jar also contains a Pale Garden backport (pale oak set, creaking + heart, pale moss, eyeblossoms, resin, biome, resin armour trim).
+
 ## What changed in the port
 
 - Mojang mappings, Fabric API 0.92.x networking (`FabricPacket`) instead of payload codecs.

@@ -1,7 +1,0 @@
-{
-  "parent": "pale_garden:block/flower_pot_cross_emissive",
-  "textures": {
-    "cross_emissive": "pale_garden:block/open_eyeblossom_emissive",
-    "plant": "pale_garden:block/open_eyeblossom"
-  }
-}

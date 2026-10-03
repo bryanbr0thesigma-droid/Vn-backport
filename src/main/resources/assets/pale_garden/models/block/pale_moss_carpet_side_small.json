@@ -1,0 +1,6 @@
+{
+  "parent": "pale_garden:block/mossy_carpet_side",
+  "textures": {
+    "side": "pale_garden:block/pale_moss_carpet_side_small"
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "pale_garden:resin_brick"
+  }
+ },
+ "pattern": [
+  "##",
+  "##"
+ ],
+ "result": {
+  "item": "pale_garden:resin_bricks"
+ }
+}
