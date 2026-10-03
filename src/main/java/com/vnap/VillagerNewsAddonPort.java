@@ -20,7 +20,10 @@ public class VillagerNewsAddonPort implements ModInitializer {
    public static final String MOD_ID = "villager-news-addon-port";
    public static final Logger LOGGER = LoggerFactory.getLogger("villager-news-addon-port");
 
+   public static final net.minecraft.core.particles.SimpleParticleType SLEEPING_Z = net.fabricmc.fabric.api.particle.v1.FabricParticleTypes.simple();
+
    public void onInitialize() {
+      net.minecraft.core.Registry.register(net.minecraft.core.registries.BuiltInRegistries.PARTICLE_TYPE, id("sleeping_z"), SLEEPING_Z);
       VillagerNewsItems.register();
       VillagerNewsSettings.load();
       VillagerNewsSettingsNetwork.register();

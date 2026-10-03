@@ -169,6 +169,8 @@ public final class DialogueAnimationState {
 
    static void clear() {
       ACTIVE.clear();
+      TRANSFORM_CACHE.clear();
+      cacheEntity = null;
       IDLE_STATES.clear();
       LOOK_STATES.clear();
       TURN_STATES.clear();
@@ -205,6 +207,10 @@ public final class DialogueAnimationState {
       }
    }
 
+   static float sleeping() {
+      return EMFAnimationApi.getCurrentEntity() instanceof LivingEntity e && e.isSleeping() ? 1.0F : 0.0F;
+   }
+
    static float speaking() {
       DialogueAnimationState.ActiveDialogue active = active();
       return active == null ? 0.0F : active.speechWeight();
@@ -236,7 +242,33 @@ public final class DialogueAnimationState {
       return EMFAnimationApi.getCurrentEntity() instanceof Villager villager && ((VillagerNewsData)villager).vnap$cosmetic() == cosmetic ? 1.0F : 0.0F;
    }
 
+   private static EMFEntity cacheEntity;
+   private static float cacheAge = Float.NaN;
+   private static final java.util.HashMap<String, Float> TRANSFORM_CACHE = new java.util.HashMap<>();
+
    static float transform(String variableName) {
+      EMFEntity current = EMFAnimationApi.getCurrentEntity();
+      if (current == null) {
+         return transformUncached(variableName);
+      }
+
+      float age = animationTick(current);
+      if (current != cacheEntity || age != cacheAge) {
+         TRANSFORM_CACHE.clear();
+         cacheEntity = current;
+         cacheAge = age;
+      }
+
+      Float cached = TRANSFORM_CACHE.get(variableName);
+      if (cached == null) {
+         cached = transformUncached(variableName);
+         TRANSFORM_CACHE.put(variableName, cached);
+      }
+
+      return cached;
+   }
+
+   private static float transformUncached(String variableName) {
       DialogueAnimationState.ActiveDialogue active = active();
       if (!variableName.equals("vnap_look_pitch") && !variableName.equals("vnap_look_yaw")) {
          boolean scale = variableName.endsWith("_sx") || variableName.endsWith("_sy") || variableName.endsWith("_sz");

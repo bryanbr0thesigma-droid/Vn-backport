@@ -1390,7 +1390,7 @@
           "mayor_base_6q6da5kmhh6j.sz": "vnap_eye_group_sz"
         },
         {
-          "mayor_base_6q6da5kmhh6j.sy": "if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.08,1+12.75*fmod(time+id*0.37,1.25+fmod(id,3)*0.5),if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.18,2.02,if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.26,2.02-12.75*(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)-0.18),1)))*vnap_eye_group_sy"
+          "mayor_base_6q6da5kmhh6j.sy": "if(vnap_sleeping>0.5,2.02,if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.08,1+12.75*fmod(time+id*0.37,1.25+fmod(id,3)*0.5),if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.18,2.02,if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.26,2.02-12.75*(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)-0.18),1))))*vnap_eye_group_sy"
         },
         {
           "mayor_base_6q6da5kmhh6jd67l.rx": "vnap_eye_right_rx",
@@ -1426,7 +1426,7 @@
           "mayor_base_6q6da5kdgo6j.sz": "vnap_lower_face_sz"
         },
         {
-          "mayor_base_6q6da5kdgo6j.sy": "if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.08,1+12.75*fmod(time+id*0.37,1.25+fmod(id,3)*0.5),if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.18,2.02,if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.26,2.02-12.75*(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)-0.18),1)))*vnap_lower_face_sy"
+          "mayor_base_6q6da5kdgo6j.sy": "if(vnap_sleeping>0.5,2.02,if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.08,1+12.75*fmod(time+id*0.37,1.25+fmod(id,3)*0.5),if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.18,2.02,if(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)<0.26,2.02-12.75*(fmod(time+id*0.37,1.25+fmod(id,3)*0.5)-0.18),1))))*vnap_lower_face_sy"
         },
         {
           "mayor_base_egfg3jgo.rx": "vnap_brow_rx",

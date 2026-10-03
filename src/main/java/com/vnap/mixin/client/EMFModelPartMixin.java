@@ -25,6 +25,8 @@ public abstract class EMFModelPartMixin {
    private ResourceLocation vnap$previousTexture;
    @Unique
    private boolean vnap$rainbowTextureActive;
+   @Unique
+   private byte vnap$noseKind;
 
    @Inject(
       method = {"render"},
@@ -106,6 +108,12 @@ public abstract class EMFModelPartMixin {
 
    @Unique
    private boolean vnap$isRainbowNose() {
-      return (Object)this instanceof EMFModelPartCustom part && part.id.contains("villager_news_base_fgk6") && RainbowNoseRenderState.active();
+      byte kind = this.vnap$noseKind;
+      if (kind == 0) {
+         kind = (Object)this instanceof EMFModelPartCustom part && part.id != null && part.id.contains("villager_news_base_fgk6") ? (byte)1 : (byte)2;
+         this.vnap$noseKind = kind;
+      }
+
+      return kind == 1 && RainbowNoseRenderState.active();
    }
 }

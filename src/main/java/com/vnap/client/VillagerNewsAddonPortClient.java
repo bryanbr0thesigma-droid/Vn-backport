@@ -25,10 +25,14 @@ public final class VillagerNewsAddonPortClient implements ClientModInitializer {
    public void onInitializeClient() {
       VillagerNewsClientSettings.load();
       VillagerNewsItemModels.register();
+      net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry.getInstance()
+         .register(VillagerNewsAddonPort.SLEEPING_Z, SleepingZParticle.Provider::new);
+      ClientTickEvents.END_CLIENT_TICK.register(client -> SleepingZParticle.tick(client));
 
       try {
          DialogueAnimationState.load();
          registerFloat("vnap_speaking", DialogueAnimationState::speaking, "Whether the Villager News character is speaking");
+         registerFloat("vnap_sleeping", DialogueAnimationState::sleeping, "Whether the Villager News character is asleep");
          registerFloat("vnap_mouth_open", DialogueAnimationState::mouthOpen, "Current Villager News mouth opening");
          registerFloat("vnap_mouth_width", DialogueAnimationState::mouthWidth, "Current Villager News mouth width");
          registerFloat("vnap_mouth_closed", DialogueAnimationState::mouthClosed, "Current Villager News closed-mouth layer");
