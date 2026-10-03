@@ -3,3 +3,5 @@ build/
 run/
 .idea/
 *.iml
+pale-garden/build/
+pale-garden/.gradle/

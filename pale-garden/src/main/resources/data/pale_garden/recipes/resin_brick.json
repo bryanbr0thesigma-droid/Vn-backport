@@ -1,0 +1,9 @@
+{
+ "type": "minecraft:smelting",
+ "cookingtime": 200,
+ "experience": 0.1,
+ "ingredient": {
+  "item": "pale_garden:resin_clump"
+ },
+ "result": "pale_garden:resin_brick"
+}

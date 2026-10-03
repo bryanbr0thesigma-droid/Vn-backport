@@ -1,0 +1,9 @@
+{
+ "replace": false,
+ "values": [
+  "pale_garden:pale_oak_log",
+  "pale_garden:pale_oak_wood",
+  "pale_garden:stripped_pale_oak_log",
+  "pale_garden:stripped_pale_oak_wood"
+ ]
+}
