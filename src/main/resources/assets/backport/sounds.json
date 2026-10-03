@@ -892,5 +892,72 @@
    }
   ],
   "subtitle": "subtitles.item.mace.smash_ground"
+ },
+ "entity.bogged.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/bogged/ambient1"
+   },
+   {
+    "name": "backport:mob/bogged/ambient2"
+   },
+   {
+    "name": "backport:mob/bogged/ambient3"
+   },
+   {
+    "name": "backport:mob/bogged/ambient4"
+   }
+  ],
+  "subtitle": "subtitles.entity.bogged.ambient"
+ },
+ "entity.bogged.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/bogged/death"
+   }
+  ],
+  "subtitle": "subtitles.entity.bogged.death"
+ },
+ "entity.bogged.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/bogged/hurt1"
+   },
+   {
+    "name": "backport:mob/bogged/hurt2"
+   },
+   {
+    "name": "backport:mob/bogged/hurt3"
+   },
+   {
+    "name": "backport:mob/bogged/hurt4"
+   }
+  ],
+  "subtitle": "subtitles.entity.bogged.hurt"
+ },
+ "entity.bogged.shear": {
+  "sounds": [
+   {
+    "name": "backport:mob/sheep/shear"
+   }
+  ],
+  "subtitle": "subtitles.item.shears.shear"
+ },
+ "entity.bogged.step": {
+  "sounds": [
+   {
+    "name": "backport:mob/bogged/step1"
+   },
+   {
+    "name": "backport:mob/bogged/step2"
+   },
+   {
+    "name": "backport:mob/bogged/step3"
+   },
+   {
+    "name": "backport:mob/bogged/step4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
  }
 }

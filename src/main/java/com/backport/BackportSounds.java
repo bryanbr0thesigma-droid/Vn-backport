@@ -32,6 +32,11 @@ public final class BackportSounds {
    public static final SoundEvent BLOCK_HEAVY_CORE_HIT = register("block.heavy_core.hit");
    public static final SoundEvent BLOCK_HEAVY_CORE_PLACE = register("block.heavy_core.place");
    public static final SoundEvent BLOCK_HEAVY_CORE_STEP = register("block.heavy_core.step");
+   public static final SoundEvent ENTITY_BOGGED_AMBIENT = register("entity.bogged.ambient");
+   public static final SoundEvent ENTITY_BOGGED_DEATH = register("entity.bogged.death");
+   public static final SoundEvent ENTITY_BOGGED_HURT = register("entity.bogged.hurt");
+   public static final SoundEvent ENTITY_BOGGED_SHEAR = register("entity.bogged.shear");
+   public static final SoundEvent ENTITY_BOGGED_STEP = register("entity.bogged.step");
    public static final SoundEvent ENTITY_COPPER_GOLEM_DEATH = register("entity.copper_golem.death");
    public static final SoundEvent ENTITY_COPPER_GOLEM_HURT = register("entity.copper_golem.hurt");
    public static final SoundEvent ENTITY_COPPER_GOLEM_ITEM_DROP = register("entity.copper_golem.item_drop");

@@ -19,7 +19,13 @@ public class BackportClient implements ClientModInitializer {
 
    public static final net.minecraft.client.model.geom.ModelLayerLocation WIND_CHARGE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("wind_charge"), "main");
 
+   public static final net.minecraft.client.model.geom.ModelLayerLocation BOGGED_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("bogged"), "main");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation BOGGED_OUTER_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("bogged"), "outer");
+
    public void onInitializeClient() {
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BOGGED_LAYER, BoggedModel::createBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BOGGED_OUTER_LAYER, BoggedModel::createOuterLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BOGGED, BoggedRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(WIND_CHARGE_LAYER, WindChargeRenderer::createBodyLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.WIND_CHARGE, WindChargeRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(COPPER_GOLEM_RUNNING_LAYER, CopperGolemModel::createRunningPoseBodyLayer);

@@ -212,5 +212,10 @@
  "subtitles.entity.wind_charge.throw": "Wind Charge flies",
  "subtitles.entity.wind_charge.wind_burst": "Wind Charge bursts",
  "subtitles.item.mace.smash_air": "Mace smashes",
- "subtitles.item.mace.smash_ground": "Mace smashes"
+ "subtitles.item.mace.smash_ground": "Mace smashes",
+ "entity.backport.bogged": "Bogged",
+ "item.backport.bogged_spawn_egg": "Bogged Spawn Egg",
+ "subtitles.entity.bogged.ambient": "Bogged rattles",
+ "subtitles.entity.bogged.death": "Bogged dies",
+ "subtitles.entity.bogged.hurt": "Bogged hurts"
 }

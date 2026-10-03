@@ -6,7 +6,8 @@
   "mixins": [
     "CarvedPumpkinBlockMixin",
     "LightningRodBlockMixin",
-    "LivingEntityMaceMixin"
+    "LivingEntityMaceMixin",
+    "AbstractSkeletonAccessor"
   ],
   "client": [],
   "injectors": {
