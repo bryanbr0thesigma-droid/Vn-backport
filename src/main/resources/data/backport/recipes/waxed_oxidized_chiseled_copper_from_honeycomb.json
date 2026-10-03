@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "group": "waxed_oxidized_chiseled_copper",
+ "ingredients": [
+  {
+   "item": "backport:oxidized_chiseled_copper"
+  },
+  {
+   "item": "minecraft:honeycomb"
+  }
+ ],
+ "result": {
+  "item": "backport:waxed_oxidized_chiseled_copper"
+ }
+}

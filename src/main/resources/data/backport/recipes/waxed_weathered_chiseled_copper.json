@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "waxed_weathered_chiseled_copper",
+ "key": {
+  "M": {
+   "item": "minecraft:waxed_weathered_cut_copper_slab"
+  }
+ },
+ "pattern": [
+  " M ",
+  " M "
+ ],
+ "result": {
+  "item": "backport:waxed_weathered_chiseled_copper"
+ }
+}

@@ -47,6 +47,8 @@ public final class Backport {
 
    public static void init() {
       SimpleBlocks.init();
+      CopperBlocks.init();
+      CopperTools.init();
       Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ResourceKey.create(Registries.CREATIVE_MODE_TAB, id("main")), FabricItemGroup.builder()
          .title(Component.translatable("itemGroup.backport"))
          .icon(() -> new ItemStack(Items.TUFF))

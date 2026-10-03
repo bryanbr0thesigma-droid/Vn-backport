@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  "backport:copper_door",
+  "backport:exposed_copper_door",
+  "backport:weathered_copper_door",
+  "backport:oxidized_copper_door",
+  "backport:waxed_copper_door",
+  "backport:waxed_exposed_copper_door",
+  "backport:waxed_weathered_copper_door",
+  "backport:waxed_oxidized_copper_door"
+ ]
+}

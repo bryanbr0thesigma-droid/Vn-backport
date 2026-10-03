@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "backport:copper_torch"
+  },
+  "X": {
+   "item": "backport:copper_nugget"
+  }
+ },
+ "pattern": [
+  "XXX",
+  "X#X",
+  "XXX"
+ ],
+ "result": {
+  "item": "backport:copper_lantern"
+ }
+}

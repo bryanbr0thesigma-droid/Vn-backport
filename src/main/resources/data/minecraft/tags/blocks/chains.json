@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  "backport:copper_chain",
+  "backport:exposed_copper_chain",
+  "backport:weathered_copper_chain",
+  "backport:oxidized_copper_chain",
+  "backport:waxed_copper_chain",
+  "backport:waxed_exposed_copper_chain",
+  "backport:waxed_weathered_copper_chain",
+  "backport:waxed_oxidized_copper_chain"
+ ]
+}

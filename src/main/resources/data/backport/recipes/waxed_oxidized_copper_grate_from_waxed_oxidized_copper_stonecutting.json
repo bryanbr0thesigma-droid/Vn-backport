@@ -1,0 +1,8 @@
+{
+ "type": "minecraft:stonecutting",
+ "ingredient": {
+  "item": "minecraft:waxed_oxidized_copper"
+ },
+ "result": "backport:waxed_oxidized_copper_grate",
+ "count": 4
+}

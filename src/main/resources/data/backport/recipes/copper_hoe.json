@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "minecraft:stick"
+  },
+  "X": {
+   "tag": "minecraft:copper_tool_materials"
+  }
+ },
+ "pattern": [
+  "XX",
+  " #",
+  " #"
+ ],
+ "result": {
+  "item": "backport:copper_hoe"
+ }
+}

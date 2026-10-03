@@ -19,7 +19,8 @@
 		],
 		"client": [
 			"com.vnap.client.VillagerNewsAddonPortClient",
-			"com.palegarden.client.PaleGardenClient"
+			"com.palegarden.client.PaleGardenClient",
+			"com.backport.client.BackportClient"
 		],
 		"modmenu": [
 			"com.vnap.client.VillagerNewsModMenu"

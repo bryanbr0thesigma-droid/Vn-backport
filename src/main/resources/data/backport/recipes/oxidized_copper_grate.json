@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "oxidized_copper_grate",
+ "key": {
+  "M": {
+   "item": "minecraft:oxidized_copper"
+  }
+ },
+ "pattern": [
+  " M ",
+  "M M",
+  " M "
+ ],
+ "result": {
+  "item": "backport:oxidized_copper_grate",
+  "count": 4
+ }
+}

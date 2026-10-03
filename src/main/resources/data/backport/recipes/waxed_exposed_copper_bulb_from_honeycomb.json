@@ -1,0 +1,15 @@
+{
+ "type": "minecraft:crafting_shapeless",
+ "group": "waxed_exposed_copper_bulb",
+ "ingredients": [
+  {
+   "item": "backport:exposed_copper_bulb"
+  },
+  {
+   "item": "minecraft:honeycomb"
+  }
+ ],
+ "result": {
+  "item": "backport:waxed_exposed_copper_bulb"
+ }
+}

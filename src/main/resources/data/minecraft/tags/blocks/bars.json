@@ -1,0 +1,13 @@
+{
+ "replace": false,
+ "values": [
+  "backport:copper_bars",
+  "backport:exposed_copper_bars",
+  "backport:weathered_copper_bars",
+  "backport:oxidized_copper_bars",
+  "backport:waxed_copper_bars",
+  "backport:waxed_exposed_copper_bars",
+  "backport:waxed_weathered_copper_bars",
+  "backport:waxed_oxidized_copper_bars"
+ ]
+}

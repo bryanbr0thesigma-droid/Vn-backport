@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "condition": {
+    "type": "minecraft:survives_explosion"
+   },
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "condition": {
+      "type": "minecraft:match_block",
+      "blocks": "backport:oxidized_copper_door",
+      "state": {
+       "half": "lower"
+      }
+     },
+     "name": "backport:oxidized_copper_door"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}
