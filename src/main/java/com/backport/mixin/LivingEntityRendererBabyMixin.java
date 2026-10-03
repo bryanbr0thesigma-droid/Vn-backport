@@ -31,19 +31,33 @@ public abstract class LivingEntityRendererBabyMixin<T extends LivingEntity, M ex
    private M backport$adult;
    @Unique
    private ResourceLocation backport$tex;
+   @Unique
+   private boolean backport$variantAdult;
 
    @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("HEAD"))
    private void backport$swapIn(T entity, float yaw, float pt, PoseStack ps, MultiBufferSource buf, int light, CallbackInfo ci) {
       this.backport$adult = null;
       this.backport$tex = null;
+      this.backport$variantAdult = false;
+      int variant = com.backport.variant.Variants.of(entity);
       if (!entity.isBaby()) {
+         if (variant != 0) {
+            EntityModel<?> vm = com.backport.client.VariantModels.model(entity.getType(), variant);
+            if (vm != null) {
+               this.backport$adult = this.model;
+               this.model = (M) vm;
+            }
+            this.backport$tex = com.backport.client.VariantModels.texture(entity.getType(), variant);
+            this.backport$variantAdult = true;
+         }
          return;
       }
       EntityModel<?> baby = BabyModels.modelFor(entity.getType());
       if (baby == null) {
          return;
       }
-      ResourceLocation tex = BabyModels.textureFor(((net.minecraft.client.renderer.entity.EntityRenderer<T>) (Object) this).getTextureLocation(entity));
+      ResourceLocation tex = BabyModels.textureFor(variant != 0 ? com.backport.client.VariantModels.texture(entity.getType(), variant)
+         : ((net.minecraft.client.renderer.entity.EntityRenderer<T>) (Object) this).getTextureLocation(entity));
       if (tex == null) {
          return;
       }
@@ -59,16 +73,19 @@ public abstract class LivingEntityRendererBabyMixin<T extends LivingEntity, M ex
       if (this.backport$adult != null) {
          this.model = this.backport$adult;
          this.backport$adult = null;
-         this.backport$tex = null;
          BabyModels.active = false;
       }
+      this.backport$tex = null;
+      this.backport$variantAdult = false;
    }
 
    @Inject(method = "getRenderType", at = @At("HEAD"), cancellable = true)
    private void backport$babyRenderType(T entity, boolean visible, boolean translucent, boolean glowing, CallbackInfoReturnable<RenderType> cir) {
       if (this.backport$tex != null) {
-         this.model.young = false;
-         BabyModels.postAnim(this.model);
+         if (!this.backport$variantAdult) {
+            this.model.young = false;
+            BabyModels.postAnim(this.model);
+         }
          if (translucent) {
             cir.setReturnValue(RenderType.itemEntityTranslucentCull(this.backport$tex));
          } else if (visible) {
@@ -82,6 +99,6 @@ public abstract class LivingEntityRendererBabyMixin<T extends LivingEntity, M ex
    @WrapWithCondition(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V",
       at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/entity/layers/RenderLayer;render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/Entity;FFFFFF)V"))
    private boolean backport$babyLayers(RenderLayer layer, PoseStack ps, MultiBufferSource buf, int light, net.minecraft.world.entity.Entity entity, float a, float b, float c, float d, float e, float f) {
-      return this.backport$tex == null || layer instanceof ItemInHandLayer || layer instanceof CustomHeadLayer || layer instanceof SheepFurLayer;
+      return this.backport$tex == null || this.backport$variantAdult || layer instanceof ItemInHandLayer || layer instanceof CustomHeadLayer || layer instanceof SheepFurLayer;
    }
 }

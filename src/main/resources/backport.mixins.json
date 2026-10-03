@@ -16,7 +16,10 @@
     "ZombieFrostbiteMixin",
     "LivingEntityFreezingJumpMixin",
     "RaidsOmenMixin",
-    "DecoratedPotPatternsMixin"
+    "DecoratedPotPatternsMixin",
+    "AnimalVariantMixin",
+    "MobVariantSpawnMixin",
+    "ChickenEggMixin"
   ],
   "client": [
     "ItemRendererMixin",

@@ -47,6 +47,10 @@ public final class BabyModels {
       OVERRIDES.put("cow/red_mooshroom", "cow/mooshroom_red");
       OVERRIDES.put("cow/brown_mooshroom", "cow/mooshroom_brown");
       OVERRIDES.put("chicken", "chicken/chicken_temperate");
+      for (String a : new String[]{"pig", "cow", "chicken"}) {
+         OVERRIDES.put("variant/" + a + "_cold", a + "/" + a + "_cold");
+         OVERRIDES.put("variant/" + a + "_warm", a + "/" + a + "_warm");
+      }
       OVERRIDES.put("sheep/sheep", "sheep/sheep");
       OVERRIDES.put("sheep/sheep_fur", "sheep/sheep_wool");
       for (String r : new String[]{"brown", "white", "black", "gold", "salt", "white_splotched", "toast", "caerbannog"}) {

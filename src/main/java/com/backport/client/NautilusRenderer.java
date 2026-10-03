@@ -20,17 +20,19 @@ import net.minecraft.world.item.ItemStack;
 public class NautilusRenderer extends MobRenderer<AbstractNautilus, NautilusModel> {
    private final NautilusModel adult;
    private final NautilusModel baby;
+   private final NautilusModel coral;
 
    public NautilusRenderer(EntityRendererProvider.Context ctx) {
       super(ctx, new NautilusModel(ctx.bakeLayer(BackportClient.NAUTILUS_LAYER)), 0.7F);
       this.adult = this.model;
+      this.coral = new NautilusModel(ctx.bakeLayer(BackportClient.NAUTILUS_CORAL_LAYER));
       this.baby = new NautilusModel(ctx.bakeLayer(BackportClient.NAUTILUS_BABY_LAYER));
       this.addLayer(new Equip(this, new NautilusModel(ctx.bakeLayer(BackportClient.NAUTILUS_ARMOR_LAYER)), true));
       this.addLayer(new Equip(this, new NautilusModel(ctx.bakeLayer(BackportClient.NAUTILUS_SADDLE_LAYER)), false));
    }
 
    public void render(AbstractNautilus entity, float yaw, float partial, PoseStack pose, MultiBufferSource buffer, int light) {
-      this.model = entity.isBaby() ? this.baby : this.adult;
+      this.model = entity.isBaby() ? this.baby : entity instanceof ZombieNautilus z && z.isCoral() ? this.coral : this.adult;
       super.render(entity, yaw, partial, pose, buffer, light);
    }
 

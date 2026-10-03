@@ -30,6 +30,7 @@ public class BackportClient implements ClientModInitializer {
    public static final net.minecraft.client.model.geom.ModelLayerLocation HAPPY_GHAST_HARNESS_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("happy_ghast"), "harness");
    public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "main");
    public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_BABY_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "baby");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_CORAL_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "coral");
    public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_ARMOR_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "armor");
    public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_SADDLE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "saddle");
    public static final net.minecraft.client.model.geom.ModelLayerLocation CUSHION_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("cushion"), "main");
@@ -66,6 +67,7 @@ public class BackportClient implements ClientModInitializer {
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.HAPPY_GHAST, HappyGhastRenderer::new);
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlock(com.backport.BackportItems.DRIED_GHAST, net.minecraft.client.renderer.RenderType.cutout());
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_LAYER, NautilusModel::createBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_CORAL_LAYER, NautilusModel::createCoralLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_BABY_LAYER, NautilusModel::createBabyBodyLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_ARMOR_LAYER, () -> NautilusModel.createArmorLayer(0.01F, false));
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_SADDLE_LAYER, () -> NautilusModel.createArmorLayer(0.2F, true));
@@ -107,6 +109,7 @@ public class BackportClient implements ClientModInitializer {
       }
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.OMINOUS_ITEM_SPAWNER, OminousItemSpawnerRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.FROSTBITE, FrostbiteRenderer::new);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.variant.Variants.EGG_ENTITY, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.ICE_BALL_ENTITY, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutout(), com.backport.ice.IceCaves.ICE_CRYSTAL, com.backport.ice.IceCaves.ICICLE);
       net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry.getInstance().register(com.backport.BackportParticles.SULFUR_CUBE_GOO, net.minecraft.client.particle.WaterDropParticle.Provider::new);
