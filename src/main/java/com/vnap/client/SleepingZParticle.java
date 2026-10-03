@@ -17,7 +17,7 @@ public final class SleepingZParticle extends TextureSheetParticle {
       super(level, x, y, z, 0.0, 0.0, 0.0);
       this.pickSprite(sprites);
       this.lifetime = 40 + this.random.nextInt(10);
-      this.quadSize = 0.12F + this.random.nextFloat() * 0.04F;
+      this.quadSize = 0.05F + this.random.nextFloat() * 0.02F;
       this.xd = 0.01;
       this.yd = 0.025;
       this.zd = 0.0;
@@ -36,7 +36,7 @@ public final class SleepingZParticle extends TextureSheetParticle {
    public void tick() {
       super.tick();
       this.alpha = Math.max(0.0F, 1.0F - (float)this.age / (float)this.lifetime);
-      this.quadSize *= 1.012F;
+      this.quadSize *= 1.008F;
    }
 
    public static void tick(Minecraft client) {
