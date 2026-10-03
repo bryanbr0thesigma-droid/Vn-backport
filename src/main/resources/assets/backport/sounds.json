@@ -2219,5 +2219,955 @@
    }
   ],
   "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "item.spear.attack": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/attack1"
+   },
+   {
+    "name": "backport:item/spear/attack2"
+   },
+   {
+    "name": "backport:item/spear/attack3"
+   }
+  ],
+  "subtitle": "subtitles.item.spear.attack"
+ },
+ "item.spear.hit": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/hit1"
+   },
+   {
+    "name": "backport:item/spear/hit2"
+   },
+   {
+    "name": "backport:item/spear/hit3"
+   }
+  ],
+  "subtitle": "subtitles.item.spear.hit"
+ },
+ "item.spear.lunge_1": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/lunge1"
+   }
+  ],
+  "subtitle": "subtitles.item.spear.lunge"
+ },
+ "item.spear.lunge_2": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/lunge2"
+   }
+  ],
+  "subtitle": "subtitles.item.spear.lunge"
+ },
+ "item.spear.lunge_3": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/lunge3"
+   }
+  ],
+  "subtitle": "subtitles.item.spear.lunge"
+ },
+ "item.spear.use": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/use"
+   }
+  ],
+  "subtitle": "subtitles.item.spear.use"
+ },
+ "item.spear_wood.attack": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/wood/attack1"
+   },
+   {
+    "name": "backport:item/spear/wood/attack2"
+   },
+   {
+    "name": "backport:item/spear/wood/attack3"
+   }
+  ],
+  "subtitle": "subtitles.item.spear_wood.attack"
+ },
+ "item.spear_wood.hit": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/wood/hit1"
+   },
+   {
+    "name": "backport:item/spear/wood/hit2"
+   },
+   {
+    "name": "backport:item/spear/wood/hit3"
+   }
+  ],
+  "subtitle": "subtitles.item.spear_wood.hit"
+ },
+ "item.spear_wood.use": {
+  "sounds": [
+   {
+    "name": "backport:item/spear/wood/use"
+   }
+  ],
+  "subtitle": "subtitles.item.spear_wood.use"
+ },
+ "block.dried_ghast.ambient": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/ambient1"
+   },
+   {
+    "name": "backport:block/dried_ghast/ambient2"
+   },
+   {
+    "name": "backport:block/dried_ghast/ambient3"
+   },
+   {
+    "name": "backport:block/dried_ghast/ambient4"
+   }
+  ],
+  "subtitle": "subtitles.block.dried_ghast.ambient"
+ },
+ "block.dried_ghast.ambient_water": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/ambient_water1"
+   },
+   {
+    "name": "backport:block/dried_ghast/ambient_water2"
+   }
+  ],
+  "subtitle": "subtitles.block.dried_ghast.ambient_water"
+ },
+ "block.dried_ghast.break": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/break"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.break"
+ },
+ "block.dried_ghast.fall": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/step1"
+   },
+   {
+    "name": "backport:block/dried_ghast/step2"
+   },
+   {
+    "name": "backport:block/dried_ghast/step3"
+   },
+   {
+    "name": "backport:block/dried_ghast/step4"
+   },
+   {
+    "name": "backport:block/dried_ghast/step5"
+   },
+   {
+    "name": "backport:block/dried_ghast/step6"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.fall"
+ },
+ "block.dried_ghast.place": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/place1"
+   },
+   {
+    "name": "backport:block/dried_ghast/place2"
+   },
+   {
+    "name": "backport:block/dried_ghast/place3"
+   },
+   {
+    "name": "backport:block/dried_ghast/place4"
+   },
+   {
+    "name": "backport:block/dried_ghast/place5"
+   },
+   {
+    "name": "backport:block/dried_ghast/place6"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.place"
+ },
+ "block.dried_ghast.place_in_water": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/placeinwater"
+   }
+  ],
+  "subtitle": "subtitles.block.dried_ghast.place_in_water"
+ },
+ "block.dried_ghast.step": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/step1"
+   },
+   {
+    "name": "backport:block/dried_ghast/step2"
+   },
+   {
+    "name": "backport:block/dried_ghast/step3"
+   },
+   {
+    "name": "backport:block/dried_ghast/step4"
+   },
+   {
+    "name": "backport:block/dried_ghast/step5"
+   },
+   {
+    "name": "backport:block/dried_ghast/step6"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "block.dried_ghast.transition": {
+  "sounds": [
+   {
+    "name": "backport:block/dried_ghast/transition"
+   }
+  ],
+  "subtitle": "subtitles.block.dried_ghast.transition"
+ },
+ "entity.ghastling.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/ghastling/ghastling1"
+   },
+   {
+    "name": "backport:mob/ghastling/ghastling2"
+   },
+   {
+    "name": "backport:mob/ghastling/ghastling3"
+   },
+   {
+    "name": "backport:mob/ghastling/ghastling4"
+   },
+   {
+    "name": "backport:mob/ghastling/ghastling5"
+   },
+   {
+    "name": "backport:mob/ghastling/ghastling6"
+   },
+   {
+    "name": "backport:mob/ghastling/ghastling7"
+   }
+  ],
+  "subtitle": "subtitles.entity.ghastling.ambient"
+ },
+ "entity.ghastling.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/ghastling/death"
+   }
+  ],
+  "subtitle": "subtitles.entity.ghastling.death"
+ },
+ "entity.ghastling.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/ghastling/hurt1"
+   },
+   {
+    "name": "backport:mob/ghastling/hurt2"
+   },
+   {
+    "name": "backport:mob/ghastling/hurt3"
+   },
+   {
+    "name": "backport:mob/ghastling/hurt4"
+   },
+   {
+    "name": "backport:mob/ghastling/hurt5"
+   }
+  ],
+  "subtitle": "subtitles.entity.ghastling.hurt"
+ },
+ "entity.ghastling.spawn": {
+  "sounds": [
+   {
+    "name": "backport:mob/ghastling/spawn"
+   }
+  ],
+  "subtitle": "subtitles.entity.ghastling.spawn"
+ },
+ "entity.happy_ghast.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/ambient1"
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient2",
+    "weight": 3
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient3",
+    "weight": 2
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient4"
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient5",
+    "weight": 2
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient6"
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient7",
+    "weight": 2
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient8"
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient9"
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient10"
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient11"
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient12",
+    "weight": 2
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient13",
+    "weight": 2
+   },
+   {
+    "name": "backport:mob/happy_ghast/ambient14"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.ambient"
+ },
+ "entity.happy_ghast.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/death"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.death"
+ },
+ "entity.happy_ghast.equip": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/harness_equip"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.equip"
+ },
+ "entity.happy_ghast.harness_goggles_down": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/goggles_down"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.harness_goggles_down"
+ },
+ "entity.happy_ghast.harness_goggles_up": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/goggles_up"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.harness_goggles_up"
+ },
+ "entity.happy_ghast.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/hurt1"
+   },
+   {
+    "name": "backport:mob/happy_ghast/hurt2"
+   },
+   {
+    "name": "backport:mob/happy_ghast/hurt3"
+   },
+   {
+    "name": "backport:mob/happy_ghast/hurt4"
+   },
+   {
+    "name": "backport:mob/happy_ghast/hurt5"
+   },
+   {
+    "name": "backport:mob/happy_ghast/hurt6"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.hurt"
+ },
+ "entity.happy_ghast.riding": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/ghast_ride"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.riding"
+ },
+ "entity.happy_ghast.unequip": {
+  "sounds": [
+   {
+    "name": "backport:mob/happy_ghast/harness_unequip"
+   }
+  ],
+  "subtitle": "subtitles.entity.happy_ghast.unequip"
+ },
+ "entity.baby_nautilus.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/baby_nautilus/ambient1"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient2"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient3"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient4"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient5"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient6"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.ambient"
+ },
+ "entity.baby_nautilus.ambient_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/baby_nautilus/ambient_land1"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient_land2"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient_land3"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/ambient_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.ambient_land"
+ },
+ "entity.baby_nautilus.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/baby_nautilus/death"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.death"
+ },
+ "entity.baby_nautilus.death_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/baby_nautilus/death_land"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.death_land"
+ },
+ "entity.baby_nautilus.eat": {
+  "sounds": [
+   {
+    "name": "backport:mob/baby_nautilus/eat1"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/eat2"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.eat"
+ },
+ "entity.baby_nautilus.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/baby_nautilus/hurt1"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/hurt2"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/hurt3"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/hurt4"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.hurt"
+ },
+ "entity.baby_nautilus.hurt_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/baby_nautilus/hurt_land1"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/hurt_land2"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/hurt_land3"
+   },
+   {
+    "name": "backport:mob/baby_nautilus/hurt_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.hurt_land"
+ },
+ "entity.baby_nautilus.swim": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/swim1"
+   },
+   {
+    "name": "backport:mob/nautilus/swim2"
+   },
+   {
+    "name": "backport:mob/nautilus/swim3"
+   },
+   {
+    "name": "backport:mob/nautilus/swim4"
+   },
+   {
+    "name": "backport:mob/nautilus/swim5"
+   },
+   {
+    "name": "backport:mob/nautilus/swim6"
+   },
+   {
+    "name": "backport:mob/nautilus/swim7"
+   },
+   {
+    "name": "backport:mob/nautilus/swim8"
+   },
+   {
+    "name": "backport:mob/nautilus/swim9"
+   }
+  ],
+  "subtitle": "subtitles.entity.baby_nautilus.swim"
+ },
+ "entity.nautilus.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/ambient1"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient2"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient3"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient4"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient5"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient6"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient7"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient8"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.ambient"
+ },
+ "entity.nautilus.ambient_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/ambient_land1"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient_land2"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient_land3"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient_land4"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient_land5"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient_land6"
+   },
+   {
+    "name": "backport:mob/nautilus/ambient_land7"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.ambient_land"
+ },
+ "entity.nautilus.dash": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/dash1"
+   },
+   {
+    "name": "backport:mob/nautilus/dash2"
+   },
+   {
+    "name": "backport:mob/nautilus/dash3"
+   },
+   {
+    "name": "backport:mob/nautilus/dash4"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.dash"
+ },
+ "entity.nautilus.dash_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/dash_land1"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_land2"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_land3"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.dash_land"
+ },
+ "entity.nautilus.dash_ready": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/dash_ready1"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_ready2"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_ready3"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.dash_ready"
+ },
+ "entity.nautilus.dash_ready_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/dash_ready_land1"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_ready_land2"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_ready_land3"
+   },
+   {
+    "name": "backport:mob/nautilus/dash_ready_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.dash_ready_land"
+ },
+ "entity.nautilus.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/death"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.death"
+ },
+ "entity.nautilus.death_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/death_land"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.death_land"
+ },
+ "entity.nautilus.eat": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/eat1"
+   },
+   {
+    "name": "backport:mob/nautilus/eat2"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.eat"
+ },
+ "entity.nautilus.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/hurt1"
+   },
+   {
+    "name": "backport:mob/nautilus/hurt2"
+   },
+   {
+    "name": "backport:mob/nautilus/hurt3"
+   },
+   {
+    "name": "backport:mob/nautilus/hurt4"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.hurt"
+ },
+ "entity.nautilus.hurt_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/hurt_land1"
+   },
+   {
+    "name": "backport:mob/nautilus/hurt_land2"
+   },
+   {
+    "name": "backport:mob/nautilus/hurt_land3"
+   },
+   {
+    "name": "backport:mob/nautilus/hurt_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.hurt_land"
+ },
+ "entity.nautilus.riding": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/ride"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.riding"
+ },
+ "entity.nautilus.swim": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/swim1"
+   },
+   {
+    "name": "backport:mob/nautilus/swim2"
+   },
+   {
+    "name": "backport:mob/nautilus/swim3"
+   },
+   {
+    "name": "backport:mob/nautilus/swim4"
+   },
+   {
+    "name": "backport:mob/nautilus/swim5"
+   },
+   {
+    "name": "backport:mob/nautilus/swim6"
+   },
+   {
+    "name": "backport:mob/nautilus/swim7"
+   },
+   {
+    "name": "backport:mob/nautilus/swim8"
+   },
+   {
+    "name": "backport:mob/nautilus/swim9"
+   }
+  ],
+  "subtitle": "subtitles.entity.nautilus.swim"
+ },
+ "entity.zombie_nautilus.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/ambient1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient2"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient3"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient4"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient5"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.ambient"
+ },
+ "entity.zombie_nautilus.ambient_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/ambient_land1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient_land2"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient_land3"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient_land4"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient_land5"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/ambient_land6"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.ambient_land"
+ },
+ "entity.zombie_nautilus.dash": {
+  "sounds": [
+   {
+    "name": "backport:entity.nautilus.dash",
+    "type": "event"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.dash"
+ },
+ "entity.zombie_nautilus.dash_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/dash_land1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_land2"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_land3"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.dash_land"
+ },
+ "entity.zombie_nautilus.dash_ready": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/dash_ready1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_ready2"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_ready3"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.dash_ready"
+ },
+ "entity.zombie_nautilus.dash_ready_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/dash_ready_land1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_ready_land2"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_ready_land3"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/dash_ready_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.dash_ready_land"
+ },
+ "entity.zombie_nautilus.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/death"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.death"
+ },
+ "entity.zombie_nautilus.death_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/death_land"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.death_land"
+ },
+ "entity.zombie_nautilus.eat": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/eat1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/eat2"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.eat"
+ },
+ "entity.zombie_nautilus.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/hurt1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/hurt2"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/hurt3"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/hurt4"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.hurt"
+ },
+ "entity.zombie_nautilus.hurt_land": {
+  "sounds": [
+   {
+    "name": "backport:mob/zombie_nautilus/hurt_land1"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/hurt_land2"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/hurt_land3"
+   },
+   {
+    "name": "backport:mob/zombie_nautilus/hurt_land4"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.hurt_land"
+ },
+ "entity.zombie_nautilus.swim": {
+  "sounds": [
+   {
+    "name": "backport:mob/nautilus/swim1"
+   },
+   {
+    "name": "backport:mob/nautilus/swim2"
+   },
+   {
+    "name": "backport:mob/nautilus/swim3"
+   },
+   {
+    "name": "backport:mob/nautilus/swim4"
+   },
+   {
+    "name": "backport:mob/nautilus/swim5"
+   },
+   {
+    "name": "backport:mob/nautilus/swim6"
+   },
+   {
+    "name": "backport:mob/nautilus/swim7"
+   },
+   {
+    "name": "backport:mob/nautilus/swim8"
+   },
+   {
+    "name": "backport:mob/nautilus/swim9"
+   }
+  ],
+  "subtitle": "subtitles.entity.zombie_nautilus.swim"
  }
 }

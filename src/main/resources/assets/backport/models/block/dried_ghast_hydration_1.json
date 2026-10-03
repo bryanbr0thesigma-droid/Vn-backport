@@ -1,0 +1,13 @@
+{
+ "parent": "backport:block/dried_ghast",
+ "textures": {
+  "bottom": "backport:block/dried_ghast_hydration_1_bottom",
+  "east": "backport:block/dried_ghast_hydration_1_east",
+  "north": "backport:block/dried_ghast_hydration_1_north",
+  "particle": "backport:block/dried_ghast_hydration_1_north",
+  "south": "backport:block/dried_ghast_hydration_1_south",
+  "tentacles": "backport:block/dried_ghast_hydration_1_tentacles",
+  "top": "backport:block/dried_ghast_hydration_1_top",
+  "west": "backport:block/dried_ghast_hydration_1_west"
+ }
+}

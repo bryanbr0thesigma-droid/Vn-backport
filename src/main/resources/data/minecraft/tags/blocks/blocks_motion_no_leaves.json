@@ -29,6 +29,7 @@
   "backport:waxed_exposed_copper_bulb",
   "backport:waxed_weathered_copper_bulb",
   "backport:waxed_oxidized_copper_bulb",
-  "backport:crafter"
+  "backport:crafter",
+  "backport:dried_ghast"
  ]
 }

@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "dry_ghast",
+ "key": {
+  "#": {
+   "item": "minecraft:ghast_tear"
+  },
+  "X": {
+   "item": "minecraft:soul_sand"
+  }
+ },
+ "pattern": [
+  "###",
+  "#X#",
+  "###"
+ ],
+ "result": {
+  "item": "backport:dried_ghast"
+ }
+}

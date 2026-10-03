@@ -1,0 +1,22 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "group": "harness",
+ "key": {
+  "#": {
+   "item": "minecraft:gray_wool"
+  },
+  "G": {
+   "item": "minecraft:glass"
+  },
+  "L": {
+   "item": "minecraft:leather"
+  }
+ },
+ "pattern": [
+  "LLL",
+  "G#G"
+ ],
+ "result": {
+  "item": "backport:gray_harness"
+ }
+}

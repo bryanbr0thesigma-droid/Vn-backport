@@ -50,6 +50,27 @@ public final class BackportEntities {
          .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, net.minecraft.world.entity.Mob::checkMobSpawnRules)
          .dimensions(EntityDimensions.fixed(1.7F, 2.375F)).trackRangeBlocks(10).build()
    );
+   public static final EntityType<com.backport.entity.HappyGhast> HAPPY_GHAST = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("happy_ghast"),
+      FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.HappyGhast::new).spawnGroup(MobCategory.CREATURE)
+         .spawnRestriction(SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING, net.minecraft.world.entity.Mob::checkMobSpawnRules)
+         .dimensions(EntityDimensions.fixed(4.0F, 4.0F)).trackRangeBlocks(10).build()
+   );
+   public static final EntityType<com.backport.entity.Nautilus> NAUTILUS = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("nautilus"),
+      FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.Nautilus::new).spawnGroup(MobCategory.WATER_CREATURE)
+         .spawnRestriction(SpawnPlacements.Type.IN_WATER, Heightmap.Types.OCEAN_FLOOR, com.backport.entity.AbstractNautilus::checkNautilusSpawnRules)
+         .dimensions(EntityDimensions.fixed(0.875F, 0.95F)).trackRangeBlocks(10).build()
+   );
+   public static final EntityType<com.backport.entity.ZombieNautilus> ZOMBIE_NAUTILUS = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("zombie_nautilus"),
+      FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.ZombieNautilus::new).spawnGroup(MobCategory.WATER_CREATURE)
+         .spawnRestriction(SpawnPlacements.Type.IN_WATER, Heightmap.Types.OCEAN_FLOOR, com.backport.entity.AbstractNautilus::checkNautilusSpawnRules)
+         .dimensions(EntityDimensions.fixed(0.875F, 0.95F)).trackRangeBlocks(10).build()
+   );
    public static final EntityType<com.backport.entity.Armadillo> ARMADILLO = Registry.register(
       BuiltInRegistries.ENTITY_TYPE,
       Backport.id("armadillo"),
@@ -73,6 +94,9 @@ public final class BackportEntities {
    public static final Item ARMADILLO_SPAWN_EGG = Backport.item("armadillo_spawn_egg", new SpawnEggItem(ARMADILLO, 0xAD716D, 0x984E4E, new FabricItemSettings()));
    public static final Item PARCHED_SPAWN_EGG = Backport.item("parched_spawn_egg", new SpawnEggItem(PARCHED, 0xE2C98B, 0xA68A52, new FabricItemSettings()));
    public static final Item CAMEL_HUSK_SPAWN_EGG = Backport.item("camel_husk_spawn_egg", new SpawnEggItem(CAMEL_HUSK, 0x8C7B4C, 0xD6BE79, new FabricItemSettings()));
+   public static final Item HAPPY_GHAST_SPAWN_EGG = Backport.item("happy_ghast_spawn_egg", new SpawnEggItem(HAPPY_GHAST, 0xF2F2F2, 0xA8D7F0, new FabricItemSettings()));
+   public static final Item NAUTILUS_SPAWN_EGG = Backport.item("nautilus_spawn_egg", new SpawnEggItem(NAUTILUS, 0xB6A58B, 0xE17F8B, new FabricItemSettings()));
+   public static final Item ZOMBIE_NAUTILUS_SPAWN_EGG = Backport.item("zombie_nautilus_spawn_egg", new SpawnEggItem(ZOMBIE_NAUTILUS, 0x5C6E55, 0xA2B79A, new FabricItemSettings()));
    public static final Item BOGGED_SPAWN_EGG = Backport.item("bogged_spawn_egg", new SpawnEggItem(BOGGED, 0x8A9C6E, 0x7A5F43, new FabricItemSettings()));
    public static final Item COPPER_GOLEM_SPAWN_EGG = Backport.item("copper_golem_spawn_egg", new SpawnEggItem(COPPER_GOLEM, 0xB4693C, 0xE3A57A, new FabricItemSettings()));
 
@@ -95,6 +119,14 @@ public final class BackportEntities {
       net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
          net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(net.minecraft.world.level.biome.Biomes.DESERT),
          MobCategory.MONSTER, CAMEL_HUSK, 5, 1, 1);
+      FabricDefaultAttributeRegistry.register(HAPPY_GHAST, com.backport.entity.HappyGhast.createAttributes());
+      FabricDefaultAttributeRegistry.register(NAUTILUS, com.backport.entity.AbstractNautilus.createAttributes());
+      FabricDefaultAttributeRegistry.register(ZOMBIE_NAUTILUS, com.backport.entity.ZombieNautilus.createAttributes());
+      net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
+         net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(net.minecraft.world.level.biome.Biomes.OCEAN, net.minecraft.world.level.biome.Biomes.DEEP_OCEAN, net.minecraft.world.level.biome.Biomes.COLD_OCEAN,
+            net.minecraft.world.level.biome.Biomes.DEEP_COLD_OCEAN, net.minecraft.world.level.biome.Biomes.LUKEWARM_OCEAN, net.minecraft.world.level.biome.Biomes.DEEP_LUKEWARM_OCEAN, net.minecraft.world.level.biome.Biomes.WARM_OCEAN,
+            net.minecraft.world.level.biome.Biomes.FROZEN_OCEAN, net.minecraft.world.level.biome.Biomes.DEEP_FROZEN_OCEAN),
+         MobCategory.WATER_CREATURE, NAUTILUS, 5, 1, 1);
       FabricDefaultAttributeRegistry.register(BOGGED, Bogged.createAttributes());
       FabricDefaultAttributeRegistry.register(BREEZE, com.backport.entity.Breeze.createAttributes());
       FabricDefaultAttributeRegistry.register(ARMADILLO, com.backport.entity.Armadillo.createAttributes());

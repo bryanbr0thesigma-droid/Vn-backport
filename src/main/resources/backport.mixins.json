@@ -9,9 +9,12 @@
     "LightningRodBlockMixin",
     "LivingEntityMaceMixin",
     "AbstractSkeletonAccessor",
-    "LivingEntityWolfArmorMixin"
+    "LivingEntityWolfArmorMixin",
+    "LivingEntityAccessor"
   ],
-  "client": [],
+  "client": [
+    "ItemRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

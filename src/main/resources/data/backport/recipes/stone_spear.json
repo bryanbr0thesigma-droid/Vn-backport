@@ -1,0 +1,28 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "category": "equipment",
+ "key": {
+  "#": {
+   "item": "minecraft:stick"
+  },
+  "X": [
+   {
+    "item": "minecraft:cobblestone"
+   },
+   {
+    "item": "minecraft:blackstone"
+   },
+   {
+    "item": "minecraft:cobbled_deepslate"
+   }
+  ]
+ },
+ "pattern": [
+  "  X",
+  " # ",
+  "#  "
+ ],
+ "result": {
+  "item": "backport:stone_spear"
+ }
+}

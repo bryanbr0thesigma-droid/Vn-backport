@@ -38,6 +38,28 @@ public final class BackportItems {
    public static final Block VAULT = Backport.block("vault", new com.backport.trial.VaultBlock(
       BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel(s -> s.getValue(com.backport.trial.VaultBlock.STATE).lightLevel)
          .strength(50.0F).sound(VAULT_SOUNDS).noOcclusion()));
+   public static final Item WOODEN_SPEAR = Backport.item("wooden_spear", new SpearItem(net.minecraft.world.item.Tiers.WOOD, 0.65F, 0.7F, 0.75F, 5.0F, 14.0F, 10.0F, 5.1F, 15.0F, 4.6F, new FabricItemSettings()));
+   public static final Item STONE_SPEAR = Backport.item("stone_spear", new SpearItem(net.minecraft.world.item.Tiers.STONE, 0.75F, 0.82F, 0.7F, 4.5F, 13.0F, 9.0F, 5.1F, 13.75F, 4.6F, new FabricItemSettings()));
+   public static final Item COPPER_SPEAR = Backport.item("copper_spear", new SpearItem(CopperTools.TIER, 0.85F, 0.82F, 0.65F, 4.0F, 12.0F, 8.25F, 5.1F, 12.5F, 4.6F, new FabricItemSettings()));
+   public static final Item IRON_SPEAR = Backport.item("iron_spear", new SpearItem(net.minecraft.world.item.Tiers.IRON, 0.95F, 0.95F, 0.6F, 2.5F, 11.0F, 6.75F, 5.1F, 11.25F, 4.6F, new FabricItemSettings()));
+   public static final Item GOLDEN_SPEAR = Backport.item("golden_spear", new SpearItem(net.minecraft.world.item.Tiers.GOLD, 0.95F, 0.7F, 0.7F, 3.5F, 13.0F, 8.5F, 5.1F, 13.75F, 4.6F, new FabricItemSettings()));
+   public static final Item DIAMOND_SPEAR = Backport.item("diamond_spear", new SpearItem(net.minecraft.world.item.Tiers.DIAMOND, 1.05F, 1.075F, 0.5F, 3.0F, 10.0F, 6.5F, 5.1F, 10.0F, 4.6F, new FabricItemSettings()));
+   public static final Item NETHERITE_SPEAR = Backport.item("netherite_spear", new SpearItem(net.minecraft.world.item.Tiers.NETHERITE, 1.15F, 1.2F, 0.4F, 2.5F, 9.0F, 5.5F, 5.1F, 8.75F, 4.6F, new FabricItemSettings().fireResistant()));
+   public static final SoundType DRIED_GHAST_SOUNDS = new SoundType(1.0F, 1.0F, BackportSounds.BLOCK_DRIED_GHAST_BREAK, BackportSounds.BLOCK_DRIED_GHAST_STEP,
+      BackportSounds.BLOCK_DRIED_GHAST_PLACE, BackportSounds.BLOCK_DRIED_GHAST_STEP, BackportSounds.BLOCK_DRIED_GHAST_FALL);
+   public static final Block DRIED_GHAST = Backport.block("dried_ghast", new DriedGhastBlock(
+      BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).strength(0.5F).sound(DRIED_GHAST_SOUNDS).noOcclusion()));
+   public static final String[] HARNESS_COLORS = {"white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"};
+   public static final Item[] HARNESSES = new Item[16];
+   static {
+      for (int i = 0; i < 16; i++) HARNESSES[i] = Backport.item(HARNESS_COLORS[i] + "_harness", new HarnessItem(HARNESS_COLORS[i], new FabricItemSettings().maxCount(1)));
+   }
+   public static final Item NAUTILUS_SHELL = Backport.item("nautilus_shell", new Item(new FabricItemSettings()));
+   public static final Item COPPER_NAUTILUS_ARMOR = Backport.item("copper_nautilus_armor", new NautilusArmorItem(4, new FabricItemSettings().maxDamage(176)));
+   public static final Item IRON_NAUTILUS_ARMOR = Backport.item("iron_nautilus_armor", new NautilusArmorItem(5, new FabricItemSettings().maxDamage(240)));
+   public static final Item GOLDEN_NAUTILUS_ARMOR = Backport.item("golden_nautilus_armor", new NautilusArmorItem(7, new FabricItemSettings().maxDamage(112)));
+   public static final Item DIAMOND_NAUTILUS_ARMOR = Backport.item("diamond_nautilus_armor", new NautilusArmorItem(11, new FabricItemSettings().maxDamage(528)));
+   public static final Item NETHERITE_NAUTILUS_ARMOR = Backport.item("netherite_nautilus_armor", new NautilusArmorItem(11, new FabricItemSettings().maxDamage(592).fireproof()));
    public static final Item BREEZE_ROD = Backport.item("breeze_rod", new Item(new FabricItemSettings()));
    public static final Item MACE = Backport.item("mace", new MaceItem(new FabricItemSettings().maxDamage(500).rarity(Rarity.EPIC)));
    public static final Item WIND_CHARGE = Backport.item("wind_charge", new WindChargeItem(new FabricItemSettings()));
@@ -55,6 +77,24 @@ public final class BackportItems {
       com.backport.crafter.CrafterMenu.registerServer();
       com.backport.trial.TrialSpawnerBlockEntity.register(TRIAL_SPAWNER);
       com.backport.trial.VaultBlockEntity.register(VAULT);
+   }
+
+   public static final class NautilusArmorItem extends Item {
+      public final int defense;
+
+      NautilusArmorItem(int defense, Item.Properties properties) {
+         super(properties);
+         this.defense = defense;
+      }
+   }
+
+   public static final class HarnessItem extends Item {
+      public final String color;
+
+      HarnessItem(String color, Item.Properties properties) {
+         super(properties);
+         this.color = color;
+      }
    }
 
    public static final class WolfArmorItem extends Item implements net.minecraft.world.item.DyeableLeatherItem {

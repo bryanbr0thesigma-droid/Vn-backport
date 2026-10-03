@@ -25,6 +25,13 @@ public class BackportClient implements ClientModInitializer {
    public static final net.minecraft.client.model.geom.ModelLayerLocation ARMADILLO_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("armadillo"), "main");
    public static final net.minecraft.client.model.geom.ModelLayerLocation ARMADILLO_BABY_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("armadillo"), "baby");
 
+   public static final net.minecraft.client.model.geom.ModelLayerLocation HAPPY_GHAST_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("happy_ghast"), "main");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation HAPPY_GHAST_BABY_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("happy_ghast"), "baby");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation HAPPY_GHAST_HARNESS_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("happy_ghast"), "harness");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "main");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_BABY_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "baby");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_ARMOR_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "armor");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation NAUTILUS_SADDLE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("nautilus"), "saddle");
    public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "main");
    public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_WIND_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "wind");
    public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_EYES_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "eyes");
@@ -47,6 +54,22 @@ public class BackportClient implements ClientModInitializer {
             return Backport.id("textures/entity/camel/camel_husk.png");
          }
       });
+      net.fabricmc.fabric.api.client.model.ModelLoadingRegistry.INSTANCE.registerModelProvider((manager, out) -> {
+         for (String m : new String[]{"wooden", "stone", "copper", "iron", "golden", "diamond", "netherite"}) {
+            out.accept(new net.minecraft.client.resources.model.ModelResourceLocation(Backport.ID, m + "_spear_icon", "inventory"));
+         }
+      });
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(HAPPY_GHAST_LAYER, () -> HappyGhastModel.createBodyLayer(false));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(HAPPY_GHAST_BABY_LAYER, () -> HappyGhastModel.createBodyLayer(true));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(HAPPY_GHAST_HARNESS_LAYER, HappyGhastHarnessModel::createHarnessLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.HAPPY_GHAST, HappyGhastRenderer::new);
+      net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlock(com.backport.BackportItems.DRIED_GHAST, net.minecraft.client.renderer.RenderType.cutout());
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_LAYER, NautilusModel::createBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_BABY_LAYER, NautilusModel::createBabyBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_ARMOR_LAYER, () -> NautilusModel.createArmorLayer(0.01F, false));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(NAUTILUS_SADDLE_LAYER, () -> NautilusModel.createArmorLayer(0.2F, true));
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.NAUTILUS, NautilusRenderer::new);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.ZOMBIE_NAUTILUS, NautilusRenderer::new);
       net.minecraft.client.gui.screens.MenuScreens.register(com.backport.crafter.CrafterMenu.TYPE, CrafterScreen::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE, BreezeRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE_WIND_CHARGE, WindChargeRenderer::new);

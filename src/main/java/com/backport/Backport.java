@@ -49,6 +49,7 @@ public final class Backport {
 
    public static void init() {
       BackportSounds.init();
+      BackportEffects.init();
       com.backport.worldgen.TrialChambersStructure.register();
       com.backport.loot.BackportLootFunctions.init();
       MaceEnchantments.init();
