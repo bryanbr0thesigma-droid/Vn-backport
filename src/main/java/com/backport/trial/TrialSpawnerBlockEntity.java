@@ -214,15 +214,33 @@ public class TrialSpawnerBlockEntity extends BlockEntity {
       List<UUID> los = this.detect(level, pos, true);
       boolean becameOminous = false;
       if (!this.ominous && !los.isEmpty()) {
+         Player withTrial = null;
+         Player withBad = null;
          for (UUID u : los) {
             Player p = level.getPlayerByUUID(u);
-            if (p != null && p.hasEffect(MobEffects.BAD_OMEN)) {
-               p.removeEffect(MobEffects.BAD_OMEN);
-               TrialFx.event(level, 3020, BlockPos.containing(p.getEyePosition()), 0);
-               this.applyOminous(level, pos);
-               becameOminous = true;
-               break;
+            if (p != null) {
+               if (p.hasEffect(com.backport.OmenEffects.TRIAL_OMEN)) {
+                  withTrial = p;
+                  break;
+               }
+               if (p.hasEffect(MobEffects.BAD_OMEN)) {
+                  withBad = p;
+               }
             }
+         }
+         Player chosen = withTrial != null ? withTrial : withBad;
+         if (chosen != null) {
+            if (withTrial == null) {
+               net.minecraft.world.effect.MobEffectInstance bad = chosen.getEffect(MobEffects.BAD_OMEN);
+               if (bad != null) {
+                  int duration = 18000 * (bad.getAmplifier() + 1);
+                  chosen.removeEffect(MobEffects.BAD_OMEN);
+                  chosen.addEffect(new net.minecraft.world.effect.MobEffectInstance(com.backport.OmenEffects.TRIAL_OMEN, duration, 0));
+               }
+            }
+            TrialFx.event(level, 3020, BlockPos.containing(chosen.getEyePosition()), 0);
+            this.applyOminous(level, pos);
+            becameOminous = true;
          }
       }
       if (st != TrialSpawnerState.COOLDOWN || becameOminous) {
@@ -395,9 +413,9 @@ public class TrialSpawnerBlockEntity extends BlockEntity {
       ItemStack stack = drops.get(level.random.nextInt(drops.size())).copy();
       stack.setCount(1);
       Vec3 at = target.position().add(0.0, target.getBbHeight() + 2.0 + level.random.nextInt(3), 0.0);
-      ItemEntity ie = new ItemEntity(level, at.x, at.y, at.z, stack);
-      ie.setDeltaMovement(Vec3.ZERO);
-      level.addFreshEntity(ie);
+      com.backport.entity.OminousItemSpawner ois = com.backport.entity.OminousItemSpawner.create(level, stack);
+      ois.moveTo(at.x, at.y, at.z);
+      level.addFreshEntity(ois);
       level.playSound(null, BlockPos.containing(at), com.backport.BackportSounds.BLOCK_TRIAL_SPAWNER_SPAWN_ITEM_BEGIN, SoundSource.BLOCKS, 1.0F, 1.0F);
       this.cooldownEndsAt = level.getGameTime() + 160L;
    }

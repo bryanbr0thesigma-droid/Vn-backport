@@ -97,6 +97,12 @@ public final class BackportEntities {
          .dimensions(EntityDimensions.fixed(1.04F, 1.04F)).trackRangeBlocks(10).build()
    );
    public static final Item SULFUR_CUBE_SPAWN_EGG = Backport.item("sulfur_cube_spawn_egg", new SpawnEggItem(SULFUR_CUBE, 0xCBD64C, 0x6F7B1F, new FabricItemSettings()));
+   public static final EntityType<com.backport.entity.OminousItemSpawner> OMINOUS_ITEM_SPAWNER = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("ominous_item_spawner"),
+      FabricEntityTypeBuilder.<com.backport.entity.OminousItemSpawner>create(MobCategory.MISC, com.backport.entity.OminousItemSpawner::new)
+         .dimensions(EntityDimensions.fixed(0.25F, 0.25F)).trackRangeBlocks(8).trackedUpdateRate(20).build()
+   );
    public static final Item BREEZE_SPAWN_EGG = Backport.item("breeze_spawn_egg", new SpawnEggItem(BREEZE, 0xAFC1E8, 0x9B9FE0, new FabricItemSettings()));
    public static final EntityType<com.backport.entity.BreezeWindCharge> BREEZE_WIND_CHARGE = Registry.register(
       BuiltInRegistries.ENTITY_TYPE,

@@ -100,6 +100,7 @@ public class BackportClient implements ClientModInitializer {
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(SulfurCubeRenderer.INNER_SMALL, () -> SulfurCubeRenderer.inner(true));
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.SULFUR_CUBE, SulfurCubeRenderer::new);
       BabyModels.init();
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.OMINOUS_ITEM_SPAWNER, OminousItemSpawnerRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.FROSTBITE, FrostbiteRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.ICE_BALL_ENTITY, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutout(), com.backport.ice.IceCaves.ICE_CRYSTAL, com.backport.ice.IceCaves.ICICLE);

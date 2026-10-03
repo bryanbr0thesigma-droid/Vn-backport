@@ -63,6 +63,7 @@ public final class Backport {
       BackportItems.init();
       SimpleBlocks.init();
       NewStone.init();
+      OmenEffects.init();
       com.backport.ice.IceCaves.init();
       PlantBlocks.init();
       com.backport.poplar.PoplarBoats.init();
