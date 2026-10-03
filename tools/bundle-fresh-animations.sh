@@ -1,8 +1,8 @@
 #!/bin/bash
 # Builds a PERSONAL-USE jar of this mod with Fresh Animations and every dependency bundled in.
 # Fresh Animations' terms forbid redistributing the pack, so it is downloaded here at build time and the
-# resulting jar must not be published or committed. EMF / ETF / ESF (LGPL-3.0) and Fabric API (Apache-2.0)
-# are nested as jar-in-jar.
+# resulting jar must not be published or committed. EMF / ETF / ESF (LGPL-3.0) are nested as jar-in-jar.
+# Fabric API is NOT bundled; install it separately.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 IN=${1:-build/libs/villager-news-addon-port-1.3.6.jar}
@@ -20,11 +20,9 @@ if [ ! -s "$CACHE/esf.jar" ]; then
   U=$(curl -sS -G 'https://api.modrinth.com/v2/project/entity-sound-features/version' --data-urlencode 'game_versions=["1.20.1"]' --data-urlencode 'loaders=["fabric"]' | python3 -c "import json,sys;print(json.load(sys.stdin)[0]['files'][0]['url'])")
   dl "$U" "$CACHE/esf.jar"
 fi
-[ -s "$CACHE/fabric-api.jar" ] || cp "$(find ~/.gradle -name 'fabric-api-0.92.*+1.20.1.jar' | head -1)" "$CACHE/fabric-api.jar"
 cp "$CACHE/emf.jar" "$W/jars/entity_model_features.jar"
 cp "$CACHE/etf.jar" "$W/jars/entity_texture_features.jar"
 cp "$CACHE/esf.jar" "$W/jars/entity_sound_features.jar"
-cp "$CACHE/fabric-api.jar" "$W/jars/fabric-api.jar"
 mkdir -p "$W/pack"; (cd "$W/pack" && unzip -q "$CACHE/FA.zip")
 python3 - "$IN" "$OUT" "$W" <<'P'
 import sys,zipfile,json,os
