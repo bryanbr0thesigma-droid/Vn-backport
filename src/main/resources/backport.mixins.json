@@ -13,7 +13,8 @@
     "LivingEntityAccessor",
     "MushroomBlockMixin",
     "MushroomBlockAccess",
-    "ZombieFrostbiteMixin"
+    "ZombieFrostbiteMixin",
+    "LivingEntityFreezingJumpMixin"
   ],
   "client": [
     "ItemRendererMixin",
