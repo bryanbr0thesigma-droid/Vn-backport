@@ -98,6 +98,29 @@ public class BackportClient implements ClientModInitializer {
                net.minecraft.network.chat.Component.literal("Fresh Animations"), net.fabricmc.fabric.api.resource.ResourcePackActivationType.DEFAULT_ENABLED);
          }
       });
+      net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents.CLIENT_STARTED.register(mc -> {
+         // DEFAULT_ENABLED only applies to profiles without a saved pack list, so switch the bundled pack on once for existing ones.
+         try {
+            java.nio.file.Path marker = net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().resolve("backport_fresh_animations_enabled");
+            if (java.nio.file.Files.exists(marker)) {
+               return;
+            }
+            net.minecraft.server.packs.repository.PackRepository repo = mc.getResourcePackRepository();
+            repo.reload();
+            boolean changed = false;
+            for (String id : repo.getAvailableIds()) {
+               if (id.endsWith("fresh_animations") && !repo.getSelectedIds().contains(id)) {
+                  changed |= repo.addPack(id);
+               }
+            }
+            java.nio.file.Files.createFile(marker);
+            if (changed) {
+               mc.options.updateResourcePacks(repo);
+            }
+         } catch (Exception e) {
+            Backport.LOGGER.warn("Could not enable the bundled Fresh Animations pack", e);
+         }
+      });
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutout(), com.backport.poplar.Poplar.SAPLING, com.backport.poplar.Poplar.POTTED_SAPLING, com.backport.poplar.Poplar.DOOR, com.backport.poplar.Poplar.TRAPDOOR);
       net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry.register(com.backport.shelf.ShelfBlockEntity.TYPE, ShelfRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(CUSHION_LAYER, CushionRenderer::createBodyLayer);
