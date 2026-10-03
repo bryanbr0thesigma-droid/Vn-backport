@@ -16,7 +16,8 @@
     "ItemRendererMixin",
     "LivingEntityRendererBabyMixin",
     "SheepFurLayerBabyMixin",
-    "HumanoidModelBabyMixin"
+    "HumanoidModelBabyMixin",
+    "StriderRendererBabyMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -24,6 +24,11 @@ public final class BabyModels {
 
    /** Default part positions of baby humanoid models (HumanoidModel.setupAnim overwrites them with adult values). */
    public static final Map<Object, float[][]> HUMANOID_POSES = new WeakHashMap<>();
+   private record Lock(ModelPart[] parts, float[][] pos, ModelPart[] zeroXRot) {
+   }
+
+   private static final Map<EntityModel<?>, Lock> LOCKS = new java.util.WeakHashMap<>();
+   private static final Map<EntityType<?>, String[][]> LOCK_NAMES = new HashMap<>();
    private static final Map<EntityType<?>, Def> DEFS = new LinkedHashMap<>();
    private static final Map<EntityType<?>, EntityModel<?>> BAKED = new HashMap<>();
    private static final Map<String, ResourceLocation> TEX = new HashMap<>();
@@ -60,7 +65,18 @@ public final class BabyModels {
       DEFS.put(type, new Def(new ModelLayerLocation(Backport.id("baby_" + id), "main"), mesh, ctor));
    }
 
+   private static void lock(String[] posParts, String[] zeroRot, EntityType<?>... types) {
+      for (EntityType<?> t : types) {
+         LOCK_NAMES.put(t, new String[][]{posParts, zeroRot});
+      }
+   }
+
    public static void init() {
+      lock(new String[]{"head", "body", "tail1", "tail2", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[]{"body"}, EntityType.CAT, EntityType.OCELOT);
+      lock(new String[]{"head", "body", "upper_body", "tail", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[]{"body", "upper_body"}, EntityType.WOLF);
+      lock(new String[]{"head", "body", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[]{"body"}, EntityType.FOX);
+      lock(new String[]{"head", "body", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[0], EntityType.HOGLIN, EntityType.ZOGLIN);
+      lock(new String[]{"body", "right_leg", "left_leg"}, new String[0], EntityType.STRIDER);
       def(EntityType.PIG, "pig", BabyMeshes::pig, PigModel::new);
       def(EntityType.COW, "cow", BabyMeshes::cow, CowModel::new);
       def(EntityType.MOOSHROOM, "mooshroom", BabyMeshes::cow, CowModel::new);
@@ -68,6 +84,7 @@ public final class BabyModels {
       def(EntityType.CHICKEN, "chicken", BabyMeshes::chicken, ChickenModel::new);
       def(EntityType.WOLF, "wolf", BabyMeshes::wolf, WolfModel::new);
       def(EntityType.CAT, "cat", BabyMeshes::feline, CatModel::new);
+      def(EntityType.OCELOT, "ocelot", BabyMeshes::feline, OcelotModel::new);
       def(EntityType.GOAT, "goat", BabyMeshes::goat, GoatModel::new);
       def(EntityType.FOX, "fox", BabyMeshes::fox, FoxModel::new);
       def(EntityType.RABBIT, "rabbit", BabyMeshes::rabbit, RabbitModel::new);
@@ -93,6 +110,20 @@ public final class BabyModels {
       }
    }
 
+   /** Undo adult-pose assignments the 1.20.1 animation code makes on baby models. */
+   public static void postAnim(EntityModel<?> model) {
+      Lock l = LOCKS.get(model);
+      if (l == null) {
+         return;
+      }
+      for (int i = 0; i < l.parts().length; i++) {
+         l.parts()[i].setPos(l.pos()[i][0], l.pos()[i][1], l.pos()[i][2]);
+      }
+      for (ModelPart p : l.zeroXRot()) {
+         p.xRot = 0.0F;
+      }
+   }
+
    public static EntityModel<?> modelFor(EntityType<?> type) {
       Def d = DEFS.get(type);
       if (d == null) {
@@ -103,7 +134,22 @@ public final class BabyModels {
       }
       EntityModel<?> m = null;
       try {
-         m = d.ctor().apply(Minecraft.getInstance().getEntityModels().bakeLayer(d.layer()));
+         ModelPart root = Minecraft.getInstance().getEntityModels().bakeLayer(d.layer());
+         m = d.ctor().apply(root);
+         String[][] names = LOCK_NAMES.get(type);
+         if (names != null) {
+            ModelPart[] parts = new ModelPart[names[0].length];
+            float[][] pos = new float[parts.length][];
+            for (int i = 0; i < parts.length; i++) {
+               parts[i] = root.getChild(names[0][i]);
+               pos[i] = new float[]{parts[i].x, parts[i].y, parts[i].z};
+            }
+            ModelPart[] zero = new ModelPart[names[1].length];
+            for (int i = 0; i < zero.length; i++) {
+               zero[i] = root.getChild(names[1][i]);
+            }
+            LOCKS.put(m, new Lock(parts, pos, zero));
+         }
       } catch (RuntimeException e) {
          Backport.LOGGER.warn("Baby model for {} could not be built; using the adult model: {}", type, e.toString());
       }

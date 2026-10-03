@@ -67,6 +67,7 @@ public abstract class LivingEntityRendererBabyMixin<T extends LivingEntity, M ex
    private void backport$babyRenderType(T entity, boolean visible, boolean translucent, boolean glowing, CallbackInfoReturnable<RenderType> cir) {
       if (this.backport$tex != null) {
          this.model.young = false;
+         BabyModels.postAnim(this.model);
          if (translucent) {
             cir.setReturnValue(RenderType.itemEntityTranslucentCull(this.backport$tex));
          } else if (visible) {
