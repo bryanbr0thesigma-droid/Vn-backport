@@ -24,11 +24,18 @@ public final class BabyModels {
 
    /** Default part positions of baby humanoid models (HumanoidModel.setupAnim overwrites them with adult values). */
    public static final Map<Object, float[][]> HUMANOID_POSES = new WeakHashMap<>();
-   private record Lock(ModelPart[] parts, float[][] pos, ModelPart[] zeroXRot) {
+   /** Parts whose adult animation values are applied as offsets from the adult rest pose. */
+   private record Rig(ModelPart[] parts, float[][] babyPos, float[][] adultPos, ModelPart[] rotParts, float[] babyRot, float[] adultRot,
+                      ModelPart[] copyFrom, ModelPart[] copyTo, float[][] copyRest, boolean lockOnly) {
    }
 
-   private static final Map<EntityModel<?>, Lock> LOCKS = new java.util.WeakHashMap<>();
-   private static final Map<EntityType<?>, String[][]> LOCK_NAMES = new HashMap<>();
+   private static final java.util.Set<net.minecraft.client.model.geom.ModelLayerLocation> LOCK_ONLY = new java.util.HashSet<>();
+
+   private record RigSpec(ModelLayerLocation adult, String[] posParts, String[] rotParts, String[][] copies) {
+   }
+
+   private static final Map<EntityModel<?>, Rig> RIGS = new java.util.WeakHashMap<>();
+   private static final Map<EntityType<?>, RigSpec> RIG_SPECS = new HashMap<>();
    private static final Map<EntityType<?>, Def> DEFS = new LinkedHashMap<>();
    private static final Map<EntityType<?>, EntityModel<?>> BAKED = new HashMap<>();
    private static final Map<String, ResourceLocation> TEX = new HashMap<>();
@@ -65,18 +72,46 @@ public final class BabyModels {
       DEFS.put(type, new Def(new ModelLayerLocation(Backport.id("baby_" + id), "main"), mesh, ctor));
    }
 
-   private static void lock(String[] posParts, String[] zeroRot, EntityType<?>... types) {
+   private static void rig(ModelLayerLocation adult, String[] posParts, String[] rotParts, String[][] copies, EntityType<?>... types) {
       for (EntityType<?> t : types) {
-         LOCK_NAMES.put(t, new String[][]{posParts, zeroRot});
+         RIG_SPECS.put(t, new RigSpec(adult, posParts, rotParts, copies));
       }
    }
 
+   private static ModelPart path(ModelPart root, String path) {
+      ModelPart p = root;
+      for (String n : path.split("/")) {
+         p = p.getChild(n);
+      }
+      return p;
+   }
+
+   private static String[] concat(String[] a, String[] b) {
+      String[] r = java.util.Arrays.copyOf(a, a.length + b.length);
+      System.arraycopy(b, 0, r, a.length, b.length);
+      return r;
+   }
+
    public static void init() {
-      lock(new String[]{"head", "body", "tail1", "tail2", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[]{"body"}, EntityType.CAT, EntityType.OCELOT);
-      lock(new String[]{"head", "body", "upper_body", "tail", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[]{"body", "upper_body"}, EntityType.WOLF);
-      lock(new String[]{"head", "body", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[]{"body"}, EntityType.FOX);
-      lock(new String[]{"head", "body", "left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"}, new String[0], EntityType.HOGLIN, EntityType.ZOGLIN);
-      lock(new String[]{"body", "right_leg", "left_leg"}, new String[0], EntityType.STRIDER);
+      LOCK_ONLY.add(net.minecraft.client.model.geom.ModelLayers.CAT);
+      LOCK_ONLY.add(net.minecraft.client.model.geom.ModelLayers.OCELOT);
+      String[] none = new String[0];
+      String[] four = {"left_hind_leg", "right_hind_leg", "left_front_leg", "right_front_leg"};
+      rig(net.minecraft.client.model.geom.ModelLayers.CAT, concat(new String[]{"head", "body", "tail1", "tail2"}, four), new String[]{"body"}, null, EntityType.CAT);
+      rig(net.minecraft.client.model.geom.ModelLayers.OCELOT, concat(new String[]{"head", "body", "tail1", "tail2"}, four), new String[]{"body"}, null, EntityType.OCELOT);
+      rig(net.minecraft.client.model.geom.ModelLayers.WOLF, concat(new String[]{"head", "body", "upper_body", "tail"}, four), new String[]{"body", "upper_body"}, null, EntityType.WOLF);
+      rig(net.minecraft.client.model.geom.ModelLayers.FOX, concat(new String[]{"head", "body", "body/tail"}, four), new String[]{"body"}, null, EntityType.FOX);
+      rig(net.minecraft.client.model.geom.ModelLayers.HOGLIN, concat(new String[]{"head", "body"}, four), none, null, EntityType.HOGLIN);
+      rig(net.minecraft.client.model.geom.ModelLayers.ZOGLIN, concat(new String[]{"head", "body"}, four), none, null, EntityType.ZOGLIN);
+      rig(net.minecraft.client.model.geom.ModelLayers.STRIDER, new String[]{"body", "right_leg", "left_leg"}, none, null, EntityType.STRIDER);
+      rig(net.minecraft.client.model.geom.ModelLayers.AXOLOTL, new String[]{"body", "body/head"}, none, null, EntityType.AXOLOTL);
+      rig(net.minecraft.client.model.geom.ModelLayers.BEE, new String[]{"bone"}, none, null, EntityType.BEE);
+      rig(net.minecraft.client.model.geom.ModelLayers.SHEEP, new String[]{"head"}, none, null, EntityType.SHEEP);
+      rig(net.minecraft.client.model.geom.ModelLayers.RABBIT, none, none, new String[][]{
+         {"head", "body/head"}, {"left_ear", "body/head/left_ear"}, {"right_ear", "body/head/right_ear"}, {"tail", "body/tail"},
+         {"left_front_leg", "body/frontlegs/left_front_leg"}, {"right_front_leg", "body/frontlegs/right_front_leg"},
+         {"left_haunch", "backlegs/left_hind_leg/left_haunch"}, {"right_haunch", "backlegs/right_hind_leg/right_haunch"},
+         {"left_hind_foot", "backlegs/left_hind_leg"}, {"right_hind_foot", "backlegs/right_hind_leg"}}, EntityType.RABBIT);
       def(EntityType.PIG, "pig", BabyMeshes::pig, PigModel::new);
       def(EntityType.COW, "cow", BabyMeshes::cow, CowModel::new);
       def(EntityType.MOOSHROOM, "mooshroom", BabyMeshes::cow, CowModel::new);
@@ -110,17 +145,56 @@ public final class BabyModels {
       }
    }
 
-   /** Undo adult-pose assignments the 1.20.1 animation code makes on baby models. */
-   public static void postAnim(EntityModel<?> model) {
-      Lock l = LOCKS.get(model);
-      if (l == null) {
+   /** Reset rigged parts to their baby rest pose before the adult animation code runs. */
+   public static void preAnim(EntityModel<?> model) {
+      Rig r = RIGS.get(model);
+      if (r == null) {
          return;
       }
-      for (int i = 0; i < l.parts().length; i++) {
-         l.parts()[i].setPos(l.pos()[i][0], l.pos()[i][1], l.pos()[i][2]);
+      for (int i = 0; i < r.parts().length; i++) {
+         r.parts()[i].setPos(r.babyPos()[i][0], r.babyPos()[i][1], r.babyPos()[i][2]);
       }
-      for (ModelPart p : l.zeroXRot()) {
-         p.xRot = 0.0F;
+      for (int i = 0; i < r.rotParts().length; i++) {
+         r.rotParts()[i].xRot = r.babyRot()[i];
+      }
+      for (int i = 0; i < r.copyFrom().length; i++) {
+         r.copyFrom()[i].xRot = 0.0F;
+         r.copyFrom()[i].yRot = 0.0F;
+         r.copyFrom()[i].zRot = 0.0F;
+         r.copyTo()[i].xRot = r.copyRest()[i][0];
+         r.copyTo()[i].yRot = r.copyRest()[i][1];
+         r.copyTo()[i].zRot = r.copyRest()[i][2];
+      }
+   }
+
+   /** Re-express what the adult animation code did as offsets from the adult rest pose, applied to the baby parts. */
+   public static void postAnim(EntityModel<?> model) {
+      Rig r = RIGS.get(model);
+      if (r == null) {
+         return;
+      }
+      for (int i = 0; i < r.parts().length; i++) {
+         ModelPart p = r.parts()[i];
+         float[] b = r.babyPos()[i];
+         float[] a = r.adultPos()[i];
+         if (r.lockOnly()) {
+            p.setPos(b[0], b[1], b[2]);
+         } else if (p.x != b[0] || p.y != b[1] || p.z != b[2]) {
+            p.setPos(b[0] + (p.x - a[0]), b[1] + (p.y - a[1]), b[2] + (p.z - a[2]));
+         }
+      }
+      for (int i = 0; i < r.rotParts().length; i++) {
+         ModelPart p = r.rotParts()[i];
+         if (r.lockOnly()) {
+            p.xRot = r.babyRot()[i];
+         } else if (p.xRot != r.babyRot()[i]) {
+            p.xRot = r.babyRot()[i] + (p.xRot - r.adultRot()[i]);
+         }
+      }
+      for (int i = 0; i < r.copyFrom().length; i++) {
+         r.copyTo()[i].xRot = r.copyRest()[i][0] + r.copyFrom()[i].xRot;
+         r.copyTo()[i].yRot = r.copyRest()[i][1] + r.copyFrom()[i].yRot;
+         r.copyTo()[i].zRot = r.copyRest()[i][2] + r.copyFrom()[i].zRot;
       }
    }
 
@@ -136,19 +210,36 @@ public final class BabyModels {
       try {
          ModelPart root = Minecraft.getInstance().getEntityModels().bakeLayer(d.layer());
          m = d.ctor().apply(root);
-         String[][] names = LOCK_NAMES.get(type);
-         if (names != null) {
-            ModelPart[] parts = new ModelPart[names[0].length];
-            float[][] pos = new float[parts.length][];
+         RigSpec spec = RIG_SPECS.get(type);
+         if (spec != null) {
+            ModelPart adult = Minecraft.getInstance().getEntityModels().bakeLayer(spec.adult());
+            ModelPart[] parts = new ModelPart[spec.posParts().length];
+            float[][] bp = new float[parts.length][];
+            float[][] ap = new float[parts.length][];
             for (int i = 0; i < parts.length; i++) {
-               parts[i] = root.getChild(names[0][i]);
-               pos[i] = new float[]{parts[i].x, parts[i].y, parts[i].z};
+               parts[i] = path(root, spec.posParts()[i]);
+               ModelPart ad = path(adult, spec.posParts()[i]);
+               bp[i] = new float[]{parts[i].x, parts[i].y, parts[i].z};
+               ap[i] = new float[]{ad.x, ad.y, ad.z};
             }
-            ModelPart[] zero = new ModelPart[names[1].length];
-            for (int i = 0; i < zero.length; i++) {
-               zero[i] = root.getChild(names[1][i]);
+            ModelPart[] rp = new ModelPart[spec.rotParts().length];
+            float[] br = new float[rp.length];
+            float[] ar = new float[rp.length];
+            for (int i = 0; i < rp.length; i++) {
+               rp[i] = path(root, spec.rotParts()[i]);
+               br[i] = rp[i].xRot;
+               ar[i] = path(adult, spec.rotParts()[i]).xRot;
             }
-            LOCKS.put(m, new Lock(parts, pos, zero));
+            int n = spec.copies() == null ? 0 : spec.copies().length;
+            ModelPart[] cf = new ModelPart[n];
+            ModelPart[] ct = new ModelPart[n];
+            float[][] cr = new float[n][];
+            for (int i = 0; i < n; i++) {
+               cf[i] = path(root, spec.copies()[i][0]);
+               ct[i] = path(root, spec.copies()[i][1]);
+               cr[i] = new float[]{ct[i].xRot, ct[i].yRot, ct[i].zRot};
+            }
+            RIGS.put(m, new Rig(parts, bp, ap, rp, br, ar, cf, ct, cr, LOCK_ONLY.contains(spec.adult())));
          }
       } catch (RuntimeException e) {
          Backport.LOGGER.warn("Baby model for {} could not be built; using the adult model: {}", type, e.toString());

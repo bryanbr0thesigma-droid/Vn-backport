@@ -51,6 +51,7 @@ public abstract class LivingEntityRendererBabyMixin<T extends LivingEntity, M ex
       this.model = (M) baby;
       this.backport$tex = tex;
       BabyModels.active = true;
+      BabyModels.preAnim(baby);
    }
 
    @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", at = @At("RETURN"))
