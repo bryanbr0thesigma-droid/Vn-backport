@@ -36,6 +36,27 @@ public final class BackportEntities {
          .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
          .dimensions(EntityDimensions.fixed(0.6F, 1.99F)).trackRangeBlocks(8).build()
    );
+   public static final EntityType<com.backport.entity.Armadillo> ARMADILLO = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("armadillo"),
+      FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.Armadillo::new).spawnGroup(MobCategory.CREATURE)
+         .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING, (type, level, reason, pos, random) -> level.getRawBrightness(pos, 0) > 8 && level.getBlockState(pos.below()).is(net.minecraft.world.level.block.Blocks.SAND) || level.getBlockState(pos.below()).is(net.minecraft.tags.BlockTags.TERRACOTTA) || level.getBlockState(pos.below()).is(net.minecraft.world.level.block.Blocks.RED_SAND) || level.getBlockState(pos.below()).is(net.minecraft.world.level.block.Blocks.COARSE_DIRT) || level.getBlockState(pos.below()).is(net.minecraft.world.level.block.Blocks.GRASS_BLOCK) || level.getBlockState(pos.below()).is(net.minecraft.world.level.block.Blocks.DIRT))
+         .dimensions(EntityDimensions.fixed(0.7F, 0.65F)).trackRangeBlocks(10).build()
+   );
+   public static final EntityType<com.backport.entity.Breeze> BREEZE = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("breeze"),
+      FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.Breeze::new).spawnGroup(MobCategory.MONSTER)
+         .dimensions(EntityDimensions.fixed(0.6F, 1.77F)).trackRangeBlocks(10).build()
+   );
+   public static final Item BREEZE_SPAWN_EGG = Backport.item("breeze_spawn_egg", new SpawnEggItem(BREEZE, 0xAFC1E8, 0x9B9FE0, new FabricItemSettings()));
+   public static final EntityType<com.backport.entity.BreezeWindCharge> BREEZE_WIND_CHARGE = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("breeze_wind_charge"),
+      FabricEntityTypeBuilder.<com.backport.entity.BreezeWindCharge>create(MobCategory.MISC, com.backport.entity.BreezeWindCharge::new)
+         .dimensions(EntityDimensions.fixed(0.3125F, 0.3125F)).trackRangeBlocks(4).trackedUpdateRate(10).build()
+   );
+   public static final Item ARMADILLO_SPAWN_EGG = Backport.item("armadillo_spawn_egg", new SpawnEggItem(ARMADILLO, 0xAD716D, 0x984E4E, new FabricItemSettings()));
    public static final Item BOGGED_SPAWN_EGG = Backport.item("bogged_spawn_egg", new SpawnEggItem(BOGGED, 0x8A9C6E, 0x7A5F43, new FabricItemSettings()));
    public static final Item COPPER_GOLEM_SPAWN_EGG = Backport.item("copper_golem_spawn_egg", new SpawnEggItem(COPPER_GOLEM, 0xB4693C, 0xE3A57A, new FabricItemSettings()));
 
@@ -43,8 +64,20 @@ public final class BackportEntities {
    }
 
    public static void init() {
+      net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
+         if (entity instanceof net.minecraft.world.entity.animal.Wolf wolf && !WolfArmor.get(wolf).isEmpty()) {
+            wolf.spawnAtLocation(WolfArmor.get(wolf).copy());
+            WolfArmor.set(wolf, net.minecraft.world.item.ItemStack.EMPTY);
+         }
+      });
       FabricDefaultAttributeRegistry.register(COPPER_GOLEM, CopperGolem.createAttributes());
       FabricDefaultAttributeRegistry.register(BOGGED, Bogged.createAttributes());
+      FabricDefaultAttributeRegistry.register(BREEZE, com.backport.entity.Breeze.createAttributes());
+      FabricDefaultAttributeRegistry.register(ARMADILLO, com.backport.entity.Armadillo.createAttributes());
+      net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
+         net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(net.minecraft.world.level.biome.Biomes.SAVANNA, net.minecraft.world.level.biome.Biomes.SAVANNA_PLATEAU,
+            net.minecraft.world.level.biome.Biomes.WINDSWEPT_SAVANNA, net.minecraft.world.level.biome.Biomes.BADLANDS, net.minecraft.world.level.biome.Biomes.ERODED_BADLANDS, net.minecraft.world.level.biome.Biomes.WOODED_BADLANDS),
+         MobCategory.CREATURE, ARMADILLO, 6, 2, 3);
       net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
          net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(net.minecraft.world.level.biome.Biomes.SWAMP, net.minecraft.world.level.biome.Biomes.MANGROVE_SWAMP),
          MobCategory.MONSTER, BOGGED, 30, 4, 4);

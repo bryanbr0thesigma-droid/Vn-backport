@@ -1,0 +1,7 @@
+{
+ "parent": "pale_garden:block/template_wall_hanging_sign",
+ "textures": {
+  "all": "pale_garden:block/pale_oak_hanging_sign",
+  "particle": "pale_garden:block/stripped_pale_oak_log"
+ }
+}

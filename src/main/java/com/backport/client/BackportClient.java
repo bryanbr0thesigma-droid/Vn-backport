@@ -22,7 +22,31 @@ public class BackportClient implements ClientModInitializer {
    public static final net.minecraft.client.model.geom.ModelLayerLocation BOGGED_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("bogged"), "main");
    public static final net.minecraft.client.model.geom.ModelLayerLocation BOGGED_OUTER_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("bogged"), "outer");
 
+   public static final net.minecraft.client.model.geom.ModelLayerLocation ARMADILLO_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("armadillo"), "main");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation ARMADILLO_BABY_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("armadillo"), "baby");
+
+   public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "main");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_WIND_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "wind");
+   public static final net.minecraft.client.model.geom.ModelLayerLocation BREEZE_EYES_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("breeze"), "eyes");
+
    public void onInitializeClient() {
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BREEZE_LAYER, BreezeModel::createBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BREEZE_WIND_LAYER, BreezeModel::createWindLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BREEZE_EYES_LAYER, BreezeModel::createEyesLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE, BreezeRenderer::new);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE_WIND_CHARGE, WindChargeRenderer::new);
+      net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback.EVENT.register((type, renderer, helper, context) -> {
+         if (type == net.minecraft.world.entity.EntityType.WOLF && renderer instanceof net.minecraft.client.renderer.entity.WolfRenderer wolfRenderer) {
+            helper.register(new WolfArmorLayer(wolfRenderer, context.getModelSet()));
+         }
+      });
+      net.minecraft.client.renderer.item.ItemProperties.register(com.backport.BackportItems.WOLF_ARMOR, Backport.id("dyed"),
+         (stack, level, entity, seed) -> com.backport.BackportItems.WOLF_ARMOR instanceof net.minecraft.world.item.DyeableLeatherItem d && d.hasCustomColor(stack) ? 1.0F : 0.0F);
+      net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry.ITEM.register(
+         (stack, tint) -> tint == 1 ? ((net.minecraft.world.item.DyeableLeatherItem)stack.getItem()).getColor(stack) : -1, com.backport.BackportItems.WOLF_ARMOR);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(ARMADILLO_LAYER, ArmadilloModel::createAdultLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(ARMADILLO_BABY_LAYER, ArmadilloModel::createBabyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.ARMADILLO, ArmadilloRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BOGGED_LAYER, BoggedModel::createBodyLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BOGGED_OUTER_LAYER, BoggedModel::createOuterLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BOGGED, BoggedRenderer::new);

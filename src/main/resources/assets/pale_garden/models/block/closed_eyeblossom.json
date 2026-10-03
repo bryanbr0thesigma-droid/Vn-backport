@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "pale_garden:block/closed_eyeblossom"
-  }
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "pale_garden:block/closed_eyeblossom"
+ }
 }

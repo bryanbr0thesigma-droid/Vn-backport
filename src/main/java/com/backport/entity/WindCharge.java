@@ -35,6 +35,10 @@ public class WindCharge extends AbstractHurtingProjectile {
       super(BackportEntities.WIND_CHARGE, owner, 0.0, 0.0, 0.0, level);
    }
 
+   protected WindCharge(EntityType<? extends WindCharge> type, LivingEntity owner, Level level) {
+      super(type, owner, 0.0, 0.0, 0.0, level);
+   }
+
    protected float getInertia() {
       return 1.0F;
    }

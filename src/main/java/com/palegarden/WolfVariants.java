@@ -33,6 +33,10 @@ public final class WolfVariants {
       int palegarden$getVariant();
 
       void palegarden$setVariant(int variant);
+
+      net.minecraft.world.item.ItemStack palegarden$getArmor();
+
+      void palegarden$setArmor(net.minecraft.world.item.ItemStack stack);
    }
 
    public static int of(Wolf wolf) {

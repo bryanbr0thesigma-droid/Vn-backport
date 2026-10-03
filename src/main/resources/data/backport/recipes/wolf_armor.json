@@ -1,0 +1,16 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "X": {
+   "item": "backport:armadillo_scute"
+  }
+ },
+ "pattern": [
+  "X  ",
+  "XXX",
+  "XX "
+ ],
+ "result": {
+  "item": "backport:wolf_armor"
+ }
+}

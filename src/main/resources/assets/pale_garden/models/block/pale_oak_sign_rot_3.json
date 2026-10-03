@@ -1,0 +1,7 @@
+{
+ "parent": "pale_garden:block/template_sign_rot_3",
+ "textures": {
+  "all": "pale_garden:block/pale_oak_sign",
+  "particle": "pale_garden:block/pale_oak_planks"
+ }
+}

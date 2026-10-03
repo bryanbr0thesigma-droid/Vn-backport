@@ -7,7 +7,7 @@
       "model": "pale_garden:block/resin_bricks"
     },
     "type=top": {
-      "model": "minecraft:block/resin_brick_slab_top"
+      "model": "pale_garden:block/resin_brick_slab_top"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "pale_garden:block/pale_hanging_moss"
-  }
+ "parent": "minecraft:block/cross",
+ "textures": {
+  "cross": "pale_garden:block/pale_hanging_moss"
+ }
 }

@@ -32,12 +32,28 @@ public final class BackportItems {
    public static final Item TRIAL_KEY = Backport.item("trial_key", new Item(new FabricItemSettings()));
    public static final Item OMINOUS_TRIAL_KEY = Backport.item("ominous_trial_key", new Item(new FabricItemSettings()));
    public static final Item OMINOUS_BOTTLE = Backport.item("ominous_bottle", new OminousBottleItem(new FabricItemSettings().maxCount(64).rarity(Rarity.UNCOMMON)));
+   public static final Item WOLF_ARMOR = Backport.item("wolf_armor", new WolfArmorItem(new FabricItemSettings().maxDamage(64)));
    public static final Item ARMADILLO_SCUTE = Backport.item("armadillo_scute", new Item(new FabricItemSettings()));
 
    private BackportItems() {
    }
 
    public static void init() {
+   }
+
+   public static final class WolfArmorItem extends Item implements net.minecraft.world.item.DyeableLeatherItem {
+      WolfArmorItem(Item.Properties properties) {
+         super(properties);
+      }
+
+      public boolean isValidRepairItem(ItemStack stack, ItemStack repair) {
+         return repair.is(ARMADILLO_SCUTE);
+      }
+
+      public int getColor(ItemStack stack) {
+         net.minecraft.nbt.CompoundTag display = stack.getTagElement("display");
+         return display != null && display.contains("color", 99) ? display.getInt("color") : 0xFFFFFF;
+      }
    }
 
    static final class WindChargeItem extends Item {

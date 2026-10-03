@@ -4,7 +4,7 @@
       "model": "pale_garden:block/pale_oak_pressure_plate"
     },
     "powered=true": {
-      "model": "minecraft:block/pale_oak_pressure_plate_down"
+      "model": "pale_garden:block/pale_oak_pressure_plate_down"
     }
   }
 }

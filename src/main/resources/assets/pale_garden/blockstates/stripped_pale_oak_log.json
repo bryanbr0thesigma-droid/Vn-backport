@@ -1,7 +1,7 @@
 {
   "variants": {
     "axis=x": {
-      "model": "minecraft:block/stripped_pale_oak_log_horizontal",
+      "model": "pale_garden:block/stripped_pale_oak_log_horizontal",
       "x": 90,
       "y": 90
     },
@@ -9,7 +9,7 @@
       "model": "pale_garden:block/stripped_pale_oak_log"
     },
     "axis=z": {
-      "model": "minecraft:block/stripped_pale_oak_log_horizontal",
+      "model": "pale_garden:block/stripped_pale_oak_log_horizontal",
       "x": 90
     }
   }

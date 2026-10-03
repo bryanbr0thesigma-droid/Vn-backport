@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
-      "model": "pale_garden:block/pale_oak_hanging_sign"
+    "facing=east": {
+      "model": "pale_garden:block/pale_oak_wall_hanging_sign",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "pale_garden:block/pale_oak_wall_hanging_sign",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "pale_garden:block/pale_oak_wall_hanging_sign"
+    },
+    "facing=west": {
+      "model": "pale_garden:block/pale_oak_wall_hanging_sign",
+      "y": 90
     }
   }
 }

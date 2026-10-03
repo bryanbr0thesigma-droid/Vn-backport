@@ -1,0 +1,8 @@
+{
+ "parent": "minecraft:block/slab_top",
+ "textures": {
+  "bottom": "pale_garden:block/resin_bricks",
+  "side": "pale_garden:block/resin_bricks",
+  "top": "pale_garden:block/resin_bricks"
+ }
+}

@@ -1,0 +1,6 @@
+{
+ "parent": "minecraft:block/wall_inventory",
+ "textures": {
+  "wall": "pale_garden:block/resin_bricks"
+ }
+}

@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "pale_garden:block/closed_eyeblossom"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "pale_garden:block/closed_eyeblossom"
+ }
 }

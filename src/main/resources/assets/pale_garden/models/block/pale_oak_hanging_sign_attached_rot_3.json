@@ -1,0 +1,7 @@
+{
+ "parent": "pale_garden:block/template_attached_hanging_sign_rot_3",
+ "textures": {
+  "all": "pale_garden:block/pale_oak_hanging_sign",
+  "particle": "pale_garden:block/stripped_pale_oak_log"
+ }
+}
