@@ -7,7 +7,7 @@
       "model": "minecraft:block/green_wool"
     },
     "type=top": {
-      "model": "minecraft:block/green_wool_slab_top"
+      "model": "backport:block/green_wool_slab_top"
     }
   }
 }

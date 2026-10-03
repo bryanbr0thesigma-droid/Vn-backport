@@ -199,5 +199,18 @@
  "block.backport.waxed_oxidized_lightning_rod": "Waxed Oxidized Lightning Rod",
  "block.backport.weathered_lightning_rod": "Weathered Lightning Rod",
  "block.backport.exposed_lightning_rod": "Exposed Lightning Rod",
- "block.backport.waxed_exposed_lightning_rod": "Waxed Exposed Lightning Rod"
+ "block.backport.waxed_exposed_lightning_rod": "Waxed Exposed Lightning Rod",
+ "item.backport.ominous_bottle": "Ominous Bottle",
+ "item.backport.wind_charge": "Wind Charge",
+ "entity.backport.wind_charge": "Wind Charge",
+ "item.backport.mace": "Mace",
+ "item.backport.breeze_rod": "Breeze Rod",
+ "block.backport.heavy_core": "Heavy Core",
+ "item.backport.ominous_trial_key": "Ominous Trial Key",
+ "item.backport.trial_key": "Trial Key",
+ "item.backport.armadillo_scute": "Armadillo Scute",
+ "subtitles.entity.wind_charge.throw": "Wind Charge flies",
+ "subtitles.entity.wind_charge.wind_burst": "Wind Charge bursts",
+ "subtitles.item.mace.smash_air": "Mace smashes",
+ "subtitles.item.mace.smash_ground": "Mace smashes"
 }

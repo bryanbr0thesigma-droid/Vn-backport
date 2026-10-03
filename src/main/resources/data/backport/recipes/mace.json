@@ -1,0 +1,18 @@
+{
+ "type": "minecraft:crafting_shaped",
+ "key": {
+  "#": {
+   "item": "backport:heavy_core"
+  },
+  "I": {
+   "item": "backport:breeze_rod"
+  }
+ },
+ "pattern": [
+  " # ",
+  " I "
+ ],
+ "result": {
+  "item": "backport:mace"
+ }
+}

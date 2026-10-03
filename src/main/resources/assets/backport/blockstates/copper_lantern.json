@@ -4,7 +4,7 @@
       "model": "backport:block/copper_lantern"
     },
     "hanging=true": {
-      "model": "minecraft:block/copper_lantern_hanging"
+      "model": "backport:block/copper_lantern_hanging"
     }
   }
 }

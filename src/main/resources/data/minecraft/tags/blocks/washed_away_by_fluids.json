@@ -10,6 +10,7 @@
   "backport:waxed_copper_golem_statue",
   "backport:waxed_exposed_copper_golem_statue",
   "backport:waxed_weathered_copper_golem_statue",
-  "backport:waxed_oxidized_copper_golem_statue"
+  "backport:waxed_oxidized_copper_golem_statue",
+  "backport:heavy_core"
  ]
 }

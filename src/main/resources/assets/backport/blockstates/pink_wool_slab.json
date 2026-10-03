@@ -7,7 +7,7 @@
       "model": "minecraft:block/pink_wool"
     },
     "type=top": {
-      "model": "minecraft:block/pink_wool_slab_top"
+      "model": "backport:block/pink_wool_slab_top"
     }
   }
 }

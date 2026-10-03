@@ -7,7 +7,7 @@
       "model": "minecraft:block/gray_wool"
     },
     "type=top": {
-      "model": "minecraft:block/gray_wool_slab_top"
+      "model": "backport:block/gray_wool_slab_top"
     }
   }
 }

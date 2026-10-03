@@ -740,5 +740,157 @@
    }
   ],
   "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "block.heavy_core.break": {
+  "sounds": [
+   {
+    "name": "backport:block/heavy_core/break1"
+   },
+   {
+    "name": "backport:block/heavy_core/break2"
+   },
+   {
+    "name": "backport:block/heavy_core/break3"
+   },
+   {
+    "name": "backport:block/heavy_core/break4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.break"
+ },
+ "block.heavy_core.fall": {
+  "sounds": [
+   {
+    "name": "backport:block/heavy_core/step1"
+   },
+   {
+    "name": "backport:block/heavy_core/step2"
+   },
+   {
+    "name": "backport:block/heavy_core/step3"
+   },
+   {
+    "name": "backport:block/heavy_core/step4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.fall"
+ },
+ "block.heavy_core.hit": {
+  "sounds": [
+   {
+    "name": "backport:block/heavy_core/step1"
+   },
+   {
+    "name": "backport:block/heavy_core/step2"
+   },
+   {
+    "name": "backport:block/heavy_core/step3"
+   },
+   {
+    "name": "backport:block/heavy_core/step4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.hit"
+ },
+ "block.heavy_core.place": {
+  "sounds": [
+   {
+    "name": "backport:block/heavy_core/break1"
+   },
+   {
+    "name": "backport:block/heavy_core/break2"
+   },
+   {
+    "name": "backport:block/heavy_core/break3"
+   },
+   {
+    "name": "backport:block/heavy_core/break4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.place"
+ },
+ "block.heavy_core.step": {
+  "sounds": [
+   {
+    "name": "backport:block/heavy_core/step1"
+   },
+   {
+    "name": "backport:block/heavy_core/step2"
+   },
+   {
+    "name": "backport:block/heavy_core/step3"
+   },
+   {
+    "name": "backport:block/heavy_core/step4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "entity.wind_charge.throw": {
+  "sounds": [
+   {
+    "name": "backport:random/bow"
+   }
+  ],
+  "subtitle": "subtitles.entity.wind_charge.throw"
+ },
+ "entity.wind_charge.wind_burst": {
+  "sounds": [
+   {
+    "attenuation_distance": 8,
+    "name": "backport:entity/wind_charge/wind_burst1",
+    "pitch": 1.25
+   },
+   {
+    "attenuation_distance": 8,
+    "name": "backport:entity/wind_charge/wind_burst2",
+    "pitch": 1.25
+   },
+   {
+    "attenuation_distance": 8,
+    "name": "backport:entity/wind_charge/wind_burst3",
+    "pitch": 1.25
+   }
+  ],
+  "subtitle": "subtitles.entity.wind_charge.wind_burst"
+ },
+ "item.mace.smash_air": {
+  "sounds": [
+   {
+    "name": "backport:item/mace/smash_air1"
+   },
+   {
+    "name": "backport:item/mace/smash_air2"
+   },
+   {
+    "name": "backport:item/mace/smash_air3"
+   }
+  ],
+  "subtitle": "subtitles.item.mace.smash_air"
+ },
+ "item.mace.smash_ground": {
+  "sounds": [
+   {
+    "name": "backport:item/mace/smash_ground1"
+   },
+   {
+    "name": "backport:item/mace/smash_ground2"
+   },
+   {
+    "name": "backport:item/mace/smash_ground3"
+   },
+   {
+    "name": "backport:item/mace/smash_ground4"
+   }
+  ],
+  "subtitle": "subtitles.item.mace.smash_ground"
+ },
+ "item.mace.smash_ground_heavy": {
+  "sounds": [
+   {
+    "name": "backport:item/mace/smash_ground_heavy"
+   }
+  ],
+  "subtitle": "subtitles.item.mace.smash_ground"
  }
 }

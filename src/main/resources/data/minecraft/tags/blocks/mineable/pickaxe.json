@@ -90,6 +90,7 @@
   "backport:waxed_copper_grate",
   "backport:waxed_exposed_copper_grate",
   "backport:waxed_weathered_copper_grate",
-  "backport:waxed_oxidized_copper_grate"
+  "backport:waxed_oxidized_copper_grate",
+  "backport:heavy_core"
  ]
 }

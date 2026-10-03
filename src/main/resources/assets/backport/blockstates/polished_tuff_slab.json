@@ -7,7 +7,7 @@
       "model": "backport:block/polished_tuff"
     },
     "type=top": {
-      "model": "minecraft:block/polished_tuff_slab_top"
+      "model": "backport:block/polished_tuff_slab_top"
     }
   }
 }

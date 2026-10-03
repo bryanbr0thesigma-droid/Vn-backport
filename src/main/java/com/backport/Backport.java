@@ -48,6 +48,7 @@ public final class Backport {
    public static void init() {
       BackportSounds.init();
       BackportEntities.init();
+      BackportItems.init();
       SimpleBlocks.init();
       CopperBlocks.init();
       CopperTools.init();

@@ -17,7 +17,11 @@ public class BackportClient implements ClientModInitializer {
    public static final net.minecraft.client.model.geom.ModelLayerLocation COPPER_GOLEM_SITTING_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("copper_golem_sitting"), "main");
    public static final net.minecraft.client.model.geom.ModelLayerLocation COPPER_GOLEM_STAR_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("copper_golem_star"), "main");
 
+   public static final net.minecraft.client.model.geom.ModelLayerLocation WIND_CHARGE_LAYER = new net.minecraft.client.model.geom.ModelLayerLocation(Backport.id("wind_charge"), "main");
+
    public void onInitializeClient() {
+      net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(WIND_CHARGE_LAYER, WindChargeRenderer::createBodyLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.WIND_CHARGE, WindChargeRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(COPPER_GOLEM_RUNNING_LAYER, CopperGolemModel::createRunningPoseBodyLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(COPPER_GOLEM_SITTING_LAYER, CopperGolemModel::createSittingPoseBodyLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(COPPER_GOLEM_STAR_LAYER, CopperGolemModel::createStarPoseBodyLayer);

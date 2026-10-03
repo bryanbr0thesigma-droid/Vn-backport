@@ -7,7 +7,7 @@
       "model": "minecraft:block/magenta_wool"
     },
     "type=top": {
-      "model": "minecraft:block/magenta_wool_slab_top"
+      "model": "backport:block/magenta_wool_slab_top"
     }
   }
 }

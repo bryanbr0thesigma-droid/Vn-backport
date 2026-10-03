@@ -7,7 +7,7 @@
       "model": "backport:block/tuff_bricks"
     },
     "type=top": {
-      "model": "minecraft:block/tuff_brick_slab_top"
+      "model": "backport:block/tuff_brick_slab_top"
     }
   }
 }

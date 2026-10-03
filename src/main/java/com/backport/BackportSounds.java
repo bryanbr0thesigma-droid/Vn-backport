@@ -27,6 +27,11 @@ public final class BackportSounds {
    public static final SoundEvent BLOCK_COPPER_GOLEM_STATUE_STEP = register("block.copper_golem_statue.step");
    public static final SoundEvent BLOCK_COPPER_TRAPDOOR_CLOSE = register("block.copper_trapdoor.close");
    public static final SoundEvent BLOCK_COPPER_TRAPDOOR_OPEN = register("block.copper_trapdoor.open");
+   public static final SoundEvent BLOCK_HEAVY_CORE_BREAK = register("block.heavy_core.break");
+   public static final SoundEvent BLOCK_HEAVY_CORE_FALL = register("block.heavy_core.fall");
+   public static final SoundEvent BLOCK_HEAVY_CORE_HIT = register("block.heavy_core.hit");
+   public static final SoundEvent BLOCK_HEAVY_CORE_PLACE = register("block.heavy_core.place");
+   public static final SoundEvent BLOCK_HEAVY_CORE_STEP = register("block.heavy_core.step");
    public static final SoundEvent ENTITY_COPPER_GOLEM_DEATH = register("entity.copper_golem.death");
    public static final SoundEvent ENTITY_COPPER_GOLEM_HURT = register("entity.copper_golem.hurt");
    public static final SoundEvent ENTITY_COPPER_GOLEM_ITEM_DROP = register("entity.copper_golem.item_drop");
@@ -46,6 +51,11 @@ public final class BackportSounds {
    public static final SoundEvent ENTITY_COPPER_GOLEM_WEATHERED_HURT = register("entity.copper_golem_weathered.hurt");
    public static final SoundEvent ENTITY_COPPER_GOLEM_WEATHERED_SPIN = register("entity.copper_golem_weathered.spin");
    public static final SoundEvent ENTITY_COPPER_GOLEM_WEATHERED_STEP = register("entity.copper_golem_weathered.step");
+   public static final SoundEvent ENTITY_WIND_CHARGE_THROW = register("entity.wind_charge.throw");
+   public static final SoundEvent ENTITY_WIND_CHARGE_WIND_BURST = register("entity.wind_charge.wind_burst");
+   public static final SoundEvent ITEM_MACE_SMASH_AIR = register("item.mace.smash_air");
+   public static final SoundEvent ITEM_MACE_SMASH_GROUND = register("item.mace.smash_ground");
+   public static final SoundEvent ITEM_MACE_SMASH_GROUND_HEAVY = register("item.mace.smash_ground_heavy");
 
    private BackportSounds() {
    }

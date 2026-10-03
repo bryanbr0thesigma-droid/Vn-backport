@@ -1,5 +1,5 @@
 {
- "parent": "minecraft:block/template_lightning_rod",
+ "parent": "backport:block/template_lightning_rod",
  "textures": {
   "texture": "backport:block/exposed_lightning_rod"
  }
