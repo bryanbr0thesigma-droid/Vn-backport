@@ -3,8 +3,14 @@
   "minVersion": "0.8",
   "package": "com.palegarden.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": ["BlockEntityTypeMixin", "OverworldBiomeBuilderMixin"],
-  "client": [],
+  "mixins": [
+    "BlockEntityTypeMixin",
+    "OverworldBiomeBuilderMixin",
+    "WolfMixin"
+  ],
+  "client": [
+    "WolfRendererMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

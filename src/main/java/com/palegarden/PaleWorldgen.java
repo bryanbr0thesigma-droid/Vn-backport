@@ -19,5 +19,15 @@ public final class PaleWorldgen {
    }
 
    public static void init() {
+      net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents.ENTITY_LOAD.register((entity, level) -> {
+         if (entity instanceof net.minecraft.world.entity.animal.Wolf wolf && com.palegarden.WolfVariants.of(wolf) < 0) {
+            ((com.palegarden.WolfVariants.Holder2)wolf).palegarden$setVariant(com.palegarden.WolfVariants.forBiome(level.getBiome(wolf.blockPosition())));
+         }
+      });
+      net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
+         net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(
+            net.minecraft.world.level.biome.Biomes.WOODED_BADLANDS, net.minecraft.world.level.biome.Biomes.SAVANNA_PLATEAU,
+            net.minecraft.world.level.biome.Biomes.SPARSE_JUNGLE, net.minecraft.world.level.biome.Biomes.JUNGLE),
+         net.minecraft.world.entity.MobCategory.CREATURE, net.minecraft.world.entity.EntityType.WOLF, 8, 4, 4);
    }
 }
