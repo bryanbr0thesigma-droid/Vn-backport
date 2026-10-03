@@ -13,7 +13,9 @@
     "LivingEntityAccessor"
   ],
   "client": [
-    "ItemRendererMixin"
+    "ItemRendererMixin",
+    "LivingEntityRendererBabyMixin",
+    "SheepFurLayerBabyMixin"
   ],
   "injectors": {
     "defaultRequire": 1
