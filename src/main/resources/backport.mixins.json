@@ -10,7 +10,9 @@
     "LivingEntityMaceMixin",
     "AbstractSkeletonAccessor",
     "LivingEntityWolfArmorMixin",
-    "LivingEntityAccessor"
+    "LivingEntityAccessor",
+    "MushroomBlockMixin",
+    "MushroomBlockAccess"
   ],
   "client": [
     "ItemRendererMixin",

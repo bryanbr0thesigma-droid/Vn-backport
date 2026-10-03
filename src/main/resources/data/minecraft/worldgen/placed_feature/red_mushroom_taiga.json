@@ -1,0 +1,19 @@
+{
+ "feature": "backport:patch_red_mushroom_covered",
+ "placement": [
+  {
+   "type": "minecraft:rarity_filter",
+   "chance": 256
+  },
+  {
+   "type": "minecraft:in_square"
+  },
+  {
+   "type": "minecraft:heightmap",
+   "heightmap": "MOTION_BLOCKING"
+  },
+  {
+   "type": "minecraft:biome"
+  }
+ ]
+}

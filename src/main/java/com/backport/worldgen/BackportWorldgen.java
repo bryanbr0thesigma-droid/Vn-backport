@@ -24,5 +24,6 @@ public final class BackportWorldgen {
    public static void init() {
       TrapezoidInt.register();
       SulfurFeatures.init();
+      BelowHeightmapPredicate.init();
    }
 }
