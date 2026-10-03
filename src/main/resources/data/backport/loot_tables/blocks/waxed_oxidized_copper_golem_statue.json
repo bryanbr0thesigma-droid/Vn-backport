@@ -1,0 +1,32 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "conditions": [
+    {
+     "condition": "minecraft:survives_explosion"
+    }
+   ],
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:copy_name",
+       "source": "block_entity"
+      },
+      {
+       "function": "minecraft:copy_state",
+       "block": "backport:waxed_oxidized_copper_golem_statue",
+       "properties": [
+        "copper_golem_pose"
+       ]
+      }
+     ],
+     "name": "backport:waxed_oxidized_copper_golem_statue"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}

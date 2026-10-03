@@ -2,6 +2,14 @@
  "replace": false,
  "values": [
   "backport:copper_wall_torch",
-  "backport:copper_torch"
+  "backport:copper_torch",
+  "backport:copper_golem_statue",
+  "backport:exposed_copper_golem_statue",
+  "backport:weathered_copper_golem_statue",
+  "backport:oxidized_copper_golem_statue",
+  "backport:waxed_copper_golem_statue",
+  "backport:waxed_exposed_copper_golem_statue",
+  "backport:waxed_weathered_copper_golem_statue",
+  "backport:waxed_oxidized_copper_golem_statue"
  ]
 }

@@ -184,5 +184,13 @@
  "block.backport.weathered_copper_chest": "Weathered Copper Chest",
  "block.backport.waxed_copper_chest": "Waxed Copper Chest",
  "block.backport.waxed_weathered_copper_chest": "Waxed Weathered Copper Chest",
- "block.backport.waxed_exposed_copper_chest": "Waxed Exposed Copper Chest"
+ "block.backport.waxed_exposed_copper_chest": "Waxed Exposed Copper Chest",
+ "block.backport.copper_golem_statue": "Copper Golem Statue",
+ "block.backport.waxed_oxidized_copper_golem_statue": "Waxed Oxidized Copper Golem Statue",
+ "block.backport.exposed_copper_golem_statue": "Exposed Copper Golem Statue",
+ "block.backport.waxed_exposed_copper_golem_statue": "Waxed Exposed Copper Golem Statue",
+ "block.backport.oxidized_copper_golem_statue": "Oxidized Copper Golem Statue",
+ "block.backport.weathered_copper_golem_statue": "Weathered Copper Golem Statue",
+ "block.backport.waxed_copper_golem_statue": "Waxed Copper Golem Statue",
+ "block.backport.waxed_weathered_copper_golem_statue": "Waxed Weathered Copper Golem Statue"
 }

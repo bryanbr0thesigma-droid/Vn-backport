@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "backport:block/weathered_copper_golem_statue"
+    }
+  }
+}

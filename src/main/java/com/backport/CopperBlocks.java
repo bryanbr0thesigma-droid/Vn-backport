@@ -57,6 +57,7 @@ public final class CopperBlocks {
       s -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).forceSolidOn().strength(3.5F).sound(SoundType.LANTERN).lightLevel(st -> 15).noOcclusion().pushReaction(PushReaction.DESTROY));
 
    public static final Block[] COPPER_CHEST = chestFamily();
+   public static final Block[] COPPER_GOLEM_STATUE = statueFamily();
 
    private CopperBlocks() {
    }
@@ -127,6 +128,31 @@ public final class CopperBlocks {
       }
 
       CopperChestBlockEntity.register(all.toArray(new Block[0]));
+      for (Block block : all) {
+         Backport.item(BuiltInRegistries.BLOCK.getKey(block).getPath(), new net.minecraft.world.item.BlockItem(block, new FabricItemSettings()));
+      }
+
+      return weathering;
+   }
+
+   private static Block[] statueFamily() {
+      Block[] weathering = new Block[4];
+      Block[] waxed = new Block[4];
+      java.util.List<Block> all = new java.util.ArrayList<>();
+      for (int i = 0; i < 4; i++) {
+         BlockBehaviour.Properties props = BlockBehaviour.Properties.of().mapColor(COPPER_BLOCKS[i].defaultMapColor()).strength(3.0F, 6.0F).sound(SoundType.COPPER).noOcclusion().requiresCorrectToolForDrops();
+         weathering[i] = Backport.blockNoItem(PREFIX[i] + "copper_golem_statue", new WeatheringCopperGolemStatueBlock(STATES[i], props));
+         waxed[i] = Backport.blockNoItem("waxed_" + PREFIX[i] + "copper_golem_statue", new CopperGolemStatueBlock(STATES[i], props));
+         all.add(weathering[i]);
+         all.add(waxed[i]);
+         OxidizableBlocksRegistry.registerWaxableBlockPair(weathering[i], waxed[i]);
+      }
+
+      for (int i = 0; i < 3; i++) {
+         OxidizableBlocksRegistry.registerOxidizableBlockPair(weathering[i], weathering[i + 1]);
+      }
+
+      CopperGolemStatueBlockEntity.register(all.toArray(new Block[0]));
       for (Block block : all) {
          Backport.item(BuiltInRegistries.BLOCK.getKey(block).getPath(), new net.minecraft.world.item.BlockItem(block, new FabricItemSettings()));
       }
