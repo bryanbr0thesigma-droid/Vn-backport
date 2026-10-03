@@ -56,7 +56,18 @@ public class MaceItem extends Item {
             ? (attacker.fallDistance > 5.0F ? BackportSounds.ITEM_MACE_SMASH_GROUND_HEAVY : BackportSounds.ITEM_MACE_SMASH_GROUND)
             : BackportSounds.ITEM_MACE_SMASH_AIR;
          level.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), sound, attacker.getSoundSource(), 1.0F, 1.0F);
-         knockback(level, attacker, target);
+         int burst = MaceEnchantments.level(MaceEnchantments.WIND_BURST, attacker);
+         if (burst > 0) {
+            float[] mult = {1.2F, 1.75F, 2.2F};
+            Vec3 m = attacker.getDeltaMovement();
+            attacker.setDeltaMovement(m.x, mult[Math.min(burst, 3) - 1] * 0.75F, m.z);
+            attacker.hurtMarked = true;
+            level.sendParticles(net.minecraft.core.particles.ParticleTypes.EXPLOSION, attacker.getX(), attacker.getY(), attacker.getZ(), 1, 0, 0, 0, 0);
+            level.sendParticles(net.minecraft.core.particles.ParticleTypes.CLOUD, attacker.getX(), attacker.getY(), attacker.getZ(), 20, 0.5, 0.1, 0.5, 0.1);
+            level.playSound(null, attacker.getX(), attacker.getY(), attacker.getZ(), BackportSounds.ENTITY_WIND_CHARGE_WIND_BURST, attacker.getSoundSource(), 1.0F, 1.0F);
+         } else {
+            knockback(level, attacker, target);
+         }
          attacker.resetFallDistance();
       }
 
@@ -79,6 +90,7 @@ public class MaceItem extends Item {
          damage = 22.0 + fall - 8.0;
       }
 
+      damage += fall * 0.5 * MaceEnchantments.level(MaceEnchantments.DENSITY, attacker);
       return (float)damage;
    }
 

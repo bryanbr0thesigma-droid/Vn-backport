@@ -1,0 +1,14 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "backport:trial_key"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}

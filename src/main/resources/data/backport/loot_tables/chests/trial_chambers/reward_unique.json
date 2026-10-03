@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:golden_apple",
+     "weight": 4
+    },
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:trident"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}

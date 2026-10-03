@@ -1,0 +1,24 @@
+{
+ "type": "minecraft:generic",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:loot_table",
+     "weight": 4,
+     "name": "backport:equipment/inline_0"
+    },
+    {
+     "type": "minecraft:loot_table",
+     "weight": 2,
+     "name": "backport:equipment/inline_1"
+    },
+    {
+     "type": "minecraft:loot_table",
+     "name": "backport:equipment/inline_2"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}

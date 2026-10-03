@@ -33,6 +33,21 @@ public class BackportClient implements ClientModInitializer {
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BREEZE_LAYER, BreezeModel::createBodyLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BREEZE_WIND_LAYER, BreezeModel::createWindLayer);
       net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry.registerModelLayer(BREEZE_EYES_LAYER, BreezeModel::createEyesLayer);
+      net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry.register(com.backport.trial.TrialSpawnerBlockEntity.TYPE, TrialRenderers.Spawner::new);
+      net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry.register(com.backport.trial.VaultBlockEntity.TYPE, TrialRenderers.Vault::new);
+      net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlock(com.backport.BackportItems.TRIAL_SPAWNER, net.minecraft.client.renderer.RenderType.cutout());
+      net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlock(com.backport.BackportItems.VAULT, net.minecraft.client.renderer.RenderType.cutout());
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.PARCHED, ctx -> new net.minecraft.client.renderer.entity.SkeletonRenderer(ctx) {
+         public net.minecraft.resources.ResourceLocation getTextureLocation(net.minecraft.world.entity.monster.AbstractSkeleton e) {
+            return Backport.id("textures/entity/skeleton/parched.png");
+         }
+      });
+      net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.CAMEL_HUSK, ctx -> new net.minecraft.client.renderer.entity.CamelRenderer(ctx, net.minecraft.client.model.geom.ModelLayers.CAMEL) {
+         public net.minecraft.resources.ResourceLocation getTextureLocation(net.minecraft.world.entity.animal.camel.Camel e) {
+            return Backport.id("textures/entity/camel/camel_husk.png");
+         }
+      });
+      net.minecraft.client.gui.screens.MenuScreens.register(com.backport.crafter.CrafterMenu.TYPE, CrafterScreen::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE, BreezeRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.BREEZE_WIND_CHARGE, WindChargeRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback.EVENT.register((type, renderer, helper, context) -> {

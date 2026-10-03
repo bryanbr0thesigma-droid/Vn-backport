@@ -1502,5 +1502,722 @@
    }
   ],
   "subtitle": "subtitles.block.crafter.fail"
+ },
+ "block.trial_spawner.about_to_spawn_item": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/about_to_spawn_item"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.about_to_spawn_item"
+ },
+ "block.trial_spawner.ambient": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/ambient1"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient2"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient3"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient4"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient5"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.ambient"
+ },
+ "block.trial_spawner.ambient_ominous": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/ambient_ominous1"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient_ominous2"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient_ominous3"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient_ominous4"
+   },
+   {
+    "name": "backport:block/trial_spawner/ambient_ominous5"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.ambient_ominous"
+ },
+ "block.trial_spawner.break": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/break1",
+    "volume": 0.9
+   },
+   {
+    "name": "backport:block/trial_spawner/break2",
+    "volume": 0.9
+   },
+   {
+    "name": "backport:block/trial_spawner/break3",
+    "volume": 0.9
+   }
+  ],
+  "subtitle": "subtitles.block.generic.break"
+ },
+ "block.trial_spawner.close_shutter": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/close_shutter"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.close_shutter"
+ },
+ "block.trial_spawner.detect_player": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/detect_player1"
+   },
+   {
+    "name": "backport:block/trial_spawner/detect_player1",
+    "pitch": 0.95
+   },
+   {
+    "name": "backport:block/trial_spawner/detect_player2"
+   },
+   {
+    "name": "backport:block/trial_spawner/detect_player2",
+    "pitch": 0.95
+   },
+   {
+    "name": "backport:block/trial_spawner/detect_player3"
+   },
+   {
+    "name": "backport:block/trial_spawner/detect_player3",
+    "pitch": 0.95
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.detect_player"
+ },
+ "block.trial_spawner.eject_item": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/eject_item1"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.eject_item"
+ },
+ "block.trial_spawner.fall": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/step1"
+   },
+   {
+    "name": "backport:block/trial_spawner/step2"
+   },
+   {
+    "name": "backport:block/trial_spawner/step3"
+   },
+   {
+    "name": "backport:block/trial_spawner/step4"
+   },
+   {
+    "name": "backport:block/trial_spawner/step5"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.fall"
+ },
+ "block.trial_spawner.hit": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/step1"
+   },
+   {
+    "name": "backport:block/trial_spawner/step2"
+   },
+   {
+    "name": "backport:block/trial_spawner/step3"
+   },
+   {
+    "name": "backport:block/trial_spawner/step4"
+   },
+   {
+    "name": "backport:block/trial_spawner/step5"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.hit"
+ },
+ "block.trial_spawner.ominous_activate": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/ominous_activate"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.ominous_activate"
+ },
+ "block.trial_spawner.open_shutter": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/open_shutter"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.open_shutter"
+ },
+ "block.trial_spawner.place": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/place1"
+   },
+   {
+    "name": "backport:block/trial_spawner/place2"
+   },
+   {
+    "name": "backport:block/trial_spawner/place3"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.place"
+ },
+ "block.trial_spawner.spawn_item": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/spawn_item1"
+   },
+   {
+    "name": "backport:block/trial_spawner/spawn_item2"
+   },
+   {
+    "name": "backport:block/trial_spawner/spawn_item3"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.spawn_item"
+ },
+ "block.trial_spawner.spawn_item_begin": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/spawn_item_begin1"
+   },
+   {
+    "name": "backport:block/trial_spawner/spawn_item_begin2"
+   },
+   {
+    "name": "backport:block/trial_spawner/spawn_item_begin3"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.spawn_item_begin"
+ },
+ "block.trial_spawner.spawn_mob": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/spawn1"
+   },
+   {
+    "name": "backport:block/trial_spawner/spawn2"
+   },
+   {
+    "name": "backport:block/trial_spawner/spawn3"
+   },
+   {
+    "name": "backport:block/trial_spawner/spawn4"
+   }
+  ],
+  "subtitle": "subtitles.block.trial_spawner.spawn_mob"
+ },
+ "block.trial_spawner.step": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/step1"
+   },
+   {
+    "name": "backport:block/trial_spawner/step2"
+   },
+   {
+    "name": "backport:block/trial_spawner/step3"
+   },
+   {
+    "name": "backport:block/trial_spawner/step4"
+   },
+   {
+    "name": "backport:block/trial_spawner/step5"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "block.vault.activate": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/activate"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.activate"
+ },
+ "block.vault.ambient": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/ambient1"
+   },
+   {
+    "name": "backport:block/vault/ambient2"
+   },
+   {
+    "name": "backport:block/vault/ambient3"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.ambient"
+ },
+ "block.vault.break": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/break1"
+   },
+   {
+    "name": "backport:block/vault/break2"
+   },
+   {
+    "name": "backport:block/vault/break3"
+   },
+   {
+    "name": "backport:block/vault/break4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.break"
+ },
+ "block.vault.close_shutter": {
+  "sounds": [
+   {
+    "name": "backport:block/trial_spawner/close_shutter"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.close_shutter"
+ },
+ "block.vault.deactivate": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/deactivate"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.deactivate"
+ },
+ "block.vault.eject_item": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/eject1"
+   },
+   {
+    "name": "backport:block/vault/eject2"
+   },
+   {
+    "name": "backport:block/vault/eject3"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.eject_item"
+ },
+ "block.vault.fall": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/step1"
+   },
+   {
+    "name": "backport:block/vault/step2"
+   },
+   {
+    "name": "backport:block/vault/step3"
+   },
+   {
+    "name": "backport:block/vault/step4"
+   },
+   {
+    "name": "backport:block/vault/step5"
+   },
+   {
+    "name": "backport:block/vault/step6"
+   },
+   {
+    "name": "backport:block/vault/step7"
+   },
+   {
+    "name": "backport:block/vault/step8"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.fall"
+ },
+ "block.vault.hit": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/step1"
+   },
+   {
+    "name": "backport:block/vault/step2"
+   },
+   {
+    "name": "backport:block/vault/step3"
+   },
+   {
+    "name": "backport:block/vault/step4"
+   },
+   {
+    "name": "backport:block/vault/step5"
+   },
+   {
+    "name": "backport:block/vault/step6"
+   },
+   {
+    "name": "backport:block/vault/step7"
+   },
+   {
+    "name": "backport:block/vault/step8"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.hit"
+ },
+ "block.vault.insert_item": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/insert"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.insert_item"
+ },
+ "block.vault.insert_item_fail": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/insert_fail"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.insert_item_fail"
+ },
+ "block.vault.open_shutter": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/open_shutter"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.open_shutter"
+ },
+ "block.vault.place": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/place1"
+   },
+   {
+    "name": "backport:block/vault/place2"
+   },
+   {
+    "name": "backport:block/vault/place3"
+   },
+   {
+    "name": "backport:block/vault/place4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.place"
+ },
+ "block.vault.reject_rewarded_player": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/reject_rewarded_player"
+   }
+  ],
+  "subtitle": "subtitles.block.vault.reject_rewarded_player"
+ },
+ "block.vault.step": {
+  "sounds": [
+   {
+    "name": "backport:block/vault/step1"
+   },
+   {
+    "name": "backport:block/vault/step2"
+   },
+   {
+    "name": "backport:block/vault/step3"
+   },
+   {
+    "name": "backport:block/vault/step4"
+   },
+   {
+    "name": "backport:block/vault/step5"
+   },
+   {
+    "name": "backport:block/vault/step6"
+   },
+   {
+    "name": "backport:block/vault/step7"
+   },
+   {
+    "name": "backport:block/vault/step8"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "entity.camel_husk.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/ambient1"
+   },
+   {
+    "name": "backport:mob/camel_husk/ambient2"
+   },
+   {
+    "name": "backport:mob/camel_husk/ambient3"
+   },
+   {
+    "name": "backport:mob/camel_husk/ambient4"
+   },
+   {
+    "name": "backport:mob/camel_husk/ambient5"
+   },
+   {
+    "name": "backport:mob/camel_husk/ambient6"
+   },
+   {
+    "name": "backport:mob/camel_husk/ambient7"
+   },
+   {
+    "name": "backport:mob/camel_husk/ambient8"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.ambient"
+ },
+ "entity.camel_husk.dash": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/dash1"
+   },
+   {
+    "name": "backport:mob/camel_husk/dash2"
+   },
+   {
+    "name": "backport:mob/camel_husk/dash3"
+   },
+   {
+    "name": "backport:mob/camel_husk/dash4"
+   },
+   {
+    "name": "backport:mob/camel_husk/dash5"
+   },
+   {
+    "name": "backport:mob/camel_husk/dash6"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.dash"
+ },
+ "entity.camel_husk.dash_ready": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/dash_ready"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.dash_ready"
+ },
+ "entity.camel_husk.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/death1"
+   },
+   {
+    "name": "backport:mob/camel_husk/death2"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.death"
+ },
+ "entity.camel_husk.eat": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/eat1"
+   },
+   {
+    "name": "backport:mob/camel_husk/eat2"
+   },
+   {
+    "name": "backport:mob/camel_husk/eat3"
+   },
+   {
+    "name": "backport:mob/camel_husk/eat4"
+   },
+   {
+    "name": "backport:mob/camel_husk/eat5"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.eat"
+ },
+ "entity.camel_husk.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/hurt1"
+   },
+   {
+    "name": "backport:mob/camel_husk/hurt2"
+   },
+   {
+    "name": "backport:mob/camel_husk/hurt3"
+   },
+   {
+    "name": "backport:mob/camel_husk/hurt4"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.hurt"
+ },
+ "entity.camel_husk.saddle": {
+  "sounds": [
+   {
+    "name": "backport:mob/horse/leather"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.saddle"
+ },
+ "entity.camel_husk.sit": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/sit1"
+   },
+   {
+    "name": "backport:mob/camel_husk/sit2"
+   },
+   {
+    "name": "backport:mob/camel_husk/sit3"
+   },
+   {
+    "name": "backport:mob/camel_husk/sit4"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.sit"
+ },
+ "entity.camel_husk.stand": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/stand1"
+   },
+   {
+    "name": "backport:mob/camel_husk/stand2"
+   },
+   {
+    "name": "backport:mob/camel_husk/stand3"
+   },
+   {
+    "name": "backport:mob/camel_husk/stand4"
+   },
+   {
+    "name": "backport:mob/camel_husk/stand5"
+   }
+  ],
+  "subtitle": "subtitles.entity.camel_husk.stand"
+ },
+ "entity.camel_husk.step": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/step1",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step2",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step3",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step4",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step5",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step6",
+    "volume": 0.3
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "entity.camel_husk.step_sand": {
+  "sounds": [
+   {
+    "name": "backport:mob/camel_husk/step_sand1",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step_sand2",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step_sand3",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step_sand4",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step_sand5",
+    "volume": 0.3
+   },
+   {
+    "name": "backport:mob/camel_husk/step_sand6",
+    "volume": 0.3
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
+ },
+ "entity.parched.ambient": {
+  "sounds": [
+   {
+    "name": "backport:mob/parched/ambient1"
+   },
+   {
+    "name": "backport:mob/parched/ambient2"
+   },
+   {
+    "name": "backport:mob/parched/ambient3"
+   },
+   {
+    "name": "backport:mob/parched/ambient4"
+   }
+  ],
+  "subtitle": "subtitles.entity.parched.ambient"
+ },
+ "entity.parched.death": {
+  "sounds": [
+   {
+    "name": "backport:mob/parched/death"
+   }
+  ],
+  "subtitle": "subtitles.entity.parched.death"
+ },
+ "entity.parched.hurt": {
+  "sounds": [
+   {
+    "name": "backport:mob/parched/hurt1"
+   },
+   {
+    "name": "backport:mob/parched/hurt2"
+   },
+   {
+    "name": "backport:mob/parched/hurt3"
+   },
+   {
+    "name": "backport:mob/parched/hurt4"
+   }
+  ],
+  "subtitle": "subtitles.entity.parched.hurt"
+ },
+ "entity.parched.step": {
+  "sounds": [
+   {
+    "name": "backport:mob/parched/step1"
+   },
+   {
+    "name": "backport:mob/parched/step2"
+   },
+   {
+    "name": "backport:mob/parched/step3"
+   },
+   {
+    "name": "backport:mob/parched/step4"
+   }
+  ],
+  "subtitle": "subtitles.block.generic.footsteps"
  }
 }

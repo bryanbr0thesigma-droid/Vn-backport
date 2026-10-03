@@ -1,0 +1,20 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      }
+     ],
+     "name": "minecraft:water_bucket"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}

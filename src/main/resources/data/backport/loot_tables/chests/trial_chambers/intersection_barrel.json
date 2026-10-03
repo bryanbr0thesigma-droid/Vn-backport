@@ -1,0 +1,167 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "max": 0.9,
+        "min": 0.4
+       }
+      },
+      {
+       "function": "minecraft:enchant_randomly"
+      }
+     ],
+     "name": "minecraft:diamond_axe"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "max": 0.8,
+        "min": 0.15
+       }
+      }
+     ],
+     "name": "minecraft:diamond_pickaxe"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 3,
+        "min": 1
+       }
+      }
+     ],
+     "name": "minecraft:diamond"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "max": 0.8,
+        "min": 0.15
+       }
+      }
+     ],
+     "name": "minecraft:compass"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 2,
+        "min": 1
+       }
+      }
+     ],
+     "name": "minecraft:bucket"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "max": 0.8,
+        "min": 0.15
+       }
+      }
+     ],
+     "name": "minecraft:golden_axe",
+     "weight": 4
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "minecraft:set_damage",
+       "damage": {
+        "type": "minecraft:uniform",
+        "max": 0.8,
+        "min": 0.15
+       }
+      }
+     ],
+     "name": "minecraft:golden_pickaxe",
+     "weight": 4
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 15,
+        "min": 5
+       }
+      }
+     ],
+     "name": "minecraft:bamboo_planks",
+     "weight": 10
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 10,
+        "min": 6
+       }
+      }
+     ],
+     "name": "minecraft:baked_potato",
+     "weight": 10
+    }
+   ],
+   "rolls": {
+    "type": "minecraft:uniform",
+    "max": 3,
+    "min": 1
+   }
+  }
+ ]
+}

@@ -25,6 +25,8 @@ public final class Backport {
    private Backport() {
    }
 
+   public static final org.slf4j.Logger LOGGER = com.mojang.logging.LogUtils.getLogger();
+
    public static ResourceLocation id(String path) {
       return new ResourceLocation(ID, path);
    }
@@ -47,6 +49,9 @@ public final class Backport {
 
    public static void init() {
       BackportSounds.init();
+      com.backport.worldgen.TrialChambersStructure.register();
+      com.backport.loot.BackportLootFunctions.init();
+      MaceEnchantments.init();
       BackportEntities.init();
       BackportItems.init();
       SimpleBlocks.init();

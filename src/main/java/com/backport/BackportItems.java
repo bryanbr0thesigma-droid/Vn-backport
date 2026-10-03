@@ -26,6 +26,18 @@ import net.minecraft.world.level.material.PushReaction;
 public final class BackportItems {
    public static final Block HEAVY_CORE = Backport.block("heavy_core", new HeavyCoreBlock(
       BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.SNARE).strength(10.0F).explosionResistance(1200.0F).sound(SoundType.NETHERITE_BLOCK)));
+   public static final Block CRAFTER = Backport.block("crafter", new com.backport.crafter.CrafterBlock(
+      BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(1.5F, 3.5F)));
+   public static final net.minecraft.world.level.block.SoundType TRIAL_SPAWNER_SOUNDS = new net.minecraft.world.level.block.SoundType(1.0F, 1.0F,
+      BackportSounds.BLOCK_TRIAL_SPAWNER_BREAK, BackportSounds.BLOCK_TRIAL_SPAWNER_STEP, BackportSounds.BLOCK_TRIAL_SPAWNER_PLACE, BackportSounds.BLOCK_TRIAL_SPAWNER_HIT, BackportSounds.BLOCK_TRIAL_SPAWNER_FALL);
+   public static final net.minecraft.world.level.block.SoundType VAULT_SOUNDS = new net.minecraft.world.level.block.SoundType(1.0F, 1.0F,
+      BackportSounds.BLOCK_VAULT_BREAK, BackportSounds.BLOCK_VAULT_STEP, BackportSounds.BLOCK_VAULT_PLACE, BackportSounds.BLOCK_VAULT_HIT, BackportSounds.BLOCK_VAULT_FALL);
+   public static final Block TRIAL_SPAWNER = Backport.block("trial_spawner", new com.backport.trial.TrialSpawnerBlock(
+      BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel(s -> s.getValue(com.backport.trial.TrialSpawnerBlock.STATE).lightLevel)
+         .strength(50.0F).sound(TRIAL_SPAWNER_SOUNDS).noOcclusion()));
+   public static final Block VAULT = Backport.block("vault", new com.backport.trial.VaultBlock(
+      BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel(s -> s.getValue(com.backport.trial.VaultBlock.STATE).lightLevel)
+         .strength(50.0F).sound(VAULT_SOUNDS).noOcclusion()));
    public static final Item BREEZE_ROD = Backport.item("breeze_rod", new Item(new FabricItemSettings()));
    public static final Item MACE = Backport.item("mace", new MaceItem(new FabricItemSettings().maxDamage(500).rarity(Rarity.EPIC)));
    public static final Item WIND_CHARGE = Backport.item("wind_charge", new WindChargeItem(new FabricItemSettings()));
@@ -39,6 +51,10 @@ public final class BackportItems {
    }
 
    public static void init() {
+      com.backport.crafter.CrafterBlockEntity.register(CRAFTER);
+      com.backport.crafter.CrafterMenu.registerServer();
+      com.backport.trial.TrialSpawnerBlockEntity.register(TRIAL_SPAWNER);
+      com.backport.trial.VaultBlockEntity.register(VAULT);
    }
 
    public static final class WolfArmorItem extends Item implements net.minecraft.world.item.DyeableLeatherItem {

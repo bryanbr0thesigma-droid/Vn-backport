@@ -92,6 +92,8 @@
   "backport:waxed_weathered_copper_grate",
   "backport:waxed_oxidized_copper_grate",
   "backport:heavy_core",
-  "backport:crafter"
+  "backport:crafter",
+  "backport:vault",
+  "backport:trial_spawner"
  ]
 }

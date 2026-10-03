@@ -1,0 +1,19 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:enchanted_golden_apple",
+     "weight": 3
+    },
+    {
+     "type": "minecraft:item",
+     "name": "backport:heavy_core"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "type": "backport:trial_chambers",
+ "biomes": "#backport:has_structure/trial_chambers",
+ "step": "underground_structures",
+ "spawn_overrides": {
+  "ambient": {
+   "bounding_box": "piece",
+   "spawns": []
+  },
+  "axolotls": {
+   "bounding_box": "piece",
+   "spawns": []
+  },
+  "creature": {
+   "bounding_box": "piece",
+   "spawns": []
+  },
+  "misc": {
+   "bounding_box": "piece",
+   "spawns": []
+  },
+  "monster": {
+   "bounding_box": "piece",
+   "spawns": []
+  },
+  "underground_water_creature": {
+   "bounding_box": "piece",
+   "spawns": []
+  },
+  "water_ambient": {
+   "bounding_box": "piece",
+   "spawns": []
+  },
+  "water_creature": {
+   "bounding_box": "piece",
+   "spawns": []
+  }
+ },
+ "start_pool": "backport:trial_chambers/chamber/end",
+ "size": 20,
+ "max_distance_from_center": 116,
+ "start_height": {
+  "type": "minecraft:uniform",
+  "max_inclusive": {
+   "absolute": -20
+  },
+  "min_inclusive": {
+   "absolute": -40
+  }
+ },
+ "use_expansion_hack": false
+}

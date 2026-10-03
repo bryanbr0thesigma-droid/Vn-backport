@@ -1,0 +1,151 @@
+{
+ "type": "minecraft:chest",
+ "pools": [
+  {
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 8,
+        "min": 2
+       }
+      }
+     ],
+     "name": "minecraft:arrow",
+     "weight": 4
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 8,
+        "min": 2
+       }
+      },
+      {
+       "function": "minecraft:set_potion",
+       "id": "minecraft:poison"
+      }
+     ],
+     "name": "minecraft:tipped_arrow",
+     "weight": 4
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 4,
+        "min": 2
+       }
+      }
+     ],
+     "name": "minecraft:emerald",
+     "weight": 4
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 3,
+        "min": 1
+       }
+      }
+     ],
+     "name": "backport:wind_charge",
+     "weight": 3
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 4,
+        "min": 1
+       }
+      }
+     ],
+     "name": "minecraft:iron_ingot",
+     "weight": 3
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 2,
+        "min": 1
+       }
+      }
+     ],
+     "name": "minecraft:honey_bottle",
+     "weight": 3
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": 1
+      },
+      {
+       "function": "backport:set_ominous_bottle_amplifier",
+       "amplifier": {
+        "type": "minecraft:uniform",
+        "max": 1,
+        "min": 0
+       }
+      }
+     ],
+     "name": "backport:ominous_bottle",
+     "weight": 2
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 12,
+        "min": 4
+       }
+      }
+     ],
+     "name": "backport:wind_charge"
+    },
+    {
+     "type": "minecraft:item",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "max": 2,
+        "min": 1
+       }
+      }
+     ],
+     "name": "minecraft:diamond"
+    }
+   ],
+   "rolls": 1
+  }
+ ]
+}

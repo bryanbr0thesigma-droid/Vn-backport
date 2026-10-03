@@ -36,6 +36,20 @@ public final class BackportEntities {
          .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
          .dimensions(EntityDimensions.fixed(0.6F, 1.99F)).trackRangeBlocks(8).build()
    );
+   public static final EntityType<net.minecraft.world.entity.monster.Parched> PARCHED = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("parched"),
+      FabricEntityTypeBuilder.createMob().entityFactory(net.minecraft.world.entity.monster.Parched::new).spawnGroup(MobCategory.MONSTER)
+         .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Monster::checkMonsterSpawnRules)
+         .dimensions(EntityDimensions.fixed(0.6F, 1.99F)).trackRangeBlocks(8).build()
+   );
+   public static final EntityType<com.backport.entity.CamelHusk> CAMEL_HUSK = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("camel_husk"),
+      FabricEntityTypeBuilder.createMob().entityFactory(com.backport.entity.CamelHusk::new).spawnGroup(MobCategory.MONSTER)
+         .spawnRestriction(SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, net.minecraft.world.entity.Mob::checkMobSpawnRules)
+         .dimensions(EntityDimensions.fixed(1.7F, 2.375F)).trackRangeBlocks(10).build()
+   );
    public static final EntityType<com.backport.entity.Armadillo> ARMADILLO = Registry.register(
       BuiltInRegistries.ENTITY_TYPE,
       Backport.id("armadillo"),
@@ -57,6 +71,8 @@ public final class BackportEntities {
          .dimensions(EntityDimensions.fixed(0.3125F, 0.3125F)).trackRangeBlocks(4).trackedUpdateRate(10).build()
    );
    public static final Item ARMADILLO_SPAWN_EGG = Backport.item("armadillo_spawn_egg", new SpawnEggItem(ARMADILLO, 0xAD716D, 0x984E4E, new FabricItemSettings()));
+   public static final Item PARCHED_SPAWN_EGG = Backport.item("parched_spawn_egg", new SpawnEggItem(PARCHED, 0xE2C98B, 0xA68A52, new FabricItemSettings()));
+   public static final Item CAMEL_HUSK_SPAWN_EGG = Backport.item("camel_husk_spawn_egg", new SpawnEggItem(CAMEL_HUSK, 0x8C7B4C, 0xD6BE79, new FabricItemSettings()));
    public static final Item BOGGED_SPAWN_EGG = Backport.item("bogged_spawn_egg", new SpawnEggItem(BOGGED, 0x8A9C6E, 0x7A5F43, new FabricItemSettings()));
    public static final Item COPPER_GOLEM_SPAWN_EGG = Backport.item("copper_golem_spawn_egg", new SpawnEggItem(COPPER_GOLEM, 0xB4693C, 0xE3A57A, new FabricItemSettings()));
 
@@ -71,6 +87,14 @@ public final class BackportEntities {
          }
       });
       FabricDefaultAttributeRegistry.register(COPPER_GOLEM, CopperGolem.createAttributes());
+      FabricDefaultAttributeRegistry.register(PARCHED, net.minecraft.world.entity.monster.Parched.createAttributes());
+      FabricDefaultAttributeRegistry.register(CAMEL_HUSK, net.minecraft.world.entity.animal.camel.Camel.createAttributes());
+      net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
+         net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(net.minecraft.world.level.biome.Biomes.DESERT),
+         MobCategory.MONSTER, PARCHED, 40, 2, 4);
+      net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
+         net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(net.minecraft.world.level.biome.Biomes.DESERT),
+         MobCategory.MONSTER, CAMEL_HUSK, 5, 1, 1);
       FabricDefaultAttributeRegistry.register(BOGGED, Bogged.createAttributes());
       FabricDefaultAttributeRegistry.register(BREEZE, com.backport.entity.Breeze.createAttributes());
       FabricDefaultAttributeRegistry.register(ARMADILLO, com.backport.entity.Armadillo.createAttributes());
