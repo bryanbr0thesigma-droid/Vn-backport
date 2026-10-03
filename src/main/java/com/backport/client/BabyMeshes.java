@@ -12,6 +12,15 @@ public final class BabyMeshes {
    private BabyMeshes() {
    }
 
+   /** Adds empty placeholder parts that the 1.20.1 adult model classes look up but the 26.x baby meshes lack. */
+   private static void pad(PartDefinition parent, String... names) {
+      for (String n : names) {
+         if (parent.getChild(n) == null) {
+            parent.addOrReplaceChild(n, CubeListBuilder.create(), PartPose.ZERO);
+         }
+      }
+   }
+
    public static LayerDefinition pig() {
       CubeDeformation g = CubeDeformation.NONE;
 
@@ -135,6 +144,7 @@ public final class BabyMeshes {
       root.addOrReplaceChild(
          "left_wing", CubeListBuilder.create().texOffs(4, 8).addBox(-1.0F, 0.0F, -1.0F, 1.0F, 0.0F, 2.0F), PartPose.offset(-2.0F, 20.0F, 0.0F)
       );
+            pad(root, "head", "beak", "red_thing");
       return LayerDefinition.create(mesh, 16, 16);
       }
 
@@ -176,6 +186,9 @@ public final class BabyMeshes {
          CubeListBuilder.create().texOffs(22, 16).addBox(-1.0F, -5.7F, -1.0F, 2.0F, 6.0F, 2.0F, new CubeDeformation(0.0F)),
          PartPose.offsetAndRotation(0.0F, -0.6F, 0.2F, -3.1F, 0.0F, 0.0F)
       );
+            pad(root, "upper_body");
+      pad(root.getChild("head"), "real_head");
+      pad(root.getChild("tail"), "real_tail");
       return LayerDefinition.create(mesh, 32, 32);
       }
 
@@ -381,6 +394,7 @@ public final class BabyMeshes {
          CubeListBuilder.create().texOffs(0, 17).addBox(-2.0F, -0.5F, 0.0F, 2.0F, 1.0F, 3.0F),
          PartPose.offsetAndRotation(0.5F, 0.0F, -0.9F, 0.0F, 0.7854F, 0.0F)
       );
+            pad(root, "left_hind_foot", "right_hind_foot", "left_haunch", "right_haunch", "left_front_leg", "right_front_leg", "head", "right_ear", "left_ear", "tail", "nose");
       return LayerDefinition.create(mesh, 32, 32);
       }
 
@@ -499,7 +513,7 @@ public final class BabyMeshes {
 
       MeshDefinition meshdefinition = new MeshDefinition();
       PartDefinition partdefinition = meshdefinition.getRoot();
-      PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
+      PartDefinition root = partdefinition;
       PartDefinition body = root.addOrReplaceChild(
          "body",
          CubeListBuilder.create()
@@ -507,7 +521,7 @@ public final class BabyMeshes {
             .addBox(-2.0F, -0.75F, -2.75F, 4.0F, 2.0F, 6.0F, new CubeDeformation(0.0F))
             .texOffs(0, 12)
             .addBox(0.0F, -1.75F, -2.75F, 0.0F, 3.0F, 5.0F, new CubeDeformation(0.0F)),
-         PartPose.offset(0.0F, -1.25F, 1.75F)
+         PartPose.offset(0.0F, 22.75F, 1.75F)
       );
       body.addOrReplaceChild(
          "right_front_leg",
@@ -596,6 +610,7 @@ public final class BabyMeshes {
       bone.addOrReplaceChild(
          "back_legs", CubeListBuilder.create().texOffs(13, 2).addBox(-1.5F, 0.0F, 0.0F, 3.0F, 1.0F, 0.0F), PartPose.offset(0.0F, 3.3333F, 3.8567F)
       );
+            pad(root.getChild("bone").getChild("body"), "left_antenna", "right_antenna");
       return LayerDefinition.create(mesh, 32, 32);
       }
 
@@ -689,6 +704,7 @@ public final class BabyMeshes {
       root.addOrReplaceChild(
          "left_front_leg", CubeListBuilder.create().texOffs(8, 7).addBox(0.0F, 0.0F, -0.5F, 2.0F, 0.0F, 1.0F), PartPose.offset(2.0F, 23.9F, -0.5F)
       );
+            pad(root, "egg_belly");
       return LayerDefinition.create(mesh, 16, 16);
       }
 
@@ -777,7 +793,8 @@ public final class BabyMeshes {
       root.addOrReplaceChild(
          "left_leg", CubeListBuilder.create().texOffs(10, 23).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 4.0F, 3.0F), PartPose.offset(1.5F, 20.0F, 0.0F)
       );
-            root.getChild("head").addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.ZERO);
+                  pad(root, "hat", "ear", "cloak", "left_sleeve", "right_sleeve", "left_pants", "right_pants", "jacket");
+      pad(root.getChild("head"), "right_ear", "left_ear");
       return LayerDefinition.create(mesh, 64, 64);
       }
 
@@ -815,6 +832,7 @@ public final class BabyMeshes {
          CubeListBuilder.create().texOffs(0, 15).addBox(-3.5F, -2.5F, 0.0F, 7.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)),
          PartPose.offset(0.0F, -4.25F, -2.0F)
       );
+            pad(root.getChild("body"), "right_bottom_bristle", "right_middle_bristle", "right_top_bristle", "left_top_bristle", "left_middle_bristle", "left_bottom_bristle");
       return LayerDefinition.create(mesh, 32, 32);
       }
 
@@ -848,6 +866,7 @@ public final class BabyMeshes {
       root.addOrReplaceChild(
          "left_leg", CubeListBuilder.create().texOffs(0, 16).addBox(-1.0F, 0.0F, -1.0F, 2.0F, 4.0F, 2.0F, g), PartPose.offset(1.0F, 20.0F, 0.0F)
       );
+            pad(root, "hat");
       return LayerDefinition.create(mesh, 64, 64);
       }
 

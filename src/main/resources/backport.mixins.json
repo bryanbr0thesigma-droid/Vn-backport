@@ -15,7 +15,8 @@
   "client": [
     "ItemRendererMixin",
     "LivingEntityRendererBabyMixin",
-    "SheepFurLayerBabyMixin"
+    "SheepFurLayerBabyMixin",
+    "HumanoidModelBabyMixin"
   ],
   "injectors": {
     "defaultRequire": 1

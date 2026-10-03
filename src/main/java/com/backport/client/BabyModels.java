@@ -2,6 +2,7 @@ package com.backport.client;
 
 import com.backport.Backport;
 import java.util.HashMap;
+import java.util.WeakHashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -21,6 +22,8 @@ public final class BabyModels {
    private record Def(ModelLayerLocation layer, Supplier<LayerDefinition> mesh, Function<ModelPart, EntityModel<?>> ctor) {
    }
 
+   /** Default part positions of baby humanoid models (HumanoidModel.setupAnim overwrites them with adult values). */
+   public static final Map<Object, float[][]> HUMANOID_POSES = new WeakHashMap<>();
    private static final Map<EntityType<?>, Def> DEFS = new LinkedHashMap<>();
    private static final Map<EntityType<?>, EntityModel<?>> BAKED = new HashMap<>();
    private static final Map<String, ResourceLocation> TEX = new HashMap<>();
@@ -65,11 +68,9 @@ public final class BabyModels {
       def(EntityType.CHICKEN, "chicken", BabyMeshes::chicken, ChickenModel::new);
       def(EntityType.WOLF, "wolf", BabyMeshes::wolf, WolfModel::new);
       def(EntityType.CAT, "cat", BabyMeshes::feline, CatModel::new);
-      def(EntityType.OCELOT, "ocelot", BabyMeshes::feline, OcelotModel::new);
       def(EntityType.GOAT, "goat", BabyMeshes::goat, GoatModel::new);
       def(EntityType.FOX, "fox", BabyMeshes::fox, FoxModel::new);
       def(EntityType.RABBIT, "rabbit", BabyMeshes::rabbit, RabbitModel::new);
-      def(EntityType.POLAR_BEAR, "polar_bear", BabyMeshes::polar_bear, PolarBearModel::new);
       def(EntityType.PANDA, "panda", BabyMeshes::panda, PandaModel::new);
       def(EntityType.CAMEL, "camel", BabyMeshes::camel, CamelModel::new);
       def(EntityType.AXOLOTL, "axolotl", BabyMeshes::axolotl, AxolotlModel::new);
@@ -105,6 +106,14 @@ public final class BabyModels {
          m = d.ctor().apply(Minecraft.getInstance().getEntityModels().bakeLayer(d.layer()));
       } catch (RuntimeException e) {
          Backport.LOGGER.warn("Baby model for {} could not be built; using the adult model: {}", type, e.toString());
+      }
+      if (m instanceof HumanoidModel<?> h) {
+         ModelPart[] parts = {h.head, h.body, h.rightArm, h.leftArm, h.rightLeg, h.leftLeg};
+         float[][] poses = new float[parts.length][];
+         for (int i = 0; i < parts.length; i++) {
+            poses[i] = new float[]{parts[i].x, parts[i].y, parts[i].z};
+         }
+         HUMANOID_POSES.put(m, poses);
       }
       BAKED.put(type, m);
       return m;
