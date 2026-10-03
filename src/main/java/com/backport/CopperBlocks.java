@@ -58,6 +58,7 @@ public final class CopperBlocks {
 
    public static final Block[] COPPER_CHEST = chestFamily();
    public static final Block[] COPPER_GOLEM_STATUE = statueFamily();
+   public static final Block[] LIGHTNING_RODS = lightningRods();
 
    private CopperBlocks() {
    }
@@ -155,6 +156,26 @@ public final class CopperBlocks {
       CopperGolemStatueBlockEntity.register(all.toArray(new Block[0]));
       for (Block block : all) {
          Backport.item(BuiltInRegistries.BLOCK.getKey(block).getPath(), new net.minecraft.world.item.BlockItem(block, new FabricItemSettings()));
+      }
+
+      return weathering;
+   }
+
+   private static Block[] lightningRods() {
+      Block[] weathering = new Block[4];
+      Block[] waxed = new Block[4];
+      weathering[0] = Blocks.LIGHTNING_ROD;
+      for (int i = 1; i < 4; i++) {
+         weathering[i] = Backport.block(PREFIX[i] + "lightning_rod", new WeatheringLightningRodBlock(STATES[i], BlockBehaviour.Properties.copy(Blocks.LIGHTNING_ROD)));
+      }
+
+      for (int i = 0; i < 4; i++) {
+         waxed[i] = Backport.block("waxed_" + PREFIX[i] + "lightning_rod", new LightningRodBlock(BlockBehaviour.Properties.copy(Blocks.LIGHTNING_ROD)));
+         OxidizableBlocksRegistry.registerWaxableBlockPair(weathering[i], waxed[i]);
+      }
+
+      for (int i = 0; i < 3; i++) {
+         OxidizableBlocksRegistry.registerOxidizableBlockPair(weathering[i], weathering[i + 1]);
       }
 
       return weathering;

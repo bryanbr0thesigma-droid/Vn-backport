@@ -1,0 +1,12 @@
+{
+ "replace": false,
+ "values": [
+  "backport:exposed_lightning_rod",
+  "backport:weathered_lightning_rod",
+  "backport:oxidized_lightning_rod",
+  "backport:waxed_lightning_rod",
+  "backport:waxed_exposed_lightning_rod",
+  "backport:waxed_weathered_lightning_rod",
+  "backport:waxed_oxidized_lightning_rod"
+ ]
+}

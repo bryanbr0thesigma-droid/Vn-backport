@@ -192,5 +192,12 @@
  "block.backport.oxidized_copper_golem_statue": "Oxidized Copper Golem Statue",
  "block.backport.weathered_copper_golem_statue": "Weathered Copper Golem Statue",
  "block.backport.waxed_copper_golem_statue": "Waxed Copper Golem Statue",
- "block.backport.waxed_weathered_copper_golem_statue": "Waxed Weathered Copper Golem Statue"
+ "block.backport.waxed_weathered_copper_golem_statue": "Waxed Weathered Copper Golem Statue",
+ "block.backport.waxed_lightning_rod": "Waxed Lightning Rod",
+ "block.backport.oxidized_lightning_rod": "Oxidized Lightning Rod",
+ "block.backport.waxed_weathered_lightning_rod": "Waxed Weathered Lightning Rod",
+ "block.backport.waxed_oxidized_lightning_rod": "Waxed Oxidized Lightning Rod",
+ "block.backport.weathered_lightning_rod": "Weathered Lightning Rod",
+ "block.backport.exposed_lightning_rod": "Exposed Lightning Rod",
+ "block.backport.waxed_exposed_lightning_rod": "Waxed Exposed Lightning Rod"
 }

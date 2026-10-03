@@ -31,6 +31,7 @@ import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.WeatheringCopper;
@@ -43,6 +44,7 @@ public class CopperGolem extends AbstractGolem {
    private static final long UNSET_WEATHERING_TICK = -1L;
    private static final EntityDataAccessor<Integer> DATA_WEATHER_STATE = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.INT);
    private static final EntityDataAccessor<Integer> DATA_STATE = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.INT);
+   private static final EntityDataAccessor<ItemStack> DATA_ANTENNA = SynchedEntityData.defineId(CopperGolem.class, EntityDataSerializers.ITEM_STACK);
    private long nextWeatheringTick = UNSET_WEATHERING_TICK;
    private int idleAnimationStartTick = 0;
    private java.util.UUID lastLightningBolt;
@@ -83,6 +85,22 @@ public class CopperGolem extends AbstractGolem {
       super.defineSynchedData();
       this.entityData.define(DATA_WEATHER_STATE, 0);
       this.entityData.define(DATA_STATE, 0);
+      this.entityData.define(DATA_ANTENNA, ItemStack.EMPTY);
+   }
+
+   public ItemStack getAntennaItem() {
+      return this.entityData.get(DATA_ANTENNA);
+   }
+
+   public boolean readyForShearing() {
+      return this.getAntennaItem().is(Items.POPPY);
+   }
+
+   protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHit) {
+      super.dropCustomDeathLoot(source, looting, recentlyHit);
+      if (!this.getAntennaItem().isEmpty()) {
+         this.spawnAtLocation(this.getAntennaItem().copy());
+      }
    }
 
    public State getState() {
@@ -105,12 +123,16 @@ public class CopperGolem extends AbstractGolem {
       super.addAdditionalSaveData(tag);
       tag.putLong("next_weather_age", this.nextWeatheringTick);
       tag.putInt("weather_state", this.getWeatherState().ordinal());
+      tag.put("antenna_item", this.getAntennaItem().save(new CompoundTag()));
    }
 
    public void readAdditionalSaveData(CompoundTag tag) {
       super.readAdditionalSaveData(tag);
       this.nextWeatheringTick = tag.contains("next_weather_age") ? tag.getLong("next_weather_age") : UNSET_WEATHERING_TICK;
       this.entityData.set(DATA_WEATHER_STATE, tag.getInt("weather_state"));
+      if (tag.contains("antenna_item")) {
+         this.entityData.set(DATA_ANTENNA, ItemStack.of(tag.getCompound("antenna_item")));
+      }
    }
 
    public void tick() {
@@ -139,7 +161,27 @@ public class CopperGolem extends AbstractGolem {
       }
 
       Level level = this.level();
-      if (level.isClientSide()) {
+      if (stack.is(Items.SHEARS) && this.readyForShearing()) {
+         if (!level.isClientSide) {
+            level.playSound(null, this, BackportSounds.ENTITY_COPPER_GOLEM_SHEAR, SoundSource.PLAYERS, 1.0F, 1.0F);
+            ItemStack antenna = this.getAntennaItem();
+            this.entityData.set(DATA_ANTENNA, ItemStack.EMPTY);
+            this.spawnAtLocation(antenna, 1.5F);
+            this.gameEvent(GameEvent.SHEAR, player);
+            stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
+         }
+
+         return InteractionResult.sidedSuccess(level.isClientSide);
+      } else if (stack.is(Items.POPPY) && this.getAntennaItem().isEmpty()) {
+         if (!level.isClientSide) {
+            this.entityData.set(DATA_ANTENNA, stack.copyWithCount(1));
+            if (!player.getAbilities().instabuild) {
+               stack.shrink(1);
+            }
+         }
+
+         return InteractionResult.sidedSuccess(level.isClientSide);
+      } else if (level.isClientSide()) {
          return InteractionResult.PASS;
       } else if (stack.is(Items.HONEYCOMB) && this.nextWeatheringTick != IGNORE_WEATHERING_TICK) {
          BlockPos pos = this.blockPosition();

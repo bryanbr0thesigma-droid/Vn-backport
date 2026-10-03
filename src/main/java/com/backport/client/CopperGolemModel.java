@@ -271,6 +271,13 @@ public class CopperGolemModel extends HierarchicalModel<CopperGolem> implements 
       poseStack.translate(-0.125F, 0.3125F, -0.1875F);
    }
 
+   public void applyBlockOnAntennaTransform(PoseStack poseStack) {
+      this.root.translateAndRotate(poseStack);
+      this.body.translateAndRotate(poseStack);
+      this.head.translateAndRotate(poseStack);
+      poseStack.translate(0.0, -1.75, 0.0);
+   }
+
    private void poseHeldItemArmsIfStill() {
       this.rightArm.xRot = Math.min(this.rightArm.xRot, -0.87266463F);
       this.leftArm.xRot = Math.min(this.leftArm.xRot, -0.87266463F);
