@@ -2391,7 +2391,10 @@ public final class ContextualDialogueController {
 
    private static boolean playDamageDialogue(LivingEntity speaker, String id, String cooldownKey, DamageSource source, Entity target) {
       DialogueCatalog.DialogueGroup group = DialogueCatalog.byId(id);
-      long cooldown = ONGOING_DAMAGE_DIALOGUES.contains(id) ? 1L : (source.getEntity() == null ? 900L : (group == null ? 20L : group.durationTicks() + 20L));
+      // A hit from a player always re-triggers the reaction; the line-length cooldown made every second punch look ignored.
+      long cooldown = ONGOING_DAMAGE_DIALOGUES.contains(id) || source.getEntity() instanceof Player
+         ? 1L
+         : (source.getEntity() == null ? 900L : (group == null ? 20L : group.durationTicks() + 20L));
       if (!isPlaying(speaker, id) && ready(cooldownKey, cooldown)) {
          interrupt(speaker);
          boolean sharedAdult = speaker instanceof WanderingTrader
