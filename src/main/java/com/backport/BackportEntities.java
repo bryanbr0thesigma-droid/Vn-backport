@@ -71,6 +71,11 @@ public final class BackportEntities {
          .spawnRestriction(SpawnPlacements.Type.IN_WATER, Heightmap.Types.OCEAN_FLOOR, com.backport.entity.AbstractNautilus::checkNautilusSpawnRules)
          .dimensions(EntityDimensions.fixed(0.875F, 0.95F)).trackRangeBlocks(10).build()
    );
+   public static final EntityType<com.backport.entity.Mannequin> MANNEQUIN = Registry.register(
+      BuiltInRegistries.ENTITY_TYPE,
+      Backport.id("mannequin"),
+      FabricEntityTypeBuilder.<com.backport.entity.Mannequin>create(MobCategory.MISC, com.backport.entity.Mannequin::new).dimensions(EntityDimensions.fixed(0.6F, 1.8F)).trackRangeBlocks(10).build()
+   );
    public static final EntityType<com.backport.entity.Cushion> CUSHION = Registry.register(
       BuiltInRegistries.ENTITY_TYPE,
       Backport.id("cushion"),
@@ -129,6 +134,7 @@ public final class BackportEntities {
             WolfArmor.set(wolf, net.minecraft.world.item.ItemStack.EMPTY);
          }
       });
+      FabricDefaultAttributeRegistry.register(MANNEQUIN, com.backport.entity.Mannequin.createAttributes());
       FabricDefaultAttributeRegistry.register(COPPER_GOLEM, CopperGolem.createAttributes());
       FabricDefaultAttributeRegistry.register(PARCHED, net.minecraft.world.entity.monster.Parched.createAttributes());
       FabricDefaultAttributeRegistry.register(CAMEL_HUSK, net.minecraft.world.entity.animal.camel.Camel.createAttributes());
