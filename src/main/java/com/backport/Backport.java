@@ -69,6 +69,7 @@ public final class Backport {
       com.backport.advancement.BackportEvents.init();
       com.backport.locator.LocatorBar.init();
       Trades.init();
+      JockeyCommand.init();
       com.backport.spear.SpearJab.init();
       com.backport.loot.DiscDrops.init();
       com.backport.variant.Variants.init();

@@ -22,7 +22,8 @@
     "ChickenEggMixin",
     "EnchantmentHelperLungeMixin",
     "ServerPlayerLandingMixin",
-    "ZombieSpearMixin"
+    "ZombieSpearMixin",
+    "SpawnPlacementsInvoker"
   ],
   "client": [
     "ItemRendererMixin",
