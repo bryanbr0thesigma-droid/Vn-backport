@@ -114,21 +114,27 @@ public class SpearItem extends Item {
       return InteractionResultHolder.consume(stack);
    }
 
+   private static final Map<LivingEntity, Vec3> LAST_POS = new WeakHashMap<>();
+
+   /** Movement per second. Mobs move after their item ticks, so players use the position delta and mobs the last tick's. */
    private static Vec3 motion(Entity e) {
-      return new Vec3(e.getX() - e.xo, e.getY() - e.yo, e.getZ() - e.zo).scale(20.0);
+      if (e instanceof Player) {
+         return new Vec3(e.getX() - e.xo, e.getY() - e.yo, e.getZ() - e.zo).scale(20.0);
+      }
+      Vec3 d = e.getDeltaMovement();
+      return new Vec3(d.x, 0.0, d.z).scale(20.0);
    }
 
    public void onUseTick(Level level, LivingEntity user, ItemStack stack, int remaining) {
       if (!(level instanceof ServerLevel sl)) return;
+      Vec3 previous = LAST_POS.put(user, user.position());
       int used = this.getUseDuration(stack) - remaining;
       if (used < this.delayTicks) return;
       int ticksUsed = used - this.delayTicks;
       if (ticksUsed > Math.max(this.damage.maxTicks, Math.max(this.knockback.maxTicks, this.dismount.maxTicks)) + 20) return;
       Vec3 look = user.getLookAngle();
-      double attackerSpeed = look.dot(motion(user));
-      if (!(user instanceof Player) && level.getGameTime() % 10 == 0) {
-         Backport.LOGGER.info("[spear-debug] {} used={} ticksUsed={} speed={} look={}", user.getType(), used, ticksUsed, attackerSpeed, look);
-      }
+      Vec3 userMotion = user instanceof Player || previous == null ? motion(user) : user.position().subtract(previous).scale(20.0);
+      double attackerSpeed = look.dot(userMotion);
       double reach = user instanceof Player p && p.isCreative() ? 6.5 : 4.5;
       Vec3 eye = user.getEyePosition();
       Vec3 end = eye.add(look.scale(reach));
