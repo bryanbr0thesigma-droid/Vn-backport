@@ -4,3 +4,4 @@ run/
 .idea/
 *.iml
 dist-private/
+__pycache__/

@@ -14,6 +14,8 @@ For **Fabric 1.20.1**. One mod jar; it adds the Villager News addon, the Pale Ga
 | *(optional)* Fresh Animations | https://modrinth.com/resourcepack/fresh-animations |
 
 Entity Model/Texture/Sound Features are **required**, on clients and on servers. The mod will not start without them.
+Use exactly the versions in the table: newer releases (for example Entity Model Features 3.3.10) exist but have not been tested with this mod.
+The `.mrpack` files below pin these exact versions for you.
 
 ## One-file install
 

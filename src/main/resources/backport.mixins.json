@@ -24,6 +24,8 @@
     "ServerPlayerLandingMixin",
     "ZombieSpearMixin",
     "SpawnPlacementsMixin",
+    "PiglinSpearMixin$Ai",
+    "PiglinSpearMixin$Gear",
     "MobGoalAccessor"
   ],
   "client": [

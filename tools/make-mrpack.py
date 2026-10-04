@@ -35,24 +35,41 @@ def own_jar():
             "env": {"client": "required", "server": "required"}, "downloads": [RAW], "fileSize": len(data)}
 
 
-def build(name, out, with_fabric_api):
+# Exactly the versions this mod was tested with. Bump them only after re-running tools/smoke_test.py.
+PINS = {"fabric-api": "0.92.12", "entity-model-features": "3.3.9", "entitytexturefeatures": "7.2.4", "esf": "0.8.2", "fresh-animations": "1.10.4"}
+
+
+def build(name, out, with_fabric_api, check=False):
     files = []
     if with_fabric_api:
-        files.append(entry("mods/" + modrinth_file("fabric-api", "0.92.12")["filename"], modrinth_file("fabric-api", "0.92.12"), "required", "required"))
+        files.append(entry("mods/" + modrinth_file("fabric-api", PINS["fabric-api"])["filename"], modrinth_file("fabric-api", PINS["fabric-api"]), "required", "required"))
     for project in ("entity-model-features", "entitytexturefeatures", "esf"):
-        f = modrinth_file(project)
+        f = modrinth_file(project, PINS[project])
         files.append(entry("mods/" + f["filename"], f, "required", "required"))
     files.append(own_jar())
-    fa = modrinth_file("fresh-animations", None, loader=None)
+    fa = modrinth_file("fresh-animations", PINS["fresh-animations"], loader=None)
     files.append(entry("resourcepacks/" + fa["filename"], fa, "optional", "unsupported"))
     index = {"formatVersion": 1, "game": "minecraft", "versionId": "1.3.6-friends", "name": name,
              "summary": "Villager News Addon Port with the Backport, Pale Garden and 26.x content for Fabric 1.20.1.",
              "files": files, "dependencies": {"minecraft": "1.20.1", "fabric-loader": "0.16.14"}}
-    with zipfile.ZipFile(os.path.join(ROOT, "dist", out), "w", zipfile.ZIP_DEFLATED) as z:
-        z.writestr("modrinth.index.json", json.dumps(index, indent=2))
+    path = os.path.join(ROOT, "dist", out)
+    text = json.dumps(index, indent=2)
+    if check:
+        have = zipfile.ZipFile(path).read("modrinth.index.json").decode() if os.path.exists(path) else None
+        if have != text:
+            print("STALE:", out, "- run python3 tools/make-mrpack.py")
+            return False
+        print("up to date:", out)
+        return True
+    with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
+        z.writestr("modrinth.index.json", text)
     print(out, len(files), "files")
+    return True
 
 
 if __name__ == "__main__":
-    build("Friends Pack (PC and server)", "friends-pack-pc-and-server.mrpack", True)
-    build("Friends Pack (QuestCraft)", "friends-pack-questcraft.mrpack", False)
+    import sys
+    check = "--check" in sys.argv
+    ok = build("Friends Pack (PC and server)", "friends-pack-pc-and-server.mrpack", True, check)
+    ok = build("Friends Pack (QuestCraft)", "friends-pack-questcraft.mrpack", False, check) and ok
+    sys.exit(0 if ok else 1)
