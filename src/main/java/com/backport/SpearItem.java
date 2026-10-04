@@ -69,6 +69,11 @@ public class SpearItem extends Item {
       return slot == EquipmentSlot.MAINHAND ? this.modifiers : super.getDefaultAttributeModifiers(slot);
    }
 
+   /** Ticks of charging until the weapon can no longer deal damage (delay plus the damage window). */
+   public int damageUseDuration() {
+      return this.delayTicks + this.damage.maxTicks;
+   }
+
    public boolean isWood() {
       return this.wood;
    }

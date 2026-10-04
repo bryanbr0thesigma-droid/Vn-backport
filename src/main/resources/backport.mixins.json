@@ -21,7 +21,8 @@
     "MobVariantSpawnMixin",
     "ChickenEggMixin",
     "EnchantmentHelperLungeMixin",
-    "ServerPlayerLandingMixin"
+    "ServerPlayerLandingMixin",
+    "ZombieSpearMixin"
   ],
   "client": [
     "ItemRendererMixin",
