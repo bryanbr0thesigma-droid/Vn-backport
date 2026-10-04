@@ -19,14 +19,17 @@
     "DecoratedPotPatternsMixin",
     "AnimalVariantMixin",
     "MobVariantSpawnMixin",
-    "ChickenEggMixin"
+    "ChickenEggMixin",
+    "EnchantmentHelperLungeMixin"
   ],
   "client": [
     "ItemRendererMixin",
     "LivingEntityRendererBabyMixin",
     "SheepFurLayerBabyMixin",
     "HumanoidModelBabyMixin",
-    "StriderRendererBabyMixin"
+    "StriderRendererBabyMixin",
+    "MinecraftSpearMixin",
+    "LocalPlayerSpearMixin"
   ],
   "injectors": {
     "defaultRequire": 1

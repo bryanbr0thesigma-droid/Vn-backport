@@ -68,6 +68,10 @@ public class SpearItem extends Item {
       return slot == EquipmentSlot.MAINHAND ? this.modifiers : super.getDefaultAttributeModifiers(slot);
    }
 
+   public boolean isWood() {
+      return this.wood;
+   }
+
    public int getEnchantmentValue() {
       return this.tier.getEnchantmentValue();
    }

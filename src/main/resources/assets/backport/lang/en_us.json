@@ -696,5 +696,6 @@
   "painting.minecraft.dennis.author": "Sarah Boeving",
   "item.backport.blue_egg": "Blue Egg",
   "item.backport.brown_egg": "Brown Egg",
-  "entity.backport.variant_egg": "Thrown Egg"
+  "entity.backport.variant_egg": "Thrown Egg",
+  "enchantment.backport.lunge": "Lunge"
 }
