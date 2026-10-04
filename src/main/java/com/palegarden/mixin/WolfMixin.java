@@ -88,6 +88,24 @@ public abstract class WolfMixin implements WolfVariants.Holder2 {
             this.palegarden$setArmor(net.minecraft.world.item.ItemStack.EMPTY);
             wolf.playSound(com.backport.BackportSounds.ITEM_ARMOR_UNEQUIP_WOLF, 1.0F, 1.0F);
             stack.hurtAndBreak(1, player, p -> p.broadcastBreakEvent(hand));
+            if (player instanceof net.minecraft.server.level.ServerPlayer sp) {
+               com.backport.advancement.BackportEvents.fire(sp, "remove_wolf_armor");
+            }
+         }
+
+         cir.setReturnValue(net.minecraft.world.InteractionResult.sidedSuccess(wolf.level().isClientSide));
+      } else if (stack.is(com.backport.BackportItems.ARMADILLO_SCUTE) && this.palegarden$getArmor().getItem() == com.backport.BackportItems.WOLF_ARMOR && this.palegarden$getArmor().isDamaged()) {
+         if (!wolf.level().isClientSide) {
+            net.minecraft.world.item.ItemStack armor = this.palegarden$getArmor().copy();
+            armor.setDamageValue(Math.max(0, armor.getDamageValue() - (int) (armor.getMaxDamage() * 0.125F)));
+            this.palegarden$setArmor(armor);
+            wolf.playSound(com.backport.BackportSounds.ITEM_WOLF_ARMOR_REPAIR, 1.0F, 1.0F);
+            if (!player.getAbilities().instabuild) {
+               stack.shrink(1);
+            }
+            if (armor.getDamageValue() == 0 && player instanceof net.minecraft.server.level.ServerPlayer sp) {
+               com.backport.advancement.BackportEvents.fire(sp, "repair_wolf_armor");
+            }
          }
 
          cir.setReturnValue(net.minecraft.world.InteractionResult.sidedSuccess(wolf.level().isClientSide));

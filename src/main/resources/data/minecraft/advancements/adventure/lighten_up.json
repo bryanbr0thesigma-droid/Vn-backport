@@ -1,0 +1,64 @@
+{
+ "parent": "minecraft:adventure/minecraft_trials_edition",
+ "display": {
+  "icon": {
+   "item": "backport:copper_bulb"
+  },
+  "title": {
+   "translate": "advancements.adventure.lighten_up.title"
+  },
+  "description": {
+   "translate": "advancements.adventure.lighten_up.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "lighten_up": {
+   "trigger": "minecraft:item_used_on_block",
+   "conditions": {
+    "location": [
+     {
+      "condition": "minecraft:location_check",
+      "predicate": {
+       "block": {
+        "blocks": [
+         "backport:exposed_copper_bulb",
+         "backport:weathered_copper_bulb",
+         "backport:oxidized_copper_bulb",
+         "backport:waxed_exposed_copper_bulb",
+         "backport:waxed_weathered_copper_bulb",
+         "backport:waxed_oxidized_copper_bulb"
+        ],
+        "state": {
+         "lit": "true"
+        }
+       }
+      }
+     },
+     {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+       "items": [
+        "minecraft:wooden_axe",
+        "minecraft:golden_axe",
+        "minecraft:stone_axe",
+        "backport:copper_axe",
+        "minecraft:iron_axe",
+        "minecraft:diamond_axe",
+        "minecraft:netherite_axe"
+       ]
+      }
+     }
+    ]
+   }
+  }
+ },
+ "requirements": [
+  [
+   "lighten_up"
+  ]
+ ]
+}

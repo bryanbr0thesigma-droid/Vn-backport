@@ -1,0 +1,32 @@
+{
+ "parent": "minecraft:adventure/minecraft_trials_edition",
+ "display": {
+  "icon": {
+   "item": "backport:wind_charge"
+  },
+  "title": {
+   "translate": "advancements.adventure.who_needs_rockets.title"
+  },
+  "description": {
+   "translate": "advancements.adventure.who_needs_rockets.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "who_needs_rockets": {
+   "trigger": "backport:event",
+   "conditions": {
+    "event": "fall_after_explosion",
+    "min": 7.0
+   }
+  }
+ },
+ "requirements": [
+  [
+   "who_needs_rockets"
+  ]
+ ]
+}

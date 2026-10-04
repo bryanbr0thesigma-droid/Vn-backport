@@ -1,0 +1,66 @@
+{
+ "parent": "minecraft:husbandry/root",
+ "display": {
+  "icon": {
+   "item": "minecraft:tnt"
+  },
+  "title": {
+   "translate": "advancements.husbandry.uh_oh.title"
+  },
+  "description": {
+   "translate": "advancements.husbandry.uh_oh.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "give_tnt_directly": {
+   "trigger": "minecraft:player_interacted_with_entity",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "backport:sulfur_cube",
+       "flags": {
+        "is_baby": false
+       }
+      }
+     }
+    ],
+    "item": {
+     "tag": "backport:sulfur_cube_archetype/explosive"
+    }
+   }
+  },
+  "pick_up_dropped_tnt": {
+   "trigger": "minecraft:thrown_item_picked_up_by_entity",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "backport:sulfur_cube",
+       "flags": {
+        "is_baby": false
+       }
+      }
+     }
+    ],
+    "item": {
+     "tag": "backport:sulfur_cube_archetype/explosive"
+    }
+   }
+  }
+ },
+ "requirements": [
+  [
+   "pick_up_dropped_tnt",
+   "give_tnt_directly"
+  ]
+ ]
+}

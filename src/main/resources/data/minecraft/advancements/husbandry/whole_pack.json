@@ -1,0 +1,184 @@
+{
+ "parent": "minecraft:husbandry/tame_an_animal",
+ "display": {
+  "icon": {
+   "item": "minecraft:bone"
+  },
+  "title": {
+   "translate": "advancements.husbandry.whole_pack.title"
+  },
+  "description": {
+   "translate": "advancements.husbandry.whole_pack.description"
+  },
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "pale": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:0}"
+      }
+     }
+    ]
+   }
+  },
+  "ashen": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:1}"
+      }
+     }
+    ]
+   }
+  },
+  "black": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:2}"
+      }
+     }
+    ]
+   }
+  },
+  "chestnut": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:3}"
+      }
+     }
+    ]
+   }
+  },
+  "rusty": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:4}"
+      }
+     }
+    ]
+   }
+  },
+  "snowy": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:5}"
+      }
+     }
+    ]
+   }
+  },
+  "spotted": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:6}"
+      }
+     }
+    ]
+   }
+  },
+  "striped": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:7}"
+      }
+     }
+    ]
+   }
+  },
+  "woods": {
+   "trigger": "minecraft:tame_animal",
+   "conditions": {
+    "entity": [
+     {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+       "type": "minecraft:wolf",
+       "nbt": "{PaleGardenVariant:8}"
+      }
+     }
+    ]
+   }
+  }
+ },
+ "requirements": [
+  [
+   "pale"
+  ],
+  [
+   "ashen"
+  ],
+  [
+   "black"
+  ],
+  [
+   "chestnut"
+  ],
+  [
+   "rusty"
+  ],
+  [
+   "snowy"
+  ],
+  [
+   "spotted"
+  ],
+  [
+   "striped"
+  ],
+  [
+   "woods"
+  ]
+ ]
+}

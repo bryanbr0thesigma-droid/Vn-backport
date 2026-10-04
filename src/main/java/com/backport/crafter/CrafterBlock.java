@@ -139,6 +139,11 @@ public class CrafterBlock extends BaseEntityBlock {
          be.setCraftingTicksRemaining(6);
          level.setBlock(pos, state.setValue(CRAFTING, true), 2);
          this.dispenseItem(level, pos, be, results, state);
+         if (results.getItem() == com.backport.BackportItems.CRAFTER.asItem()) {
+            for (net.minecraft.server.level.ServerPlayer near : level.getEntitiesOfClass(net.minecraft.server.level.ServerPlayer.class, new net.minecraft.world.phys.AABB(pos).inflate(8.5))) {
+               com.backport.advancement.BackportEvents.fire(near, "crafter_crafted_crafter");
+            }
+         }
          for (ItemStack rem : r.getRemainingItems(be)) {
             if (!rem.isEmpty()) this.dispenseItem(level, pos, be, rem, state);
          }

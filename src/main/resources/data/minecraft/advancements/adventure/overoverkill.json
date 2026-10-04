@@ -1,0 +1,32 @@
+{
+ "parent": "minecraft:adventure/minecraft_trials_edition",
+ "display": {
+  "icon": {
+   "item": "backport:mace"
+  },
+  "title": {
+   "translate": "advancements.adventure.overoverkill.title"
+  },
+  "description": {
+   "translate": "advancements.adventure.overoverkill.description"
+  },
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "overoverkill": {
+   "trigger": "backport:event",
+   "conditions": {
+    "event": "overoverkill",
+    "min": 100.0
+   }
+  }
+ },
+ "requirements": [
+  [
+   "overoverkill"
+  ]
+ ]
+}

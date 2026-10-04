@@ -52,11 +52,24 @@ public class WindCharge extends AbstractHurtingProjectile {
    }
 
    public boolean isPickable() {
-      return false;
+      return true;
    }
 
+   /** Hitting a wind charge sends it back the way the attacker is looking, and makes the attacker its owner. */
    public boolean hurt(net.minecraft.world.damagesource.DamageSource source, float amount) {
-      return false;
+      Entity attacker = source.getEntity();
+      if (this.level().isClientSide || !(attacker instanceof LivingEntity) || this.isInvulnerableTo(source)) {
+         return false;
+      }
+      Vec3 look = attacker.getLookAngle();
+      this.setOwner(attacker);
+      this.setDeltaMovement(look.scale(1.5));
+      this.xPower = look.x * 0.1;
+      this.yPower = look.y * 0.1;
+      this.zPower = look.z * 0.1;
+      this.hasImpulse = true;
+      this.level().playSound(null, this.getX(), this.getY(), this.getZ(), BackportSounds.ENTITY_WIND_CHARGE_WIND_BURST, SoundSource.NEUTRAL, 0.5F, 1.4F);
+      return true;
    }
 
    public void tick() {
@@ -73,6 +86,9 @@ public class WindCharge extends AbstractHurtingProjectile {
          Entity owner = this.getOwner();
          if (target instanceof LivingEntity living) {
             living.hurt(this.damageSources().mobProjectile(this, owner instanceof LivingEntity l ? l : null), 1.0F);
+            if (living.isDeadOrDying() && living instanceof com.backport.entity.Breeze && owner instanceof net.minecraft.server.level.ServerPlayer sp) {
+               com.backport.advancement.BackportEvents.fire(sp, "blowback");
+            }
          }
 
          this.burst(this.position());
@@ -124,6 +140,9 @@ public class WindCharge extends AbstractHurtingProjectile {
                entity.setDeltaMovement(entity.getDeltaMovement().add(push.scale(power)));
                entity.hurtMarked = true;
                entity.fallDistance = 0.0F;
+               if (entity instanceof net.minecraft.server.level.ServerPlayer sp) {
+                  com.backport.advancement.ExplosionFall.record(sp);
+               }
             }
          }
 

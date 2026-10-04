@@ -1,0 +1,53 @@
+{
+ "parent": "minecraft:adventure/under_lock_and_key",
+ "display": {
+  "icon": {
+   "item": "backport:ominous_trial_key"
+  },
+  "title": {
+   "translate": "advancements.adventure.revaulting.title"
+  },
+  "description": {
+   "translate": "advancements.adventure.revaulting.description"
+  },
+  "frame": "goal",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "revaulting": {
+   "trigger": "minecraft:item_used_on_block",
+   "conditions": {
+    "location": [
+     {
+      "condition": "minecraft:location_check",
+      "predicate": {
+       "block": {
+        "blocks": [
+         "backport:vault"
+        ],
+        "state": {
+         "ominous": "true"
+        }
+       }
+      }
+     },
+     {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+       "items": [
+        "backport:ominous_trial_key"
+       ]
+      }
+     }
+    ]
+   }
+  }
+ },
+ "requirements": [
+  [
+   "revaulting"
+  ]
+ ]
+}

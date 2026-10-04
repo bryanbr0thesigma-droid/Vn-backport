@@ -33,6 +33,7 @@ import net.minecraft.world.phys.Vec3;
 /** Backport of the 1.21.11 spear: jab with the attack key, lunge by holding use. */
 public class SpearItem extends Item {
    private static final Map<LivingEntity, Map<UUID, Long>> STABBED = new WeakHashMap<>();
+   private static final Map<LivingEntity, java.util.Set<UUID>> LIVING_STABBED = new WeakHashMap<>();
    private final Tier tier;
    private final Multimap<Attribute, AttributeModifier> modifiers;
    private final int delayTicks;
@@ -102,6 +103,7 @@ public class SpearItem extends Item {
       player.startUsingItem(hand);
       if (!level.isClientSide) {
          STABBED.remove(player);
+         LIVING_STABBED.remove(player);
          level.playSound(null, player.getX(), player.getY(), player.getZ(), this.wood ? BackportSounds.ITEM_SPEAR_WOOD_USE : BackportSounds.ITEM_SPEAR_USE, SoundSource.PLAYERS, 1.0F, 1.0F);
       }
       return InteractionResultHolder.consume(stack);
@@ -149,6 +151,11 @@ public class SpearItem extends Item {
             dealt = true;
          }
          if (target instanceof LivingEntity lt) stack.hurtAndBreak(1, user, e -> e.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+         if (target instanceof LivingEntity && (dealt || dKb) && user instanceof net.minecraft.server.level.ServerPlayer sp) {
+            java.util.Set<UUID> set = LIVING_STABBED.computeIfAbsent(user, k -> new java.util.HashSet<>());
+            set.add(target.getUUID());
+            com.backport.advancement.BackportEvents.fire(sp, "spear_mobs", set.size());
+         }
          affected |= dealt || dKb;
       }
       if (affected) {
@@ -158,5 +165,6 @@ public class SpearItem extends Item {
 
    public void releaseUsing(ItemStack stack, Level level, LivingEntity user, int remaining) {
       STABBED.remove(user);
+      LIVING_STABBED.remove(user);
    }
 }

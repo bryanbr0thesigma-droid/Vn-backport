@@ -66,6 +66,7 @@ public final class Backport {
       OmenEffects.init();
       NewItems.init();
       com.backport.spear.Lunge.init();
+      com.backport.advancement.BackportEvents.init();
       com.backport.spear.SpearJab.init();
       com.backport.loot.DiscDrops.init();
       com.backport.variant.Variants.init();

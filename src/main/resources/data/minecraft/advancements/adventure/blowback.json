@@ -1,0 +1,31 @@
+{
+ "parent": "minecraft:adventure/minecraft_trials_edition",
+ "display": {
+  "icon": {
+   "item": "backport:wind_charge"
+  },
+  "title": {
+   "translate": "advancements.adventure.blowback.title"
+  },
+  "description": {
+   "translate": "advancements.adventure.blowback.description"
+  },
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "blowback": {
+   "trigger": "backport:event",
+   "conditions": {
+    "event": "blowback"
+   }
+  }
+ },
+ "requirements": [
+  [
+   "blowback"
+  ]
+ ]
+}

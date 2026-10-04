@@ -20,7 +20,8 @@
     "AnimalVariantMixin",
     "MobVariantSpawnMixin",
     "ChickenEggMixin",
-    "EnchantmentHelperLungeMixin"
+    "EnchantmentHelperLungeMixin",
+    "ServerPlayerLandingMixin"
   ],
   "client": [
     "ItemRendererMixin",

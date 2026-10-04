@@ -1,0 +1,31 @@
+{
+ "parent": "minecraft:adventure/root",
+ "display": {
+  "icon": {
+   "item": "backport:crafter"
+  },
+  "title": {
+   "translate": "advancements.adventure.crafters_crafting_crafters.title"
+  },
+  "description": {
+   "translate": "advancements.adventure.crafters_crafting_crafters.description"
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "crafter_crafted_crafter": {
+   "trigger": "backport:event",
+   "conditions": {
+    "event": "crafter_crafted_crafter"
+   }
+  }
+ },
+ "requirements": [
+  [
+   "crafter_crafted_crafter"
+  ]
+ ]
+}
