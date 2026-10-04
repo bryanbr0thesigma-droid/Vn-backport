@@ -17,14 +17,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 /** Zombies, husks, drowned and zombified piglins can carry spears and charge with them. */
 @Mixin(Zombie.class)
 public abstract class ZombieSpearMixin {
-   @org.spongepowered.asm.mixin.Shadow
-   @org.spongepowered.asm.mixin.Final
-   protected net.minecraft.world.entity.ai.goal.GoalSelector goalSelector;
-
    @Inject(method = "registerGoals", at = @At("TAIL"))
    private void backport$spearGoal(CallbackInfo ci) {
       Zombie self = (Zombie) (Object) this;
-      this.goalSelector.addGoal(1, new SpearUseGoal<>(self, 1.0, 1.0, 10.0F, 2.0F));
+      ((MobGoalAccessor) self).backport$goalSelector().addGoal(1, new SpearUseGoal<>(self, 1.0, 1.0, 10.0F, 2.0F));
    }
 
    @Inject(method = "populateDefaultEquipmentSlots", at = @At("TAIL"))

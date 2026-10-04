@@ -23,7 +23,8 @@
     "EnchantmentHelperLungeMixin",
     "ServerPlayerLandingMixin",
     "ZombieSpearMixin",
-    "SpawnPlacementsInvoker"
+    "SpawnPlacementsMixin",
+    "MobGoalAccessor"
   ],
   "client": [
     "ItemRendererMixin",

@@ -134,9 +134,6 @@ public final class BackportEntities {
             WolfArmor.set(wolf, net.minecraft.world.item.ItemStack.EMPTY);
          }
       });
-      com.backport.mixin.SpawnPlacementsInvoker.backport$register(net.minecraft.world.entity.EntityType.ZOMBIE_HORSE, net.minecraft.world.entity.SpawnPlacements.Type.ON_GROUND,
-         net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-         (type, level, reason, pos, random) -> net.minecraft.world.entity.monster.Monster.isDarkEnoughToSpawn(level, pos, random) && net.minecraft.world.entity.Mob.checkMobSpawnRules(type, level, reason, pos, random));
       net.fabricmc.fabric.api.biome.v1.BiomeModifications.addSpawn(
          net.fabricmc.fabric.api.biome.v1.BiomeSelectors.includeByKey(net.minecraft.world.level.biome.Biomes.PLAINS, net.minecraft.world.level.biome.Biomes.SUNFLOWER_PLAINS,
             net.minecraft.world.level.biome.Biomes.SNOWY_PLAINS, net.minecraft.world.level.biome.Biomes.SAVANNA, net.minecraft.world.level.biome.Biomes.SAVANNA_PLATEAU,
