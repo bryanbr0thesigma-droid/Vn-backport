@@ -30,6 +30,7 @@
     "HumanoidModelBabyMixin",
     "StriderRendererBabyMixin",
     "MinecraftSpearMixin",
+    "GuiLocatorBarMixin",
     "LocalPlayerSpearMixin"
   ],
   "injectors": {

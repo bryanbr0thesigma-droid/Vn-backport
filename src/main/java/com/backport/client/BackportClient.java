@@ -117,6 +117,8 @@ public class BackportClient implements ClientModInitializer {
       }
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.BackportEntities.OMINOUS_ITEM_SPAWNER, OminousItemSpawnerRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.FROSTBITE, FrostbiteRenderer::new);
+      net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking.registerGlobalReceiver(com.backport.locator.LocatorBar.PACKET, (client, handler, buf, sender) -> LocatorBarClient.receive(buf));
+      net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> LocatorBarClient.clear());
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.variant.Variants.EGG_ENTITY, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
       net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.register(com.backport.ice.IceCaves.ICE_BALL_ENTITY, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
       net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlocks(net.minecraft.client.renderer.RenderType.cutout(), com.backport.ice.IceCaves.ICE_CRYSTAL, com.backport.ice.IceCaves.ICICLE);

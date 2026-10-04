@@ -731,5 +731,7 @@
   "advancements.husbandry.whole_pack.title": "The Whole Pack",
   "advancements.husbandry.whole_pack.description": "Tame one of each Wolf variant",
   "advancements.husbandry.uh_oh.title": "Uh Oh",
-  "advancements.husbandry.uh_oh.description": "Have a Sulfur Cube absorb a TNT block"
+  "advancements.husbandry.uh_oh.description": "Have a Sulfur Cube absorb a TNT block",
+  "gamerule.locatorBar": "Locator Bar",
+  "gamerule.locatorBar.description": "Show other players on a bar above the hotbar"
 }
