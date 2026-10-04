@@ -84,9 +84,6 @@ public final class LocatorBarClient {
          Vec3 dir = cam.subtract(pos);
          Vec3 rot = new Vec3(-dir.z, dir.y, dir.x);
          double angle = Mth.wrapDegrees(Math.toDegrees(Mth.atan2(rot.z, rot.x)) - yaw);
-         if (mc.level.getGameTime() % 40 == 0) {
-            Backport.LOGGER.info("[locator-debug] angle={} yaw={} dist={} loaded={}", angle, yaw, cam.distanceTo(pos), other != null);
-         }
          if (angle <= -60.0 || angle > 60.0) {
             continue;
          }
