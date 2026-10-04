@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "villager-news-addon-port",
 	"version": "1.3.6",
-	"name": "Villager News Addon Port",
-	"description": "A Java Edition port of Villager News with contextual dialogue and EMF, ETF, and ESF models, textures, and sounds. (Backported to Fabric 1.20.1.) Also includes a Pale Garden backport (pale oak, creaking, resin, pale moss, eyeblossoms).",
+	"name": "Vanilla Extended",
+	"description": "Vanilla Extended for Fabric 1.20.1: the Villager News addon port (contextual dialogue and EMF, ETF and ESF models, textures and sounds) together with a backport of the Pale Garden and the newer Minecraft content (trial chambers, copper, spears, sulfur and ice caves, baby mobs and more).",
 	"authors": [
 		"Oreville Studios Ltd",
 		"Element Animation",

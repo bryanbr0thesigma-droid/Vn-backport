@@ -1,4 +1,4 @@
-# Installing Villager News Addon Port (Backport + Pale Garden + 26.x content)
+# Installing Vanilla Extended (Villager News + Backport + Pale Garden + 26.x content)
 
 For **Fabric 1.20.1**. One mod jar; it adds the Villager News addon, the Pale Garden, and the 26.x backport content.
 

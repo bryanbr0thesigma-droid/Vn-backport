@@ -1,4 +1,4 @@
-# Villager News Addon Port — Fabric 1.20.1 backport
+# Vanilla Extended — Fabric 1.20.1 (Villager News Addon Port + Backport + Pale Garden)
 
 Personal backport of **Villager News Addon Port 1.3.6** (originally built for Minecraft 26.3 / Java 25)
 to **Fabric 1.20.1** (Java 17).

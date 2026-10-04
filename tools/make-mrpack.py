@@ -50,7 +50,7 @@ def build(name, out, with_fabric_api, check=False):
     fa = modrinth_file("fresh-animations", PINS["fresh-animations"], loader=None)
     files.append(entry("resourcepacks/" + fa["filename"], fa, "optional", "unsupported"))
     index = {"formatVersion": 1, "game": "minecraft", "versionId": "1.3.6-friends", "name": name,
-             "summary": "Villager News Addon Port with the Backport, Pale Garden and 26.x content for Fabric 1.20.1.",
+             "summary": "Vanilla Extended: the Villager News addon port, the Pale Garden and the newer Minecraft content, for Fabric 1.20.1.",
              "files": files, "dependencies": {"minecraft": "1.20.1", "fabric-loader": "0.16.14"}}
     path = os.path.join(ROOT, "dist", out)
     text = json.dumps(index, indent=2)
@@ -70,6 +70,6 @@ def build(name, out, with_fabric_api, check=False):
 if __name__ == "__main__":
     import sys
     check = "--check" in sys.argv
-    ok = build("Friends Pack (PC and server)", "friends-pack-pc-and-server.mrpack", True, check)
-    ok = build("Friends Pack (QuestCraft)", "friends-pack-questcraft.mrpack", False, check) and ok
+    ok = build("Vanilla Extended (PC and server)", "friends-pack-pc-and-server.mrpack", True, check)
+    ok = build("Vanilla Extended (QuestCraft)", "friends-pack-questcraft.mrpack", False, check) and ok
     sys.exit(0 if ok else 1)
