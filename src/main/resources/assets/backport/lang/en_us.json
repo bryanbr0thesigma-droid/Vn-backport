@@ -736,5 +736,6 @@
   "gamerule.locatorBar.description": "Show other players on a bar above the hotbar",
   "filled_map.trial_chambers": "Trial Explorer Map",
   "entity.backport.mannequin": "Mannequin",
-  "entity.backport.mannequin.label": "NPC"
+  "entity.backport.mannequin.label": "NPC",
+  "vanilla_extended.guidebook": "Guidebook"
 }

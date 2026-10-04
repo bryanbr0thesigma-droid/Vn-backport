@@ -36,7 +36,9 @@
     "StriderRendererBabyMixin",
     "MinecraftSpearMixin",
     "GuiLocatorBarMixin",
-    "LocalPlayerSpearMixin"
+    "OptionsScreenGuidebookMixin",
+    "LocalPlayerSpearMixin",
+    "ScreenInvoker"
   ],
   "injectors": {
     "defaultRequire": 1
