@@ -126,6 +126,9 @@ public class SpearItem extends Item {
       if (ticksUsed > Math.max(this.damage.maxTicks, Math.max(this.knockback.maxTicks, this.dismount.maxTicks)) + 20) return;
       Vec3 look = user.getLookAngle();
       double attackerSpeed = look.dot(motion(user));
+      if (!(user instanceof Player) && level.getGameTime() % 10 == 0) {
+         Backport.LOGGER.info("[spear-debug] {} used={} ticksUsed={} speed={} look={}", user.getType(), used, ticksUsed, attackerSpeed, look);
+      }
       double reach = user instanceof Player p && p.isCreative() ? 6.5 : 4.5;
       Vec3 eye = user.getEyePosition();
       Vec3 end = eye.add(look.scale(reach));
