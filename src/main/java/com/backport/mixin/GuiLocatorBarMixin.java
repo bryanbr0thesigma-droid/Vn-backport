@@ -24,4 +24,13 @@ public abstract class GuiLocatorBarMixin {
          LocatorBarClient.render(g, net.minecraft.client.Minecraft.getInstance().getFrameTime());
       }
    }
+
+   /** Creative has no experience bar to replace, so the locator bar is drawn on its own there. */
+   @Inject(method = "render", at = @At("RETURN"))
+   private void backport$drawLocatorWithoutXp(GuiGraphics g, float partial, CallbackInfo ci) {
+      net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+      if (LocatorBarClient.active() && mc.gameMode != null && !mc.gameMode.hasExperience() && !mc.player.isSpectator() && !mc.options.hideGui) {
+         LocatorBarClient.render(g, partial);
+      }
+   }
 }
