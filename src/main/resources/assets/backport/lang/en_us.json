@@ -733,5 +733,6 @@
   "advancements.husbandry.uh_oh.title": "Uh Oh",
   "advancements.husbandry.uh_oh.description": "Have a Sulfur Cube absorb a TNT block",
   "gamerule.locatorBar": "Locator Bar",
-  "gamerule.locatorBar.description": "Show other players on a bar above the hotbar"
+  "gamerule.locatorBar.description": "Show other players on a bar above the hotbar",
+  "filled_map.trial_chambers": "Trial Explorer Map"
 }
